@@ -3,941 +3,1460 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import {
-  Sparkles,
-  ArrowRight,
-  ShieldCheck,
-  Zap,
   Globe,
-  Laptop,
+  ArrowRight,
   CheckCircle2,
+  XCircle,
+  Smartphone,
+  Zap,
+  Search,
+  ShieldCheck,
+  Server,
+  Layers,
+  Sparkles,
   Utensils,
   Wrench,
-  Clock,
+  Sparkle,
+  HardHat,
+  Scissors,
+  Car,
+  Briefcase,
+  ShoppingBag,
   ExternalLink,
-  Check,
-  Star,
-  Layers,
-  PhoneCall,
+  ChevronDown,
+  Clock,
+  MapPin,
   Calendar,
-  Smartphone,
-  TrendingUp,
-  Headphones,
-  Award,
-  ChevronRight,
-  Compass,
-  Code2,
-  Cpu,
-  Palette,
-  Search,
+  MessageSquare,
+  Star,
+  Check,
+  Menu as MenuIcon,
+  X,
+  Phone,
+  Mail,
+  Laptop,
 } from 'lucide-react';
 
-export default function BuyerRadarLandingPage() {
-  const [quickName, setQuickName] = useState('');
-  const [quickCity, setQuickCity] = useState('');
-  const [quickIndustry, setQuickIndustry] = useState('restaurant');
-  const [isGenerating, setIsGenerating] = useState(false);
-  const [activeTab, setActiveTab] = useState<'restaurant' | 'handyman' | 'cleaning'>('restaurant');
+export default function AgencyLandingPage() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
+  const [portfolioTab, setPortfolioTab] = useState<'all' | 'restaurant' | 'home-services' | 'cleaning' | 'contractor'>('all');
+  const [isGetStartedOpen, setIsGetStartedOpen] = useState(false);
 
-  const handleQuickGenerate = async (e: React.FormEvent) => {
+  // Onboarding modal state
+  const [step, setStep] = useState(1);
+  const [formData, setFormData] = useState({
+    businessName: '',
+    industry: 'Restaurant / Cafe',
+    city: '',
+    hasExistingWebsite: 'no',
+    websiteGoal: 'New Customers & Local Visibility',
+    fullName: '',
+    email: '',
+    phone: '',
+    notes: '',
+  });
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const toggleFaq = (index: number) => {
+    setActiveFaq(activeFaq === index ? null : index);
+  };
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!quickName.trim() || !quickCity.trim()) return;
+    setIsSubmitting(true);
 
-    setIsGenerating(true);
     try {
-      const res = await fetch('/api/admin/businesses', {
+      // Save lead submission to leads API
+      await fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: quickName,
-          city: quickCity,
-          industry: quickIndustry,
+          action: 'agency_inquiry',
+          answers: formData,
         }),
       });
-      const data = await res.json();
-      if (data.business?.slug) {
-        window.location.href = `/preview/${data.business.slug}`;
-      }
-    } catch (err) {
-      console.error(err);
-      setIsGenerating(false);
+    } catch {
+      // Graceful fallback
+    } finally {
+      setIsSubmitting(false);
+      setFormSubmitted(true);
     }
   };
 
-  return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-white">
-      {/* 1. TOP ANNOUNCEMENT BAR */}
-      <div className="bg-gradient-to-r from-emerald-950 via-slate-900 to-indigo-950 text-slate-300 text-xs py-2.5 px-4 border-b border-slate-800">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-          <div className="flex items-center gap-2 font-medium">
-            <span className="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-bold uppercase tracking-wider border border-emerald-500/30">
-              ✦ BuyerRadar Agency
-            </span>
-            <span>Custom-Crafted Websites for Local Businesses • Delivered & Live in 48 Hours</span>
-          </div>
-          <div className="flex items-center gap-4">
-            <Link
-              href="/admin"
-              className="text-emerald-400 hover:text-emerald-300 font-bold flex items-center gap-1 transition-colors text-xs"
-            >
-              <span>Admin Portal</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-        </div>
-      </div>
+  const industries = [
+    { name: 'Restaurants & Cafes', icon: Utensils, desc: 'Digital menus, opening hours, booking requests & location info.' },
+    { name: 'Handyman & Home Services', icon: Wrench, desc: 'Service lists, direct quote requests & emergency call triggers.' },
+    { name: 'Cleaning Companies', icon: Sparkle, desc: 'Residential & commercial pricing packages with online booking forms.' },
+    { name: 'Contractors & Trades', icon: HardHat, desc: 'Project galleries, licensing credentials & estimate request forms.' },
+    { name: 'Beauty & Wellness', icon: Scissors, desc: 'Treatment menus, stylist showcases & appointment scheduling.' },
+    { name: 'Auto Services & Repair', icon: Car, desc: 'Service menus, mechanic credentials & rapid contact options.' },
+    { name: 'Professional Services', icon: Briefcase, desc: 'Consultants, accountants & legal advisors with trust-first layouts.' },
+    { name: 'Local Retail & Boutiques', icon: ShoppingBag, desc: 'Store hours, product catalogues, directions & featured stock.' },
+  ];
 
-      {/* 2. AGENCY NAVIGATION */}
-      <header className="bg-slate-900/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-400 text-slate-950 flex items-center justify-center font-black shadow-lg shadow-emerald-500/20">
-              <Compass className="w-6 h-6" />
+  const portfolioProjects = [
+    {
+      id: 'la-trattoria',
+      title: 'Trattoria Bella Vista',
+      category: 'restaurant',
+      categoryLabel: 'Restaurant & Dining',
+      description: 'Modern Italian dining experience featuring digital menus, table reservation requests, and verified guest reviews.',
+      accentColor: 'from-amber-600 to-rose-700',
+      tag: 'Demo Website',
+      features: ['Digital Menu', 'Table Booking', 'Google Reviews'],
+      demoSlug: 'trattoria-bella-vista',
+    },
+    {
+      id: 'apex-handyman',
+      title: 'Apex Home Services',
+      category: 'home-services',
+      categoryLabel: 'Handyman & Repairs',
+      description: 'High-conversion service business site with transparent rate tables, same-day quote forms, and direct click-to-call.',
+      accentColor: 'from-blue-600 to-indigo-800',
+      tag: 'Demo Website',
+      features: ['Emergency Callouts', 'Instant Estimate Form', 'Service Checklists'],
+      demoSlug: 'apex-home-services',
+    },
+    {
+      id: 'sparkle-pro',
+      title: 'Crystal Clear Cleaners',
+      category: 'cleaning',
+      categoryLabel: 'Cleaning Services',
+      description: 'Pristine residential and commercial cleaning website with recurring service schedules and instant pricing estimates.',
+      accentColor: 'from-emerald-600 to-teal-800',
+      tag: 'Demo Website',
+      features: ['Recurring Plans', 'Room Calculator', 'Eco-friendly Guarantee'],
+      demoSlug: 'crystal-clear-cleaners',
+    },
+    {
+      id: 'vanguard-builders',
+      title: 'Vanguard Contracting',
+      category: 'contractor',
+      categoryLabel: 'General Contracting',
+      description: 'High-ticket construction website highlighting completed remodel galleries, licensing, and detailed consultation requests.',
+      accentColor: 'from-stone-700 to-slate-900',
+      tag: 'Demo Website',
+      features: ['Portfolio Gallery', 'License & Insurance', 'Consultation Request'],
+      demoSlug: 'vanguard-contracting',
+    },
+  ];
+
+  const filteredProjects = portfolioTab === 'all'
+    ? portfolioProjects
+    : portfolioProjects.filter((p) => p.category === portfolioTab);
+
+  const faqs = [
+    {
+      q: 'Do I need an existing website to work with you?',
+      a: 'No. We can build your complete website from scratch. We handle the design, structure, business copywriting foundations, and technical setup.',
+    },
+    {
+      q: 'Can you redesign my existing website?',
+      a: 'Yes. We can redesign and rebuild an outdated website to ensure it is modern, mobile-friendly, fast, and structured for better search clarity.',
+    },
+    {
+      q: 'Will my website work on mobile phones and tablets?',
+      a: 'Yes. Every website we build is fully responsive and thoroughly tested across modern smartphones, tablets, laptops, and desktop displays.',
+    },
+    {
+      q: 'How does your local SEO foundation help search engines?',
+      a: 'We build websites with clean semantic HTML, structured business data (schema.org), fast page load times, and clear geographical and service information to give search engines an unambiguous understanding of your business.',
+    },
+    {
+      q: 'Can I use my own custom domain name?',
+      a: 'Yes. We can easily connect your existing domain (e.g. yourbusiness.com) to your new website. If you do not have one yet, we will guide you through getting one.',
+    },
+    {
+      q: 'Can I request updates and changes to my website?',
+      a: 'Yes. Our monthly service plans include ongoing updates, content adjustments, menu/service refreshes, and technical maintenance so your site is never abandoned.',
+    },
+    {
+      q: 'Can you add features like appointment booking or online menus?',
+      a: 'Yes. Depending on your business needs, we integrate contact forms, reservation systems, digital menus, image galleries, review feeds, and external ordering links.',
+    },
+    {
+      q: 'How long does it take to build and launch our website?',
+      a: 'Most standard business websites are designed and ready for your review within 3 to 7 business days once we receive your business information.',
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-white text-slate-900 font-sans antialiased selection:bg-indigo-50 selection:text-indigo-700">
+      {/* 3. STICKY RESPONSIVE HEADER */}
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 transition-all">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+          {/* Brand Logo */}
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center text-white shadow-sm transition-transform group-hover:scale-105">
+              <Globe className="w-5 h-5 text-indigo-400" />
             </div>
             <div>
-              <span className="font-black text-xl text-white block leading-tight tracking-tight">BuyerRadar</span>
-              <span className="text-[10px] text-emerald-400 font-semibold tracking-wider uppercase">Bespoke Web Agency</span>
+              <span className="text-xl font-bold tracking-tight text-slate-900">
+                Buyer<span className="text-indigo-600">Radar</span>
+              </span>
+              <span className="hidden sm:inline-block ml-2 text-[10px] font-semibold uppercase tracking-wider text-slate-500 bg-slate-100 px-2 py-0.5 rounded">
+                Web Agency
+              </span>
             </div>
           </Link>
 
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-300">
-            <a href="#services" className="hover:text-white transition-colors">Specialties</a>
-            <a href="#portfolio" className="hover:text-white transition-colors">Client Projects</a>
-            <a href="#standards" className="hover:text-white transition-colors">Capabilities</a>
-            <a href="#process" className="hover:text-white transition-colors">Our Process</a>
-            <a href="#pricing" className="hover:text-white transition-colors">Plans</a>
-            <a href="#faq" className="hover:text-white transition-colors">FAQ</a>
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-8">
+            <a href="#services" className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">
+              Services
+            </a>
+            <a href="#portfolio" className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">
+              Our Work
+            </a>
+            <a href="#process" className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">
+              Process
+            </a>
+            <a href="#features" className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">
+              Features
+            </a>
+            <a href="#pricing" className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">
+              Pricing
+            </a>
+            <a href="#faq" className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">
+              FAQ
+            </a>
           </nav>
 
-          {/* Header CTAs */}
-          <div className="flex items-center gap-3">
-            <Link
-              href="/admin"
-              className="px-4 py-2 rounded-xl border border-slate-700 hover:bg-slate-800 text-slate-200 text-xs font-bold transition-colors hidden sm:inline-flex"
+          {/* Right Action */}
+          <div className="hidden md:flex items-center space-x-4">
+            <button
+              onClick={() => {
+                setIsGetStartedOpen(true);
+                setStep(1);
+                setFormSubmitted(false);
+              }}
+              className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 shadow-sm transition-all hover:shadow hover:-translate-y-0.5 active:translate-y-0"
             >
-              Client Login
-            </Link>
-            <a
-              href="#instant-preview"
-              className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-slate-950 text-xs font-black shadow-lg shadow-emerald-500/25 transition-all flex items-center gap-1.5 active:scale-[0.98]"
+              Get Started
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="flex md:hidden">
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors"
+              aria-label="Toggle navigation menu"
             >
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Get Free Preview</span>
-            </a>
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
+            </button>
           </div>
         </div>
+
+        {/* Mobile Dropdown Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-3 shadow-lg">
+            <a
+              href="#services"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block px-3 py-2 text-base font-medium text-slate-700 hover:text-indigo-600 hover:bg-slate-50 rounded-md"
+            >
+              Services
+            </a>
+            <a
+              href="#portfolio"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block px-3 py-2 text-base font-medium text-slate-700 hover:text-indigo-600 hover:bg-slate-50 rounded-md"
+            >
+              Our Work
+            </a>
+            <a
+              href="#process"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block px-3 py-2 text-base font-medium text-slate-700 hover:text-indigo-600 hover:bg-slate-50 rounded-md"
+            >
+              Process
+            </a>
+            <a
+              href="#pricing"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block px-3 py-2 text-base font-medium text-slate-700 hover:text-indigo-600 hover:bg-slate-50 rounded-md"
+            >
+              Pricing
+            </a>
+            <a
+              href="#faq"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block px-3 py-2 text-base font-medium text-slate-700 hover:text-indigo-600 hover:bg-slate-50 rounded-md"
+            >
+              FAQ
+            </a>
+            <div className="pt-2">
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  setIsGetStartedOpen(true);
+                  setStep(1);
+                  setFormSubmitted(false);
+                }}
+                className="w-full flex items-center justify-center px-4 py-3 rounded-lg text-base font-semibold text-white bg-indigo-600 hover:bg-indigo-700"
+              >
+                Get Started
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </button>
+            </div>
+          </div>
+        )}
       </header>
 
-      {/* 3. HERO SECTION */}
-      <section className="relative pt-16 pb-20 md:pt-28 md:pb-32 px-4 overflow-hidden">
-        {/* Glow ambient background effects */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-emerald-500/15 blur-[140px] rounded-full pointer-events-none" />
-        <div className="absolute top-1/3 right-1/4 w-[450px] h-[350px] bg-cyan-500/10 blur-[120px] rounded-full pointer-events-none" />
+      {/* 4. HERO SECTION */}
+      <section className="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28 bg-gradient-to-b from-slate-50 via-white to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+            {/* Left Content */}
+            <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
+              <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-xs font-semibold text-indigo-700">
+                <span className="w-2 h-2 rounded-full bg-indigo-600 animate-pulse"></span>
+                <span>Web Design & Development for Local Businesses</span>
+              </div>
 
-        <div className="max-w-5xl mx-auto text-center space-y-8 relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-slate-700/80 text-emerald-400 text-xs font-bold shadow-inner">
-            <Award className="w-4 h-4 text-emerald-400" />
-            <span>High-Performance Websites Custom Built for Local Businesses</span>
-          </div>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.12]">
+                Professional Websites Built for Growing Businesses
+              </h1>
 
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-black text-white tracking-tight leading-[1.08]">
-            We Build Websites That Turn <br />
-            <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
-              Local Searchers Into Paying Clients.
-            </span>
-          </h1>
+              <p className="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                We design fast, modern websites that give your business a professional online presence and make it easier for potential customers to find, learn about, and contact you.
+              </p>
 
-          <p className="text-base sm:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed font-normal">
-            No generic DIY website builders or slow clunky setups. <strong className="text-white font-semibold">BuyerRadar</strong> handcrafts, launches, and manages custom high-converting websites for restaurants, contractors, and cleaning services. Test drive your actual website on your phone before paying a cent.
-          </p>
+              {/* CTAs */}
+              <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                <button
+                  onClick={() => {
+                    setIsGetStartedOpen(true);
+                    setStep(1);
+                    setFormSubmitted(false);
+                  }}
+                  className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 rounded-xl text-base font-semibold text-white bg-slate-900 hover:bg-indigo-600 shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5"
+                >
+                  Get Started
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </button>
 
-          {/* Quick Custom Preview Generator */}
-          <div id="instant-preview" className="pt-4 max-w-3xl mx-auto scroll-mt-28">
-            <form
-              onSubmit={handleQuickGenerate}
-              className="bg-slate-900/95 backdrop-blur-2xl p-6 sm:p-7 rounded-3xl border border-slate-800 shadow-2xl shadow-emerald-950/50 space-y-4 text-left"
-            >
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs font-bold uppercase tracking-wider text-slate-400">
-                <span className="flex items-center gap-1.5 text-emerald-400">
-                  <Sparkles className="w-4 h-4" /> Request Your Custom 7-Day Live Preview
+                <a
+                  href="#portfolio"
+                  className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 rounded-xl text-base font-semibold text-slate-700 bg-white border border-slate-300 hover:bg-slate-50 hover:border-slate-400 transition-all"
+                >
+                  View Our Work
+                </a>
+              </div>
+
+              {/* Simple Assurance note */}
+              <div className="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-slate-500 font-medium">
+                <span className="flex items-center">
+                  <Check className="w-4 h-4 text-emerald-500 mr-1.5" /> No tech experience required
                 </span>
-                <span className="text-[11px] text-slate-500 font-mono">100% Free • No commitment</span>
+                <span className="flex items-center">
+                  <Check className="w-4 h-4 text-emerald-500 mr-1.5" /> Complete design & setup
+                </span>
+                <span className="flex items-center">
+                  <Check className="w-4 h-4 text-emerald-500 mr-1.5" /> Ongoing maintenance included
+                </span>
               </div>
+            </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <div>
-                  <label className="block text-[11px] font-bold text-slate-400 mb-1">Business Name</label>
-                  <input
-                    required
-                    type="text"
-                    value={quickName}
-                    onChange={(e) => setQuickName(e.target.value)}
-                    placeholder="e.g. Bella Trattoria"
-                    className="w-full p-3 text-xs rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:border-emerald-500 focus:outline-hidden transition-colors"
-                  />
+            {/* Right Mockup — Realistic Business Website */}
+            <div className="lg:col-span-6">
+              <div className="relative mx-auto max-w-lg lg:max-w-none">
+                {/* Browser Frame */}
+                <div className="bg-slate-900 rounded-2xl shadow-2xl p-2.5 sm:p-3.5 border border-slate-800">
+                  {/* Browser top controls */}
+                  <div className="flex items-center justify-between px-3 py-2 bg-slate-800/80 rounded-xl mb-3">
+                    <div className="flex items-center space-x-1.5">
+                      <div className="w-3 h-3 rounded-full bg-rose-500/80"></div>
+                      <div className="w-3 h-3 rounded-full bg-amber-500/80"></div>
+                      <div className="w-3 h-3 rounded-full bg-emerald-500/80"></div>
+                    </div>
+                    <div className="flex items-center px-4 py-1 bg-slate-900/90 rounded-md text-[11px] text-slate-400 font-mono tracking-wide">
+                      <ShieldCheck className="w-3 h-3 text-emerald-400 mr-1.5" />
+                      https://www.bellavista-bistro.com
+                    </div>
+                    <div className="w-4"></div>
+                  </div>
+
+                  {/* Rendered Website Interior Preview */}
+                  <div className="bg-white rounded-xl overflow-hidden text-slate-900 shadow-inner">
+                    {/* Mock Site Nav */}
+                    <div className="px-5 py-3.5 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+                      <div className="flex items-center space-x-2">
+                        <Utensils className="w-4 h-4 text-amber-600" />
+                        <span className="text-xs font-bold text-slate-800 uppercase tracking-wider">Bella Vista Bistro</span>
+                      </div>
+                      <div className="flex items-center space-x-3 text-[11px] font-medium text-slate-600">
+                        <span className="hidden sm:inline">Menu</span>
+                        <span className="hidden sm:inline">About</span>
+                        <span className="px-2.5 py-1 rounded bg-amber-600 text-white font-semibold text-[10px]">
+                          Reserve Table
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Mock Site Hero */}
+                    <div className="p-6 sm:p-8 bg-gradient-to-r from-amber-950 via-slate-900 to-slate-900 text-white relative">
+                      <div className="max-w-xs space-y-2">
+                        <span className="inline-block px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 text-[10px] font-semibold uppercase tracking-wider border border-amber-500/30">
+                          Fresh Artisanal Dining
+                        </span>
+                        <h3 className="text-lg sm:text-xl font-bold leading-tight">
+                          Authentic Italian Cuisine in Downtown Austin
+                        </h3>
+                        <p className="text-[11px] text-slate-300">
+                          Handmade pasta, wood-fired specialties, and seasonal farm ingredients.
+                        </p>
+                        <div className="pt-2 flex items-center space-x-2">
+                          <span className="px-3 py-1.5 rounded-lg bg-amber-600 text-white text-[10px] font-bold">
+                            View Menu
+                          </span>
+                          <span className="px-3 py-1.5 rounded-lg bg-white/10 text-white text-[10px] font-semibold">
+                            Call (512) 555-0198
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Mock Site Value Strip */}
+                    <div className="p-4 bg-slate-50 border-t border-slate-200 grid grid-cols-3 gap-2 text-center">
+                      <div className="p-2 rounded bg-white border border-slate-200/60 shadow-xs">
+                        <Clock className="w-3.5 h-3.5 text-amber-600 mx-auto mb-1" />
+                        <p className="text-[10px] font-bold text-slate-800">Open Daily</p>
+                        <p className="text-[9px] text-slate-500">11:30 AM - 10 PM</p>
+                      </div>
+                      <div className="p-2 rounded bg-white border border-slate-200/60 shadow-xs">
+                        <MapPin className="w-3.5 h-3.5 text-amber-600 mx-auto mb-1" />
+                        <p className="text-[10px] font-bold text-slate-800">Downtown</p>
+                        <p className="text-[9px] text-slate-500">412 Congress Ave</p>
+                      </div>
+                      <div className="p-2 rounded bg-white border border-slate-200/60 shadow-xs">
+                        <Star className="w-3.5 h-3.5 text-amber-500 mx-auto mb-1 fill-amber-500" />
+                        <p className="text-[10px] font-bold text-slate-800">4.9 Stars</p>
+                        <p className="text-[9px] text-slate-500">Verified Reviews</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <label className="block text-[11px] font-bold text-slate-400 mb-1">City, State</label>
-                  <input
-                    required
-                    type="text"
-                    value={quickCity}
-                    onChange={(e) => setQuickCity(e.target.value)}
-                    placeholder="e.g. Austin, TX"
-                    className="w-full p-3 text-xs rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:border-emerald-500 focus:outline-hidden transition-colors"
-                  />
-                </div>
-                <div>
-                  <label className="block text-[11px] font-bold text-slate-400 mb-1">Your Industry</label>
-                  <select
-                    value={quickIndustry}
-                    onChange={(e) => setQuickIndustry(e.target.value)}
-                    className="w-full p-3 text-xs rounded-xl bg-slate-950 border border-slate-800 text-white focus:border-emerald-500 focus:outline-hidden transition-colors font-medium"
-                  >
-                    <option value="restaurant">🍽 Restaurant & Dining</option>
-                    <option value="handyman">🔨 Handyman & Contractors</option>
-                    <option value="cleaning">🧹 Cleaning Services</option>
-                  </select>
+
+                {/* Mobile Device Overlay Preview */}
+                <div className="hidden sm:block absolute -bottom-6 -right-6 w-44 bg-slate-900 rounded-2xl p-2 shadow-2xl border border-slate-700">
+                  <div className="w-12 h-1 bg-slate-700 rounded-full mx-auto mb-2"></div>
+                  <div className="bg-white rounded-xl p-3 text-slate-900">
+                    <div className="flex items-center justify-between pb-2 border-b border-slate-100 mb-2">
+                      <span className="text-[9px] font-bold">Apex Handyman</span>
+                      <Phone className="w-2.5 h-2.5 text-indigo-600" />
+                    </div>
+                    <div className="space-y-1 text-left">
+                      <p className="text-[10px] font-bold leading-tight">Same-Day Home Repairs</p>
+                      <p className="text-[8px] text-slate-500">Fast, licensed & insured services.</p>
+                      <div className="pt-1">
+                        <div className="bg-indigo-600 text-white text-[8px] text-center font-bold py-1 rounded">
+                          Get Free Estimate
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-
-              <button
-                type="submit"
-                disabled={isGenerating}
-                className="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-400 hover:brightness-110 text-slate-950 font-black text-sm flex items-center justify-center gap-2 shadow-xl shadow-emerald-500/25 transition-all active:scale-[0.99] disabled:opacity-60"
-              >
-                <Sparkles className="w-4 h-4" />
-                <span>{isGenerating ? 'Engineering Your Custom Website...' : 'Generate My Website Preview Instantly'}</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </form>
-          </div>
-
-          {/* Agency Metrics Bar */}
-          <div className="pt-6 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-            <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80 text-center">
-              <div className="text-2xl sm:text-3xl font-black text-white font-mono">48 hrs</div>
-              <div className="text-xs text-slate-400 mt-0.5">Average Turnaround</div>
-            </div>
-            <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80 text-center">
-              <div className="text-2xl sm:text-3xl font-black text-emerald-400 font-mono">3.4x</div>
-              <div className="text-xs text-slate-400 mt-0.5">Higher Lead Conversion</div>
-            </div>
-            <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80 text-center">
-              <div className="text-2xl sm:text-3xl font-black text-white font-mono">100%</div>
-              <div className="text-xs text-slate-400 mt-0.5">Custom Niche Architecture</div>
-            </div>
-            <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80 text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-400 font-mono">Zero</div>
-              <div className="text-xs text-slate-400 mt-0.5">Maintenance Headaches</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 4. AGENCY SPECIALTIES */}
-      <section id="services" className="py-20 px-4 bg-slate-900 border-t border-slate-800 scroll-mt-20">
-        <div className="max-w-7xl mx-auto space-y-16">
-          <div className="text-center max-w-3xl mx-auto space-y-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
-              Agency Specialties
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">Engineered for How Your Customers Buy</h2>
-            <p className="text-slate-400 text-sm sm:text-base">
-              Every industry has a distinct customer psychology. We design and build custom digital experiences tailored to your market.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Restaurant */}
-            <div className="bg-slate-950 rounded-3xl border border-slate-800 p-8 space-y-6 hover:border-orange-500/50 transition-all flex flex-col justify-between group">
-              <div className="space-y-4">
-                <div className="w-12 h-12 rounded-2xl bg-orange-500/10 border border-orange-500/20 text-orange-400 flex items-center justify-center font-bold">
-                  <Utensils className="w-6 h-6" />
-                </div>
-                <h3 className="text-2xl font-black text-white group-hover:text-orange-400 transition-colors">
-                  Restaurants & Dining
-                </h3>
-                <p className="text-xs text-slate-400 leading-relaxed">
-                  Engineered to drive table reservations, online food orders, and showcase structured digital menus with dietary tags and clear pricing.
-                </p>
-                <ul className="space-y-2.5 text-xs text-slate-300 pt-2">
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-orange-400" /> Categorized digital menus with search</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-orange-400" /> Table booking & OpenTable/Resy integration</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-orange-400" /> Online ordering & delivery buttons</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-orange-400" /> Mobile sticky "View Menu" bar</li>
-                </ul>
-              </div>
-              <Link
-                href="/preview/bella-vista-trattoria"
-                className="w-full py-3 rounded-xl bg-orange-600 hover:bg-orange-500 text-white font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md"
-              >
-                <span>View Live Restaurant Experience</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
+      {/* 5. TRUST / VALUE STRIP */}
+      <section className="py-8 bg-slate-900 text-white border-y border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 sm:gap-6 text-center">
+            <div className="flex items-center justify-center space-x-2">
+              <CheckCircle2 className="w-4 h-4 text-indigo-400 flex-shrink-0" />
+              <span className="text-sm font-semibold tracking-wide">Mobile Friendly</span>
             </div>
-
-            {/* Handyman */}
-            <div className="bg-slate-950 rounded-3xl border border-slate-800 p-8 space-y-6 hover:border-amber-500/50 transition-all flex flex-col justify-between group">
-              <div className="space-y-4">
-                <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center font-bold">
-                  <Wrench className="w-6 h-6" />
-                </div>
-                <h3 className="text-2xl font-black text-white group-hover:text-amber-400 transition-colors">
-                  Contractors & Home Services
-                </h3>
-                <p className="text-xs text-slate-400 leading-relaxed">
-                  Turn local homeowners searching for repairs and remodeling into instant phone calls and qualified estimate requests.
-                </p>
-                <ul className="space-y-2.5 text-xs text-slate-300 pt-2">
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-amber-400" /> One-tap "Call Now" mobile triggers</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-amber-400" /> 4-step job qualification questionnaire</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-amber-400" /> Before & after project transformation gallery</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-amber-400" /> Service area maps & verified review badge</li>
-                </ul>
-              </div>
-              <Link
-                href="/preview/mikes-handyman-services"
-                className="w-full py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs flex items-center justify-center gap-2 transition-all shadow-md"
-              >
-                <span>View Live Contractor Experience</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
+            <div className="flex items-center justify-center space-x-2">
+              <CheckCircle2 className="w-4 h-4 text-indigo-400 flex-shrink-0" />
+              <span className="text-sm font-semibold tracking-wide">Fast & Modern</span>
             </div>
-
-            {/* Cleaning */}
-            <div className="bg-slate-950 rounded-3xl border border-slate-800 p-8 space-y-6 hover:border-cyan-500/50 transition-all flex flex-col justify-between group">
-              <div className="space-y-4">
-                <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold">
-                  <Sparkles className="w-6 h-6" />
-                </div>
-                <h3 className="text-2xl font-black text-white group-hover:text-cyan-400 transition-colors">
-                  Cleaning & Janitorial Services
-                </h3>
-                <p className="text-xs text-slate-400 leading-relaxed">
-                  Clean, trustworthy aesthetic for recurring residential maid services, move-in/move-out turnover, and corporate B2B contracts.
-                </p>
-                <ul className="space-y-2.5 text-xs text-slate-300 pt-2">
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-cyan-400" /> Instant online estimate calculator</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-cyan-400" /> 50-point cleaning checklist breakdown</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-cyan-400" /> Trust badges: Insured, bonded, eco-friendly</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-cyan-400" /> Recurring frequency booking options</li>
-                </ul>
-              </div>
-              <Link
-                href="/preview/sparkling-horizon-cleaning"
-                className="w-full py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-black text-xs flex items-center justify-center gap-2 transition-all shadow-md"
-              >
-                <span>View Live Cleaning Experience</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
+            <div className="flex items-center justify-center space-x-2">
+              <CheckCircle2 className="w-4 h-4 text-indigo-400 flex-shrink-0" />
+              <span className="text-sm font-semibold tracking-wide">SEO Ready</span>
+            </div>
+            <div className="flex items-center justify-center space-x-2">
+              <CheckCircle2 className="w-4 h-4 text-indigo-400 flex-shrink-0" />
+              <span className="text-sm font-semibold tracking-wide">Custom Designed</span>
+            </div>
+            <div className="col-span-2 md:col-span-1 flex items-center justify-center space-x-2">
+              <CheckCircle2 className="w-4 h-4 text-indigo-400 flex-shrink-0" />
+              <span className="text-sm font-semibold tracking-wide">Easy to Manage</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 5. FEATURED CLIENT PROJECTS */}
-      <section id="portfolio" className="py-20 px-4 bg-slate-950 border-t border-slate-800 scroll-mt-20">
-        <div className="max-w-7xl mx-auto space-y-12">
-          <div className="text-center max-w-3xl mx-auto space-y-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
-              Agency Portfolio
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">Recent Client Websites</h2>
-            <p className="text-slate-400 text-sm sm:text-base">
-              Test drive our live client builds. Every website includes full multi-page navigation, private client editor portals, and conversion-optimized booking flows.
-            </p>
-          </div>
-
-          {/* Niche Filter Tabs */}
-          <div className="flex justify-center gap-2 p-1.5 bg-slate-900 rounded-2xl border border-slate-800 max-w-md mx-auto">
-            <button
-              onClick={() => setActiveTab('restaurant')}
-              className={`flex-1 py-2.5 px-4 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 ${
-                activeTab === 'restaurant'
-                  ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/25'
-                  : 'text-slate-400 hover:text-white'
-              }`}
-            >
-              <Utensils className="w-4 h-4" />
-              <span>Restaurants</span>
-            </button>
-            <button
-              onClick={() => setActiveTab('handyman')}
-              className={`flex-1 py-2.5 px-4 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 ${
-                activeTab === 'handyman'
-                  ? 'bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/25'
-                  : 'text-slate-400 hover:text-white'
-              }`}
-            >
-              <Wrench className="w-4 h-4" />
-              <span>Contractors</span>
-            </button>
-            <button
-              onClick={() => setActiveTab('cleaning')}
-              className={`flex-1 py-2.5 px-4 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 ${
-                activeTab === 'cleaning'
-                  ? 'bg-cyan-500 text-slate-950 shadow-lg shadow-cyan-500/25'
-                  : 'text-slate-400 hover:text-white'
-              }`}
-            >
-              <Sparkles className="w-4 h-4" />
-              <span>Cleaning</span>
-            </button>
-          </div>
-
-          {/* RESTAURANTS SHOWCASE */}
-          {activeTab === 'restaurant' && (
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
-              <div className="bg-slate-900 rounded-2xl border border-slate-800 p-5 flex flex-col justify-between hover:border-orange-500/50 transition-all group">
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-orange-400 bg-orange-500/10 px-2 py-0.5 rounded border border-orange-500/20">
-                      Italian & Trattoria
-                    </span>
-                    <span className="text-xs text-amber-400 font-bold">★ 4.8</span>
-                  </div>
-                  <h3 className="font-bold text-base text-white group-hover:text-orange-400 transition-colors">
-                    Bella Vista Trattoria
-                  </h3>
-                  <p className="text-xs text-slate-400 leading-relaxed">
-                    Chicago, IL • Wood-fired pizza, handmade pasta, digital menu categories & table reservations.
-                  </p>
-                </div>
-                <div className="pt-4 mt-4 border-t border-slate-800">
-                  <Link
-                    href="/preview/bella-vista-trattoria"
-                    className="w-full py-2.5 rounded-xl bg-orange-600 hover:bg-orange-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-md"
-                  >
-                    <span>View Live Site</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
-
-              <div className="bg-slate-900 rounded-2xl border border-slate-800 p-5 flex flex-col justify-between hover:border-orange-500/50 transition-all group">
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-orange-400 bg-orange-500/10 px-2 py-0.5 rounded border border-orange-500/20">
-                      Mexican Street Food
-                    </span>
-                    <span className="text-xs text-amber-400 font-bold">★ 4.7</span>
-                  </div>
-                  <h3 className="font-bold text-base text-white group-hover:text-orange-400 transition-colors">
-                    Taco Libre
-                  </h3>
-                  <p className="text-xs text-slate-400 leading-relaxed">
-                    Austin, TX • Street tacos, handcrafted margaritas, vibrant warm design & online ordering.
-                  </p>
-                </div>
-                <div className="pt-4 mt-4 border-t border-slate-800">
-                  <Link
-                    href="/preview/taco-libre-austin"
-                    className="w-full py-2.5 rounded-xl bg-orange-600 hover:bg-orange-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-md"
-                  >
-                    <span>View Live Site</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
-
-              <div className="bg-slate-900 rounded-2xl border border-slate-800 p-5 flex flex-col justify-between hover:border-red-500/50 transition-all group">
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-red-400 bg-red-500/10 px-2 py-0.5 rounded border border-red-500/20">
-                      Fast Casual & Burgers
-                    </span>
-                    <span className="text-xs text-amber-400 font-bold">★ 4.6</span>
-                  </div>
-                  <h3 className="font-bold text-base text-white group-hover:text-red-400 transition-colors">
-                    Big Stack Burgers
-                  </h3>
-                  <p className="text-xs text-slate-400 leading-relaxed">
-                    Houston, TX • Smashed patties, thick milkshakes, bold dark layout & fast takeout ordering.
-                  </p>
-                </div>
-                <div className="pt-4 mt-4 border-t border-slate-800">
-                  <Link
-                    href="/preview/big-stack-burgers"
-                    className="w-full py-2.5 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-md"
-                  >
-                    <span>View Live Site</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
-
-              <div className="bg-slate-900 rounded-2xl border border-slate-800 p-5 flex flex-col justify-between hover:border-amber-500/50 transition-all group">
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
-                      Asian Fusion & Dim Sum
-                    </span>
-                    <span className="text-xs text-amber-400 font-bold">★ 4.9</span>
-                  </div>
-                  <h3 className="font-bold text-base text-white group-hover:text-amber-400 transition-colors">
-                    Dragon Palace
-                  </h3>
-                  <p className="text-xs text-slate-400 leading-relaxed">
-                    San Francisco, CA • Cantonese dim sum, Peking duck, elegant gold and deep navy theme.
-                  </p>
-                </div>
-                <div className="pt-4 mt-4 border-t border-slate-800">
-                  <Link
-                    href="/preview/dragon-palace-sf"
-                    className="w-full py-2.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-md"
-                  >
-                    <span>View Live Site</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
-
-              <div className="bg-slate-900 rounded-2xl border border-slate-800 p-5 flex flex-col justify-between hover:border-blue-500/50 transition-all group">
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded border border-blue-500/20">
-                      Classic Diner & BBQ
-                    </span>
-                    <span className="text-xs text-amber-400 font-bold">★ 4.8</span>
-                  </div>
-                  <h3 className="font-bold text-base text-white group-hover:text-blue-400 transition-colors">
-                    The Rusty Fork Diner
-                  </h3>
-                  <p className="text-xs text-slate-400 leading-relaxed">
-                    Nashville, TN • All-day breakfast, 12-hour hickory smoked brisket, Southern comfort food.
-                  </p>
-                </div>
-                <div className="pt-4 mt-4 border-t border-slate-800">
-                  <Link
-                    href="/preview/the-rusty-fork-diner"
-                    className="w-full py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-md"
-                  >
-                    <span>View Live Site</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* CONTRACTORS SHOWCASE */}
-          {activeTab === 'handyman' && (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-slate-900 rounded-3xl border border-slate-800 p-7 flex flex-col justify-between hover:border-amber-500/50 transition-all">
-                <div className="space-y-4">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded border border-amber-500/20">
-                    Residential Repairs
-                  </span>
-                  <h3 className="font-bold text-2xl text-white">Mike's Handyman Services</h3>
-                  <p className="text-xs text-slate-400 leading-relaxed">
-                    Austin, TX • Drywall repairs, fixture upgrades, trust badges, verified customer reviews, and quote funnels.
-                  </p>
-                </div>
-                <div className="pt-6">
-                  <Link
-                    href="/preview/mikes-handyman-services"
-                    className="w-full py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs flex items-center justify-center gap-1.5 transition-all shadow-md"
-                  >
-                    <span>View Handyman Website</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
-
-              <div className="bg-slate-900 rounded-3xl border border-slate-800 p-7 flex flex-col justify-between hover:border-amber-500/50 transition-all">
-                <div className="space-y-4">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded border border-amber-500/20">
-                    Full Remodeling
-                  </span>
-                  <h3 className="font-bold text-2xl text-white">Premium Renovations</h3>
-                  <p className="text-xs text-slate-400 leading-relaxed">
-                    Kitchen, bathroom, and structural renovations with gallery-first showcase and estimate forms.
-                  </p>
-                </div>
-                <div className="pt-6">
-                  <Link
-                    href="/preview/mikes-handyman-services"
-                    className="w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all"
-                  >
-                    <span>View Remodeling Website</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
-
-              <div className="bg-slate-900 rounded-3xl border border-slate-800 p-7 flex flex-col justify-between hover:border-amber-500/50 transition-all">
-                <div className="space-y-4">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded border border-amber-500/20">
-                    24/7 Emergency Dispatch
-                  </span>
-                  <h3 className="font-bold text-2xl text-white">Rapid Response Repairs</h3>
-                  <p className="text-xs text-slate-400 leading-relaxed">
-                    Urgent electrical, plumbing, and roof leak repairs with prominent tap-to-call buttons and dispatch hours.
-                  </p>
-                </div>
-                <div className="pt-6">
-                  <Link
-                    href="/preview/mikes-handyman-services"
-                    className="w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all"
-                  >
-                    <span>View Emergency Website</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* CLEANING SHOWCASE */}
-          {activeTab === 'cleaning' && (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-slate-900 rounded-3xl border border-slate-800 p-7 flex flex-col justify-between hover:border-cyan-500/50 transition-all">
-                <div className="space-y-4">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded border border-cyan-500/20">
-                    Residential Maid Service
-                  </span>
-                  <h3 className="font-bold text-2xl text-white">Sparkling Horizon Cleaning</h3>
-                  <p className="text-xs text-slate-400 leading-relaxed">
-                    Seattle, WA • Residential recurring maid service, room checklist, customer reviews & instant estimate request.
-                  </p>
-                </div>
-                <div className="pt-6">
-                  <Link
-                    href="/preview/sparkling-horizon-cleaning"
-                    className="w-full py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-black text-xs flex items-center justify-center gap-1.5 transition-all shadow-md"
-                  >
-                    <span>View Cleaning Website</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
-
-              <div className="bg-slate-900 rounded-3xl border border-slate-800 p-7 flex flex-col justify-between hover:border-cyan-500/50 transition-all">
-                <div className="space-y-4">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded border border-cyan-500/20">
-                    Corporate Facilities
-                  </span>
-                  <h3 className="font-bold text-2xl text-white">Corporate Facility Cleans</h3>
-                  <p className="text-xs text-slate-400 leading-relaxed">
-                    B2B office contracts, medical facility sanitization, corporate compliance badges, and proposal requests.
-                  </p>
-                </div>
-                <div className="pt-6">
-                  <Link
-                    href="/preview/sparkling-horizon-cleaning"
-                    className="w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all"
-                  >
-                    <span>View Commercial Website</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
-
-              <div className="bg-slate-900 rounded-3xl border border-slate-800 p-7 flex flex-col justify-between hover:border-cyan-500/50 transition-all">
-                <div className="space-y-4">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded border border-cyan-500/20">
-                    Luxury Estate Care
-                  </span>
-                  <h3 className="font-bold text-2xl text-white">Luxury Home Care</h3>
-                  <p className="text-xs text-slate-400 leading-relaxed">
-                    White-glove residential cleaning, deep sanitization, elegant typography, and bespoke quote flows.
-                  </p>
-                </div>
-                <div className="pt-6">
-                  <Link
-                    href="/preview/sparkling-horizon-cleaning"
-                    className="w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all"
-                  >
-                    <span>View Luxury Website</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* 6. AGENCY CAPABILITIES & STANDARDS */}
-      <section id="standards" className="py-20 px-4 bg-slate-900/60 border-t border-slate-800 scroll-mt-20">
-        <div className="max-w-7xl mx-auto space-y-16">
-          <div className="text-center max-w-3xl mx-auto space-y-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
+      {/* 6. SERVICES SECTION */}
+      <section id="services" className="py-20 bg-slate-50/70 scroll-mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
+            <span className="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-100">
               Agency Capabilities
             </span>
-            <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">Enterprise Engineering Standards</h2>
-            <p className="text-slate-400 text-sm sm:text-base">
-              Every website we deliver is built with state-of-the-art modern technology designed for speed, security, and sales.
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+              Everything Your Business Needs Online
+            </h2>
+            <p className="text-base sm:text-lg text-slate-600">
+              We provide full-service website design, development, and ongoing maintenance so you can focus on running your business.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="p-7 rounded-3xl bg-slate-950 border border-slate-800 space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold">
-                <Zap className="w-5 h-5" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Service 1 */}
+            <div className="bg-white p-8 rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-6">
+                <Laptop className="w-6 h-6" />
               </div>
-              <h3 className="font-bold text-lg text-white">Sub-Second Load Speeds</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                Built on Next.js with global CDN caching. Fast websites rank higher on Google and convert mobile searchers immediately.
+              <h3 className="text-xl font-bold text-slate-900 mb-2">Website Design</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Professional websites designed around your business, services, and customers. Crafted with clean aesthetics that establish instant credibility.
               </p>
             </div>
 
-            <div className="p-7 rounded-3xl bg-slate-950 border border-slate-800 space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center font-bold">
-                <Smartphone className="w-5 h-5" />
+            {/* Service 2 */}
+            <div className="bg-white p-8 rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-6">
+                <Smartphone className="w-6 h-6" />
               </div>
-              <h3 className="font-bold text-lg text-white">Mobile-First Conversion UX</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                Over 80% of local searches happen on mobile. We design sticky call bars, one-tap navigation, and frictionless reservation forms.
+              <h3 className="text-xl font-bold text-slate-900 mb-2">Mobile Optimization</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Websites that look and work properly across phones, tablets, and desktops. Smooth touch navigation, fast loading, and tap-to-call buttons.
               </p>
             </div>
 
-            <div className="p-7 rounded-3xl bg-slate-950 border border-slate-800 space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold">
-                <Laptop className="w-5 h-5" />
+            {/* Service 3 */}
+            <div className="bg-white p-8 rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-6">
+                <Search className="w-6 h-6" />
               </div>
-              <h3 className="font-bold text-lg text-white">Private Client Portal</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                You get full access to edit text, update dishes and pricing, add new portfolio photos, and publish blog updates anytime.
+              <h3 className="text-xl font-bold text-slate-900 mb-2">Local SEO Foundations</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Technical and on-page foundations that help search engines understand your business, service areas, opening hours, and physical location.
               </p>
             </div>
 
-            <div className="p-7 rounded-3xl bg-slate-950 border border-slate-800 space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold">
-                <ShieldCheck className="w-5 h-5" />
+            {/* Service 4 */}
+            <div className="bg-white p-8 rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-6">
+                <Layers className="w-6 h-6" />
               </div>
-              <h3 className="font-bold text-lg text-white">Zero Fabrication Guarantee</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                We only showcase verified Google reviews, genuine services, and real business details to build authentic trust with local customers.
+              <h3 className="text-xl font-bold text-slate-900 mb-2">Business Features</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Contact forms, booking requests, online ordering links, digital menus, service lists, review displays, and Google Maps integration.
               </p>
             </div>
 
-            <div className="p-7 rounded-3xl bg-slate-950 border border-slate-800 space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold">
-                <Search className="w-5 h-5" />
+            {/* Service 5 */}
+            <div className="bg-white p-8 rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-6">
+                <Server className="w-6 h-6" />
               </div>
-              <h3 className="font-bold text-lg text-white">Local Search (SEO) Optimization</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                Structured schema markup, local geotags, semantic headings, and high-speed core web vitals baked into every page.
+              <h3 className="text-xl font-bold text-slate-900 mb-2">Hosting & Maintenance</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Keep your website online, secure, updated, and maintained on high-speed global cloud hosting with automatic SSL encryption.
               </p>
             </div>
 
-            <div className="p-7 rounded-3xl bg-slate-950 border border-slate-800 space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center font-bold">
-                <Headphones className="w-5 h-5" />
+            {/* Service 6 */}
+            <div className="bg-white p-8 rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-6">
+                <Zap className="w-6 h-6" />
               </div>
-              <h3 className="font-bold text-lg text-white">Managed Agency Support</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                Need a change? Text or email our team and we will update your website, upload your new menus, and ensure 99.9% uptime.
+              <h3 className="text-xl font-bold text-slate-900 mb-2">Custom Development</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Need something specific? We can build custom functionality, multi-page layouts, specialized enquiry workflows, and tailored brand integrations.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 7. OUR 4-STEP PROCESS */}
-      <section id="process" className="py-20 px-4 bg-slate-950 border-t border-slate-800 scroll-mt-20">
-        <div className="max-w-7xl mx-auto space-y-16">
-          <div className="text-center max-w-3xl mx-auto space-y-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
-              The BuyerRadar Advantage
+      {/* 7. INDUSTRIES SECTION */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
+            <span className="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-100">
+              Industry Experience
             </span>
-            <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">How We Launch Your Website</h2>
-            <p className="text-slate-400 text-sm sm:text-base">
-              No endless Zoom meetings, no 3-month delays. We design, deploy, and manage your website with zero friction.
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+              Websites Built Around Your Business
+            </h2>
+            <p className="text-base sm:text-lg text-slate-600">
+              We understand the specific requirements, customer questions, and conversion layouts needed for local service and storefront businesses.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800 space-y-3 relative">
-              <span className="text-4xl font-black text-slate-800 font-mono">01</span>
-              <h3 className="font-bold text-lg text-white">Business Ingestion</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                We pull your verified Google reviews, service list, opening hours, and location data into our design system.
-              </p>
-            </div>
+            {industries.map((ind, i) => {
+              const IconComp = ind.icon;
+              return (
+                <div
+                  key={i}
+                  className="p-6 rounded-2xl border border-slate-200 bg-white hover:border-indigo-300 hover:shadow-md transition-all group"
+                >
+                  <div className="w-10 h-10 rounded-lg bg-slate-100 group-hover:bg-indigo-50 text-slate-700 group-hover:text-indigo-600 flex items-center justify-center mb-4 transition-colors">
+                    <IconComp className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-base font-bold text-slate-900 mb-1.5">{ind.name}</h3>
+                  <p className="text-xs text-slate-600 leading-relaxed">{ind.desc}</p>
+                </div>
+              );
+            })}
+          </div>
 
-            <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800 space-y-3 relative">
-              <span className="text-4xl font-black text-slate-800 font-mono">02</span>
-              <h3 className="font-bold text-lg text-white">Bespoke Architecture</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                We design tailored typography, visual colorways, and conversion buttons built specifically for your local audience.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800 space-y-3 relative">
-              <span className="text-4xl font-black text-emerald-500/40 font-mono">03</span>
-              <h3 className="font-bold text-lg text-white">Live 7-Day Preview</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                You receive a private live link to test on your phone. See every page, test the booking buttons, and request any edits.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800 space-y-3 relative">
-              <span className="text-4xl font-black text-emerald-400 font-mono">04</span>
-              <h3 className="font-bold text-lg text-white">Launch & Grow</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                We connect your custom domain, set up fast cloud hosting and SSL, and provide you with a visual editor dashboard.
-              </p>
+          <div className="mt-12 text-center">
+            <div className="inline-flex items-center px-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-700 font-medium">
+              <span>Don&apos;t see your industry? We build custom websites around your specific business model.</span>
+              <button
+                onClick={() => {
+                  setIsGetStartedOpen(true);
+                  setStep(1);
+                  setFormSubmitted(false);
+                }}
+                className="ml-3 text-indigo-600 font-semibold hover:underline"
+              >
+                Inquire now &rarr;
+              </button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 8. PRICING & RETAINER PLANS */}
-      <section id="pricing" className="py-20 px-4 bg-slate-900 border-t border-slate-800 scroll-mt-20">
-        <div className="max-w-6xl mx-auto space-y-12">
-          <div className="text-center max-w-3xl mx-auto space-y-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
-              Transparent Agency Retainers
+      {/* 8. OUR WORK / PORTFOLIO */}
+      <section id="portfolio" className="py-20 bg-slate-50/80 scroll-mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div className="space-y-3 max-w-2xl">
+              <span className="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-100">
+                Portfolio Showcase
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                See What We Build
+              </h2>
+              <p className="text-base text-slate-600">
+                Explore our example website designs built for local service businesses and hospitality venues.
+              </p>
+            </div>
+
+            {/* Filter Tabs */}
+            <div className="mt-6 md:mt-0 flex flex-wrap gap-2">
+              {[
+                { key: 'all', label: 'All Projects' },
+                { key: 'restaurant', label: 'Restaurants' },
+                { key: 'home-services', label: 'Home Services' },
+                { key: 'cleaning', label: 'Cleaning' },
+                { key: 'contractor', label: 'Contractors' },
+              ].map((tab) => (
+                <button
+                  key={tab.key}
+                  onClick={() => setPortfolioTab(tab.key as any)}
+                  className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                    portfolioTab === tab.key
+                      ? 'bg-slate-900 text-white shadow-sm'
+                      : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Portfolio Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {filteredProjects.map((project) => (
+              <div
+                key={project.id}
+                className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between"
+              >
+                <div>
+                  {/* Mockup Top Banner */}
+                  <div className={`h-48 sm:h-56 bg-gradient-to-br ${project.accentColor} p-6 text-white flex flex-col justify-between relative`}>
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-mono tracking-wider uppercase bg-black/30 backdrop-blur-md px-3 py-1 rounded-full text-white/90 border border-white/10">
+                        {project.categoryLabel}
+                      </span>
+                      <span className="text-[11px] font-semibold bg-white/20 backdrop-blur-md px-2.5 py-0.5 rounded text-white border border-white/20">
+                        {project.tag}
+                      </span>
+                    </div>
+
+                    <div>
+                      <h3 className="text-2xl font-bold text-white tracking-tight mb-1">
+                        {project.title}
+                      </h3>
+                      <p className="text-xs text-white/80 line-clamp-1">
+                        Full bespoke website structure with dedicated service modules.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Project Details */}
+                  <div className="p-6">
+                    <p className="text-sm text-slate-600 mb-4 leading-relaxed">
+                      {project.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.features.map((feat, idx) => (
+                        <span
+                          key={idx}
+                          className="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium"
+                        >
+                          {feat}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Footer action */}
+                <div className="px-6 pb-6 pt-0 flex items-center justify-between border-t border-slate-100 pt-4">
+                  <span className="text-xs font-medium text-slate-500">
+                    Live Demo Ready
+                  </span>
+                  <Link
+                    href={`/preview/${project.demoSlug}`}
+                    className="inline-flex items-center text-xs font-bold text-indigo-600 group-hover:text-indigo-700 hover:underline"
+                  >
+                    View Project
+                    <ExternalLink className="w-3.5 h-3.5 ml-1.5" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 text-center text-xs text-slate-500">
+            * Showcase designs are demonstration websites built to illustrate our layout and feature standards.
+          </div>
+        </div>
+      </section>
+
+      {/* 9. BEFORE / AFTER VALUE SECTION */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
+            <span className="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-100">
+              Clear Comparison
             </span>
-            <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">Simple Monthly Website Plans</h2>
-            <p className="text-slate-400 text-sm sm:text-base">
-              No $5,000 upfront design bills. Everything is included in one manageable monthly subscription.
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+              The Value of a Proper Website
+            </h2>
+            <p className="text-base sm:text-lg text-slate-600">
+              A professional website gives potential customers an easy, confidence-inspiring way to learn about and contact your business.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Starter */}
-            <div className="bg-slate-950 rounded-3xl border border-slate-800 p-8 flex flex-col justify-between space-y-6">
-              <div className="space-y-4">
-                <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Starter Presence</span>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-black text-white">$79</span>
-                  <span className="text-xs text-slate-400">/ month</span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Left — Without */}
+            <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200">
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="w-10 h-10 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center">
+                  <XCircle className="w-6 h-6" />
                 </div>
-                <p className="text-xs text-slate-400">Perfect for solo contractors, cleaners, and local trades needing a professional standalone web presence.</p>
-                <ul className="space-y-2.5 text-xs text-slate-300 pt-4 border-t border-slate-800">
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Full 5-page responsive website</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Fast cloud hosting & SSL certificate</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Client edit portal & visual editor</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Custom domain connection</li>
-                </ul>
+                <div>
+                  <h3 className="text-lg font-bold text-slate-900">Without a Professional Website</h3>
+                  <p className="text-xs text-slate-500">Common challenges for local businesses</p>
+                </div>
               </div>
-              <a
-                href="#instant-preview"
-                className="w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs text-center transition-colors block"
-              >
-                Start with Starter
-              </a>
+
+              <ul className="space-y-4 text-sm text-slate-600">
+                <li className="flex items-start">
+                  <span className="w-2 h-2 rounded-full bg-rose-400 mt-1.5 mr-3 flex-shrink-0"></span>
+                  <span>Customers have limited or outdated information on services and pricing</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="w-2 h-2 rounded-full bg-rose-400 mt-1.5 mr-3 flex-shrink-0"></span>
+                  <span>Important business details like hours, phone numbers, and service areas may be hard to find</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="w-2 h-2 rounded-full bg-rose-400 mt-1.5 mr-3 flex-shrink-0"></span>
+                  <span>Business has no central online destination to direct social media or map visitors to</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="w-2 h-2 rounded-full bg-rose-400 mt-1.5 mr-3 flex-shrink-0"></span>
+                  <span>Lack of modern mobile formatting makes phone browsing frustrating for visitors</span>
+                </li>
+              </ul>
             </div>
 
-            {/* Pro - Featured */}
-            <div className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 rounded-3xl border-2 border-emerald-500 p-8 flex flex-col justify-between space-y-6 shadow-2xl shadow-emerald-950/60 relative">
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-slate-950 text-[10px] font-black uppercase tracking-widest px-3.5 py-1 rounded-full shadow-md">
-                Agency Recommended
-              </span>
-              <div className="space-y-4">
-                <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">Growth Engine Plan</span>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-5xl font-black text-white">$99</span>
-                  <span className="text-xs text-slate-400">/ month</span>
+            {/* Right — With */}
+            <div className="bg-gradient-to-br from-indigo-50/50 to-white rounded-2xl p-8 border border-indigo-200/80 shadow-sm">
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center">
+                  <CheckCircle2 className="w-6 h-6" />
                 </div>
-                <p className="text-xs text-slate-400">Designed for restaurants, busy contractors, and commercial cleaners ready to scale local revenue.</p>
-                <ul className="space-y-2.5 text-xs text-slate-300 pt-4 border-t border-slate-800">
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Everything in Starter</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Interactive Menu / Services CMS</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Table Reservations & Quote Estimator</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Online Order & Delivery integrations</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Monthly copy & photo updates by our team</li>
-                </ul>
+                <div>
+                  <h3 className="text-lg font-bold text-slate-900">With a Professional Website</h3>
+                  <p className="text-xs text-indigo-700 font-medium">Built & maintained by BuyerRadar</p>
+                </div>
               </div>
-              <a
-                href="#instant-preview"
-                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-400 hover:brightness-110 text-slate-950 font-black text-xs text-center transition-all shadow-lg shadow-emerald-500/25 block"
-              >
-                Claim Free 7-Day Preview
-              </a>
-            </div>
 
-            {/* Elite */}
-            <div className="bg-slate-950 rounded-3xl border border-slate-800 p-8 flex flex-col justify-between space-y-6">
-              <div className="space-y-4">
-                <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Market Leader Plan</span>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-black text-white">$149</span>
-                  <span className="text-xs text-slate-400">/ month</span>
-                </div>
-                <p className="text-xs text-slate-400">Full marketing machine with instant SMS/Email lead routing, blog CMS, and priority maintenance.</p>
-                <ul className="space-y-2.5 text-xs text-slate-300 pt-4 border-t border-slate-800">
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Everything in Growth</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Instant Lead SMS/Email Delivery</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Blog CMS & Content Publishing</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Priority 24/7 dedicated agency support</li>
-                </ul>
-              </div>
-              <a
-                href="#instant-preview"
-                className="w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs text-center transition-colors block"
-              >
-                Choose Market Leader
-              </a>
+              <ul className="space-y-4 text-sm text-slate-700">
+                <li className="flex items-start">
+                  <Check className="w-4 h-4 text-emerald-600 mt-0.5 mr-2.5 flex-shrink-0" />
+                  <span>Clear, well-organized business information with complete service descriptions</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-4 h-4 text-emerald-600 mt-0.5 mr-2.5 flex-shrink-0" />
+                  <span>Services and products presented with high-end, clean visual layouts</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-4 h-4 text-emerald-600 mt-0.5 mr-2.5 flex-shrink-0" />
+                  <span>Easy contact options including quick quote forms, booking, and click-to-call</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-4 h-4 text-emerald-600 mt-0.5 mr-2.5 flex-shrink-0" />
+                  <span>Smooth, responsive experience optimized specifically for mobile visitors</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-4 h-4 text-emerald-600 mt-0.5 mr-2.5 flex-shrink-0" />
+                  <span>Clean structural foundation to support your online visibility and reputation</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 9. AGENCY FAQ */}
-      <section id="faq" className="py-20 px-4 bg-slate-950 border-t border-slate-800 scroll-mt-20">
-        <div className="max-w-4xl mx-auto space-y-12">
-          <div className="text-center space-y-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
-              Frequently Asked Questions
+      {/* 10. PROCESS SECTION */}
+      <section id="process" className="py-20 bg-slate-900 text-white scroll-mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
+            <span className="text-xs font-bold uppercase tracking-wider text-indigo-400 bg-indigo-950/80 px-3 py-1 rounded-full border border-indigo-800">
+              Simple 4-Step Workflow
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">Everything You Need to Know</h2>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+              From Idea to Live Website
+            </h2>
+            <p className="text-base sm:text-lg text-slate-300">
+              We take care of the heavy lifting. No coding, no complicated builders, and no technical headaches.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Step 1 */}
+            <div className="bg-slate-800/60 p-6 rounded-2xl border border-slate-700/80 relative">
+              <div className="text-3xl font-extrabold text-indigo-400 font-mono mb-4">01</div>
+              <h3 className="text-lg font-bold text-white mb-2">Tell Us About Your Business</h3>
+              <p className="text-sm text-slate-300 leading-relaxed">
+                We learn about your business, services, location, customer questions, and your primary online goals.
+              </p>
+            </div>
+
+            {/* Step 2 */}
+            <div className="bg-slate-800/60 p-6 rounded-2xl border border-slate-700/80 relative">
+              <div className="text-3xl font-extrabold text-indigo-400 font-mono mb-4">02</div>
+              <h3 className="text-lg font-bold text-white mb-2">We Design</h3>
+              <p className="text-sm text-slate-300 leading-relaxed">
+                We create a clean, modern website tailored to your business, formatted for mobile and desktop speed.
+              </p>
+            </div>
+
+            {/* Step 3 */}
+            <div className="bg-slate-800/60 p-6 rounded-2xl border border-slate-700/80 relative">
+              <div className="text-3xl font-extrabold text-indigo-400 font-mono mb-4">03</div>
+              <h3 className="text-lg font-bold text-white mb-2">Review & Refine</h3>
+              <p className="text-sm text-slate-300 leading-relaxed">
+                You review the private live preview of your website and request any changes or text refinements.
+              </p>
+            </div>
+
+            {/* Step 4 */}
+            <div className="bg-slate-800/60 p-6 rounded-2xl border border-slate-700/80 relative">
+              <div className="text-3xl font-extrabold text-indigo-400 font-mono mb-4">04</div>
+              <h3 className="text-lg font-bold text-white mb-2">Launch</h3>
+              <p className="text-sm text-slate-300 leading-relaxed">
+                We connect your custom domain name, enable SSL security, and launch your website to the public.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 11. FEATURES SECTION */}
+      <section id="features" className="py-20 bg-white scroll-mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
+            <span className="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-100">
+              Technical Specifications
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+              Built for Real Businesses
+            </h2>
+            <p className="text-base sm:text-lg text-slate-600">
+              Every website includes core business and technical features required for a reliable web presence.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {[
+              { title: 'Responsive Design', desc: 'Adapts seamlessly to phones, tablets, and computers.' },
+              { title: 'Fast Loading', desc: 'Optimized assets and Next.js performance on global CDN.' },
+              { title: 'SEO-Friendly Structure', desc: 'Semantic tags, metadata, and schema for search clarity.' },
+              { title: 'Contact Forms', desc: 'Custom inquiry forms routed directly to your business email.' },
+              { title: 'Google Maps Integration', desc: 'Interactive location maps so local visitors find you easily.' },
+              { title: 'Social Media Links', desc: 'Direct links to Facebook, Instagram, Yelp, and LinkedIn.' },
+              { title: 'Image Galleries', desc: 'Showcase your work, team, completed jobs, or venue photos.' },
+              { title: 'Service Pages', desc: 'Dedicated pages detailing your individual service offerings.' },
+              { title: 'Menu Pages', desc: 'Structured digital menus with tags for dietary options & specialties.' },
+              { title: 'Booking Integration', desc: 'Direct booking requests or links to your reservation software.' },
+              { title: 'Online Ordering', desc: 'Direct links to DoorDash, UberEats, or your direct ordering portal.' },
+              { title: 'Custom Domains & SSL', desc: 'Secure HTTPS encryption on your chosen custom web address.' },
+            ].map((feat, i) => (
+              <div key={i} className="p-5 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:border-slate-300 transition-colors">
+                <h4 className="text-sm font-bold text-slate-900 mb-1 flex items-center">
+                  <Check className="w-3.5 h-3.5 text-indigo-600 mr-1.5 flex-shrink-0" />
+                  {feat.title}
+                </h4>
+                <p className="text-xs text-slate-600 leading-relaxed pl-5">{feat.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 12. PRICING */}
+      <section id="pricing" className="py-20 bg-slate-50/80 scroll-mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
+            <span className="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-100">
+              Clear & Simple Pricing
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+              Straightforward Website Plans
+            </h2>
+            <p className="text-base sm:text-lg text-slate-600">
+              No large upfront agency retainers. Simple monthly plans that cover design, hosting, security, and maintenance.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Plan 1 — Standard Website */}
+            <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <div className="mb-4">
+                  <h3 className="text-xl font-bold text-slate-900">Website</h3>
+                  <p className="text-xs text-slate-500 mt-1">
+                    Complete professional website with hosting and ongoing support.
+                  </p>
+                </div>
+
+                <div className="mb-6 flex items-baseline">
+                  <span className="text-4xl font-extrabold text-slate-900 font-mono">$99</span>
+                  <span className="text-sm text-slate-500 font-medium ml-2">/ month</span>
+                </div>
+
+                <div className="border-t border-slate-100 pt-6 space-y-3.5">
+                  <div className="flex items-center text-xs text-slate-700">
+                    <Check className="w-4 h-4 text-emerald-500 mr-2.5 flex-shrink-0" />
+                    <span>Professional bespoke website design</span>
+                  </div>
+                  <div className="flex items-center text-xs text-slate-700">
+                    <Check className="w-4 h-4 text-emerald-500 mr-2.5 flex-shrink-0" />
+                    <span>Mobile & tablet responsive formatting</span>
+                  </div>
+                  <div className="flex items-center text-xs text-slate-700">
+                    <Check className="w-4 h-4 text-emerald-500 mr-2.5 flex-shrink-0" />
+                    <span>Custom business content & service layout</span>
+                  </div>
+                  <div className="flex items-center text-xs text-slate-700">
+                    <Check className="w-4 h-4 text-emerald-500 mr-2.5 flex-shrink-0" />
+                    <span>Fast cloud hosting & SSL certificate</span>
+                  </div>
+                  <div className="flex items-center text-xs text-slate-700">
+                    <Check className="w-4 h-4 text-emerald-500 mr-2.5 flex-shrink-0" />
+                    <span>Local SEO technical foundations</span>
+                  </div>
+                  <div className="flex items-center text-xs text-slate-700">
+                    <Check className="w-4 h-4 text-emerald-500 mr-2.5 flex-shrink-0" />
+                    <span>Contact form & Google Maps setup</span>
+                  </div>
+                  <div className="flex items-center text-xs text-slate-700">
+                    <Check className="w-4 h-4 text-emerald-500 mr-2.5 flex-shrink-0" />
+                    <span>Ongoing maintenance & content updates</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-8">
+                <button
+                  onClick={() => {
+                    setIsGetStartedOpen(true);
+                    setStep(1);
+                    setFormSubmitted(false);
+                  }}
+                  className="w-full py-3 px-4 rounded-xl text-sm font-semibold text-slate-900 bg-slate-100 hover:bg-slate-200 transition-colors"
+                >
+                  Get Started
+                </button>
+              </div>
+            </div>
+
+            {/* Plan 2 — Website + Growth */}
+            <div className="bg-white rounded-2xl border-2 border-indigo-600 p-8 shadow-md flex flex-col justify-between relative">
+              <div className="absolute -top-3.5 right-6 px-3 py-0.5 rounded-full bg-indigo-600 text-white text-[10px] font-bold uppercase tracking-wider">
+                Full Solution
+              </div>
+
+              <div>
+                <div className="mb-4">
+                  <h3 className="text-xl font-bold text-slate-900">Website + Growth</h3>
+                  <p className="text-xs text-slate-500 mt-1">
+                    Everything in Website plus additional business & visibility features.
+                  </p>
+                </div>
+
+                <div className="mb-6 flex items-baseline">
+                  <span className="text-4xl font-extrabold text-slate-900 font-mono">$149</span>
+                  <span className="text-sm text-slate-500 font-medium ml-2">/ month</span>
+                </div>
+
+                <div className="border-t border-slate-100 pt-6 space-y-3.5">
+                  <div className="flex items-center text-xs font-semibold text-indigo-900">
+                    <Check className="w-4 h-4 text-indigo-600 mr-2.5 flex-shrink-0" />
+                    <span>Everything included in Website plan</span>
+                  </div>
+                  <div className="flex items-center text-xs text-slate-700">
+                    <Check className="w-4 h-4 text-emerald-500 mr-2.5 flex-shrink-0" />
+                    <span>Multi-page website (About, Services, Menu, Reviews)</span>
+                  </div>
+                  <div className="flex items-center text-xs text-slate-700">
+                    <Check className="w-4 h-4 text-emerald-500 mr-2.5 flex-shrink-0" />
+                    <span>Appointment booking or online ordering integration</span>
+                  </div>
+                  <div className="flex items-center text-xs text-slate-700">
+                    <Check className="w-4 h-4 text-emerald-500 mr-2.5 flex-shrink-0" />
+                    <span>Google Business profile optimization guidance</span>
+                  </div>
+                  <div className="flex items-center text-xs text-slate-700">
+                    <Check className="w-4 h-4 text-emerald-500 mr-2.5 flex-shrink-0" />
+                    <span>Interactive photo galleries & customer review showcase</span>
+                  </div>
+                  <div className="flex items-center text-xs text-slate-700">
+                    <Check className="w-4 h-4 text-emerald-500 mr-2.5 flex-shrink-0" />
+                    <span>Priority same-day update turnaround</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-8">
+                <button
+                  onClick={() => {
+                    setIsGetStartedOpen(true);
+                    setStep(1);
+                    setFormSubmitted(false);
+                  }}
+                  className="w-full py-3 px-4 rounded-xl text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 shadow-sm transition-colors"
+                >
+                  Get Started
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 13. DOMAIN SECTION */}
+      <section className="py-16 bg-white border-t border-slate-200">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-slate-50 rounded-2xl border border-slate-200 p-8 sm:p-10">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+              <div className="md:col-span-8 space-y-4">
+                <div className="flex items-center space-x-2 text-indigo-600 font-semibold text-xs uppercase tracking-wider">
+                  <Globe className="w-4 h-4" />
+                  <span>Custom Domains Made Simple</span>
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900">
+                  Already have a domain or need a new one?
+                </h3>
+                <div className="space-y-2 text-sm text-slate-600">
+                  <p>
+                    <strong className="text-slate-900 font-semibold">Already have a domain?</strong> We can connect your existing domain name to your new website with simple DNS records.
+                  </p>
+                  <p>
+                    <strong className="text-slate-900 font-semibold">Don&apos;t have one?</strong> We will assist you in selecting and setting up a clean domain name for your business.
+                  </p>
+                </div>
+              </div>
+
+              <div className="md:col-span-4 text-left md:text-right">
+                <button
+                  onClick={() => {
+                    setIsGetStartedOpen(true);
+                    setStep(1);
+                    setFormSubmitted(false);
+                  }}
+                  className="inline-flex items-center px-6 py-3 rounded-xl text-sm font-semibold text-white bg-slate-900 hover:bg-indigo-600 transition-colors"
+                >
+                  Ask About Domains
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 14. FAQ */}
+      <section id="faq" className="py-20 bg-slate-50/70 scroll-mt-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-3 mb-16">
+            <span className="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-100">
+              Common Questions
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-base text-slate-600">
+              Clear answers to help you understand our design and maintenance process.
+            </p>
           </div>
 
           <div className="space-y-4">
-            <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-2">
-              <h3 className="font-bold text-base text-white">How does the 7-Day Free Preview work?</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                When we build your website, you receive a private live link. The 7-day timer only begins when you visit the link for the very first time. You can test all pages, share it with your staff, and request changes. If you love it, subscribe to keep it active; if not, you owe nothing.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-2">
-              <h3 className="font-bold text-base text-white">Can I connect my own custom domain (e.g. mybusiness.com)?</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                Yes! Once your subscription is active, you can connect your existing domain or connect a new one with our automated DNS records. We handle the SSL security certificates and hosting automatically.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-2">
-              <h3 className="font-bold text-base text-white">Can I edit my own website after launch?</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                Yes. Every client gets access to our private Client Portal where you can edit text, update menu items and prices, add project photos, and post blog updates directly from your phone or computer.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-2">
-              <h3 className="font-bold text-base text-white">Is there a long-term contract?</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                No contracts. Our plans are month-to-month and you can cancel anytime with one click.
-              </p>
-            </div>
+            {faqs.map((faq, idx) => (
+              <div
+                key={idx}
+                className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs transition-all"
+              >
+                <button
+                  onClick={() => toggleFaq(idx)}
+                  className="w-full py-5 px-6 text-left flex items-center justify-between font-bold text-slate-900 hover:text-indigo-600 transition-colors"
+                >
+                  <span className="text-base pr-4">{faq.q}</span>
+                  <ChevronDown
+                    className={`w-5 h-5 text-slate-400 flex-shrink-0 transition-transform ${
+                      activeFaq === idx ? 'transform rotate-180 text-indigo-600' : ''
+                    }`}
+                  />
+                </button>
+                {activeFaq === idx && (
+                  <div className="px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                    {faq.a}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* 10. FOOTER */}
-      <footer className="bg-slate-950 text-slate-500 py-12 px-4 text-xs text-center border-t border-slate-800">
-        <div className="max-w-6xl mx-auto space-y-4">
-          <div className="flex justify-center items-center gap-6 font-semibold text-slate-400">
-            <Link href="/admin" className="hover:text-emerald-400 transition-colors">Admin Portal</Link>
-            <a href="#services" className="hover:text-emerald-400 transition-colors">Specialties</a>
-            <a href="#portfolio" className="hover:text-emerald-400 transition-colors">Portfolio</a>
-            <a href="#standards" className="hover:text-emerald-400 transition-colors">Capabilities</a>
-            <a href="#pricing" className="hover:text-emerald-400 transition-colors">Pricing</a>
-            <a href="#faq" className="hover:text-emerald-400 transition-colors">FAQ</a>
+      {/* 15. FINAL CTA */}
+      <section className="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10">
+          <span className="inline-block px-3.5 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-semibold uppercase tracking-wider border border-indigo-500/30">
+            Start Your Project
+          </span>
+
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight max-w-3xl mx-auto">
+            Ready to Give Your Business a Better Online Presence?
+          </h2>
+
+          <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            Let&apos;s build a professional website that represents your business and gives your customers a clear place to learn more and get in touch.
+          </p>
+
+          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button
+              onClick={() => {
+                setIsGetStartedOpen(true);
+                setStep(1);
+                setFormSubmitted(false);
+              }}
+              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-slate-900 bg-white hover:bg-indigo-50 shadow-lg hover:shadow-xl transition-all"
+            >
+              Get Started
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </button>
+
+            <a
+              href="#portfolio"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 transition-all"
+            >
+              View Our Work
+            </a>
           </div>
-          <p className="text-slate-400 font-bold text-sm">BuyerRadar • Bespoke Digital Agency for Local Businesses</p>
-          <p>© {new Date().getFullYear()} BuyerRadar (buyerradar.app). All rights reserved.</p>
+        </div>
+      </section>
+
+      {/* 16. FOOTER */}
+      <footer className="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-xs">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+            <div className="space-y-3">
+              <div className="flex items-center space-x-2">
+                <Globe className="w-5 h-5 text-indigo-400" />
+                <span className="text-base font-bold text-white tracking-tight">
+                  Buyer<span className="text-indigo-400">Radar</span>
+                </span>
+              </div>
+              <p className="text-slate-400 leading-relaxed">
+                Professional website design and ongoing management for local service businesses and hospitality.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-3">Navigation</h4>
+              <ul className="space-y-2">
+                <li><a href="#services" className="hover:text-white transition-colors">Services</a></li>
+                <li><a href="#portfolio" className="hover:text-white transition-colors">Our Work</a></li>
+                <li><a href="#process" className="hover:text-white transition-colors">Process</a></li>
+                <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
+                <li><a href="#faq" className="hover:text-white transition-colors">FAQ</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-3">Industries</h4>
+              <ul className="space-y-2">
+                <li><span>Restaurants & Dining</span></li>
+                <li><span>Handyman & Home Repairs</span></li>
+                <li><span>Residential Cleaning</span></li>
+                <li><span>General Contractors</span></li>
+                <li><span>Local Storefronts</span></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-3">Portal</h4>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="/admin/login" className="text-slate-500 hover:text-slate-300 transition-colors">
+                    Client & Admin Sign In
+                  </Link>
+                </li>
+                <li className="text-slate-500 pt-2">
+                  Direct online communication & support.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="border-t border-slate-850 pt-6 flex flex-col sm:flex-row items-center justify-between text-slate-500">
+            <p>&copy; {new Date().getFullYear()} BuyerRadar Agency. All rights reserved.</p>
+            <div className="flex items-center space-x-6 mt-4 sm:mt-0">
+              <span className="hover:text-slate-400">Privacy Policy</span>
+              <span className="hover:text-slate-400">Terms of Service</span>
+            </div>
+          </div>
         </div>
       </footer>
+
+      {/* 17. ONBOARDING / GET STARTED MODAL */}
+      {isGetStartedOpen && (
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-200 relative animate-in fade-in zoom-in-95 duration-150">
+            <button
+              onClick={() => setIsGetStartedOpen(false)}
+              className="absolute top-4 right-4 p-2 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            {!formSubmitted ? (
+              <form onSubmit={handleFormSubmit} className="space-y-5">
+                <div>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2.5 py-0.5 rounded">
+                    Step {step} of 2 — Project Inquiry
+                  </span>
+                  <h3 className="text-xl font-bold text-slate-900 mt-1">
+                    {step === 1 ? 'Tell Us About Your Business' : 'Contact Details'}
+                  </h3>
+                  <p className="text-xs text-slate-500">
+                    {step === 1
+                      ? 'Help us understand your business type and goals.'
+                      : 'Where should we send your preliminary website preview?'}
+                  </p>
+                </div>
+
+                {step === 1 && (
+                  <div className="space-y-4">
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-700 mb-1">
+                        Business Name *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.businessName}
+                        onChange={(e) => setFormData({ ...formData, businessName: e.target.value })}
+                        placeholder="e.g. Apex Home Repairs, Bella Vista Cafe"
+                        className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-600"
+                      />
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-3">
+                      <div>
+                        <label className="block text-xs font-semibold text-slate-700 mb-1">
+                          Industry *
+                        </label>
+                        <select
+                          value={formData.industry}
+                          onChange={(e) => setFormData({ ...formData, industry: e.target.value })}
+                          className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 bg-white"
+                        >
+                          <option>Restaurant / Cafe</option>
+                          <option>Handyman / Home Services</option>
+                          <option>Cleaning Services</option>
+                          <option>Contractor / Construction</option>
+                          <option>Beauty / Wellness</option>
+                          <option>Auto Services</option>
+                          <option>Other Local Business</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <label className="block text-xs font-semibold text-slate-700 mb-1">
+                          City & State *
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={formData.city}
+                          onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+                          placeholder="e.g. Austin, TX"
+                          className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-600"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-700 mb-1">
+                        Do you currently have an existing website?
+                      </label>
+                      <div className="grid grid-cols-2 gap-3">
+                        <button
+                          type="button"
+                          onClick={() => setFormData({ ...formData, hasExistingWebsite: 'yes' })}
+                          className={`py-2 px-3 rounded-lg text-xs font-semibold border ${
+                            formData.hasExistingWebsite === 'yes'
+                              ? 'bg-indigo-50 border-indigo-600 text-indigo-700'
+                              : 'border-slate-200 text-slate-600 hover:bg-slate-50'
+                          }`}
+                        >
+                          Yes, redesign existing
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setFormData({ ...formData, hasExistingWebsite: 'no' })}
+                          className={`py-2 px-3 rounded-lg text-xs font-semibold border ${
+                            formData.hasExistingWebsite === 'no'
+                              ? 'bg-indigo-50 border-indigo-600 text-indigo-700'
+                              : 'border-slate-200 text-slate-600 hover:bg-slate-50'
+                          }`}
+                        >
+                          No, brand new site
+                        </button>
+                      </div>
+                    </div>
+
+                    <div className="pt-2">
+                      <button
+                        type="button"
+                        disabled={!formData.businessName.trim() || !formData.city.trim()}
+                        onClick={() => setStep(2)}
+                        className="w-full py-3 rounded-xl text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 transition-colors"
+                      >
+                        Continue to Step 2 &rarr;
+                      </button>
+                    </div>
+                  </div>
+                )}
+
+                {step === 2 && (
+                  <div className="space-y-4">
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-700 mb-1">
+                        Your Name *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.fullName}
+                        onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                        placeholder="e.g. John Miller"
+                        className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-600"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-700 mb-1">
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        placeholder="you@yourbusiness.com"
+                        className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-600"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-700 mb-1">
+                        Phone Number (Optional)
+                      </label>
+                      <input
+                        type="tel"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        placeholder="(555) 000-0000"
+                        className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-600"
+                      />
+                    </div>
+
+                    <div className="flex items-center space-x-3 pt-2">
+                      <button
+                        type="button"
+                        onClick={() => setStep(1)}
+                        className="w-1/3 py-3 rounded-xl text-sm font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 transition-colors"
+                      >
+                        Back
+                      </button>
+                      <button
+                        type="submit"
+                        disabled={isSubmitting || !formData.fullName.trim() || !formData.email.trim()}
+                        className="w-2/3 py-3 rounded-xl text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 transition-colors"
+                      >
+                        {isSubmitting ? 'Submitting...' : 'Submit Inquiry'}
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </form>
+            ) : (
+              <div className="text-center py-6 space-y-4">
+                <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+                  <CheckCircle2 className="w-7 h-7" />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900">Inquiry Received!</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Thank you for submitting your details for <strong className="text-slate-900">{formData.businessName}</strong>. Our team will prepare a demonstration layout and email you shortly at <strong className="text-slate-900">{formData.email}</strong>.
+                </p>
+                <div className="pt-2">
+                  <button
+                    onClick={() => setIsGetStartedOpen(false)}
+                    className="px-6 py-2.5 rounded-xl text-sm font-semibold text-slate-800 bg-slate-100 hover:bg-slate-200 transition-colors"
+                  >
+                    Close Window
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
-
-
-
