@@ -5,8 +5,9 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Local Business Website Preview Platform',
-  description: 'Production-quality automated website generation & preview platform for local businesses.',
+  title: 'BuyerRadar | High-Converting Websites for Local Businesses',
+  description: 'BuyerRadar is a digital growth agency building fast, conversion-engineered websites for restaurants, contractors, and cleaning services.',
+  metadataBase: new URL('https://buyerradar.app'),
 };
 
 export default function RootLayout({
