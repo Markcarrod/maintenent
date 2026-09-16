@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import {
   NormalizedBusiness,
   PreviewData,
@@ -34,16 +35,20 @@ import {
   HelpCircle,
   ChevronRight,
   Lock,
+  LogOut,
 } from 'lucide-react';
 import { formatPhoneNumber } from '@/lib/utils';
 
 export default function AdminDashboardPage() {
+  const router = useRouter();
+  const [authenticated, setAuthenticated] = useState(false);
   const [items, setItems] = useState<{ business: NormalizedBusiness; preview: PreviewData; domain?: any }[]>([]);
   const [stats, setStats] = useState<any>(null);
   const [feedbacks, setFeedbacks] = useState<any[]>([]);
   const [leads, setLeads] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<'businesses' | 'import' | 'outreach' | 'feedback' | 'leads'>('businesses');
+
 
   // Filter & Search
   const [searchQuery, setSearchQuery] = useState('');
@@ -98,8 +103,21 @@ export default function AdminDashboardPage() {
   };
 
   useEffect(() => {
+    const isAuth = localStorage.getItem('maintenent_admin_auth') === 'true';
+    if (!isAuth) {
+      router.push('/admin/login');
+      return;
+    }
+    setAuthenticated(true);
     fetchDashboardData();
-  }, []);
+  }, [router]);
+
+  const handleLogout = () => {
+    localStorage.removeItem('maintenent_admin_auth');
+    localStorage.removeItem('maintenent_admin_email');
+    document.cookie = 'admin_auth=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    router.push('/admin/login');
+  };
 
   const copyToClipboard = (text: string, key: string) => {
     navigator.clipboard.writeText(text);
@@ -244,6 +262,15 @@ export default function AdminDashboardPage() {
     return matchesSearch && matchesIndustry && matchesStatus;
   });
 
+  if (!authenticated) {
+    return (
+      <div className="min-h-screen bg-slate-950 flex flex-col items-center justify-center p-4 text-slate-400 text-xs">
+        <div className="w-8 h-8 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin mb-3" />
+        <span>Verifying admin session...</span>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans antialiased">
       {/* Top Header */}
@@ -280,9 +307,18 @@ export default function AdminDashboardPage() {
               <Plus className="w-3.5 h-3.5" />
               <span>Import Lead</span>
             </button>
+            <button
+              onClick={handleLogout}
+              className="px-3.5 py-1.5 rounded-lg border border-red-200 text-red-600 hover:bg-red-50 text-xs font-semibold transition-colors flex items-center gap-1.5"
+              title="Sign Out"
+            >
+              <LogOut className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">Sign Out</span>
+            </button>
           </div>
         </div>
       </header>
+
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-8">
         {/* Metric Cards */}

@@ -43,7 +43,7 @@ export function middleware(req: NextRequest) {
   }
 
   if (subdomain) {
-    url.pathname = /preview/;
+    url.pathname = `/preview/${subdomain}`;
     return NextResponse.rewrite(url);
   }
 
