@@ -1,0 +1,148 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Business {
+  id                 String              @id @default(cuid())
+  slug               String              @unique
+  name               String
+  industry           String              // "handyman", "cleaning", "restaurant"
+  restaurantCategory String?             // "pizza", "mexican", "fastfood", "asian", "american"
+  cuisine            String?             // e.g. "Italian-American", "Cantonese"
+  category           String              // e.g. "Residential & Commercial", "Pizza & Italian"
+  description        String
+  tagline            String?
+  phone              String
+  email              String
+  address            String
+  city               String
+  state              String
+  zip                String
+  hours              String              // JSON string of BusinessHours
+  rating             Float               @default(4.9)
+  reviewCount        Int                 @default(38)
+  reviews            String              // JSON string of CustomerReview[]
+  photos             String              // JSON string of BusinessPhotos
+  services           String              // JSON string of ServiceItem[]
+  menu               String?             // JSON string of legacy MenuItem[]
+  menuCategories     String?             // JSON string of MenuCategory[]
+  orderUrl           String?
+  reservationUrl     String?
+  instagramUrl       String?
+  currency           String?             @default("USD")
+  facebookUrl        String?
+  googleMapsUrl      String?
+  templateId         String              @default("H1")
+  customDomain       String?             @unique
+  createdAt          DateTime            @default(now())
+  updatedAt          DateTime            @updatedAt
+
+  preview            Preview?
+  websiteData        StructuredWebsite?
+  blogPosts          BlogPost[]
+  mediaItems         MediaItem[]
+  feedbacks          Feedback[]
+  leads              LeadSubmission[]
+  domainConnection   DomainConnection?
+}
+
+model StructuredWebsite {
+  id         String   @id @default(cuid())
+  businessId String   @unique
+  business   Business @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  data       String   // Full JSON string of StructuredWebsite
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model Preview {
+  id               String         @id @default(cuid())
+  businessId       String         @unique
+  business         Business       @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  status           String         @default("PREVIEW_ACTIVE") // "DRAFT", "PREVIEW_ACTIVE", "EXPIRED", "ACTIVE"
+  firstViewedAt    DateTime?
+  previewExpiresAt DateTime?      // firstViewedAt + 7 days
+  plan             String         @default("NONE") // "NONE", "WEBSITE_79", "WEBSITE_LEAD_149"
+  paymentStatus    String         @default("UNPAID") // "UNPAID", "PAID"
+  viewCount        Int            @default(0)
+  dmStatus         String         @default("NOT_CONTACTED")
+  lastContactedAt  DateTime?
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+
+  events           PreviewEvent[]
+}
+
+model PreviewEvent {
+  id        String   @id @default(cuid())
+  previewId String
+  preview   Preview  @relation(fields: [previewId], references: [id], onDelete: Cascade)
+  eventType String   // "FIRST_VISIT", "PAGE_VIEW", "CTA_CLICK", "FEEDBACK_SUBMITTED", "PAYMENT_COMPLETED"
+  metadata  String?  // JSON string
+  createdAt DateTime @default(now())
+}
+
+model Feedback {
+  id          String   @id @default(cuid())
+  businessId  String
+  business    Business @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  authorName  String?
+  authorEmail String?
+  message     String
+  status      String   @default("NEW") // "NEW", "REVIEWED", "COMPLETED"
+  createdAt   DateTime @default(now())
+}
+
+model LeadSubmission {
+  id               String   @id @default(cuid())
+  businessId       String
+  business         Business @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  customerName     String
+  customerPhone    String
+  customerEmail    String
+  serviceRequested String?
+  answers          String   // JSON string of answers
+  status           String   @default("NEW")
+  createdAt        DateTime @default(now())
+}
+
+model BlogPost {
+  id         String   @id @default(cuid())
+  businessId String
+  business   Business @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  title      String
+  slug       String
+  content    String
+  excerpt    String?
+  coverImage String?
+  published  Boolean  @default(true)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model MediaItem {
+  id         String   @id @default(cuid())
+  businessId String
+  business   Business @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  name       String
+  url        String
+  createdAt  DateTime @default(now())
+}
+
+model DomainConnection {
+  id                String   @id @default(cuid())
+  businessId        String   @unique
+  business          Business @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  domain            String
+  verified          Boolean  @default(false)
+  verificationToken String
+  dnsRecords        String   // JSON string
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}

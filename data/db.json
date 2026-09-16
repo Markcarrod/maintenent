@@ -1,0 +1,4425 @@
+{
+  "businesses": [
+    {
+      "id": "lead-mikes-handyman",
+      "slug": "mikes-handyman-services",
+      "name": "Mike's Handyman Services",
+      "industry": "handyman",
+      "category": "Home Repairs & Light Remodeling",
+      "description": "Reliable residential handyman and home maintenance services serving Austin homeowners. Specializing in drywall repair, fixture replacements, carpentry, door adjustments, and exterior deck repairs.",
+      "tagline": "Prompt, Honest, Quality Home Repairs in Austin",
+      "phone": "512-555-0194",
+      "email": "mike@mikeshandymanaustin.com",
+      "address": "4209 S Congress Ave",
+      "city": "Austin",
+      "state": "TX",
+      "zip": "78745",
+      "hours": {
+        "Monday - Friday": "7:30 AM - 6:00 PM",
+        "Saturday": "8:00 AM - 2:00 PM",
+        "Sunday": "Closed"
+      },
+      "rating": 4.9,
+      "reviewCount": 42,
+      "photos": {
+        "hero": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=80",
+        "about": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=80",
+        "gallery": [
+          "https://images.unsplash.com/photo-1540518614846-7ede433c4ef2?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&w=800&q=80"
+        ],
+        "services": [
+          "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=600&q=80",
+          "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80",
+          "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
+          "https://images.unsplash.com/photo-1540518614846-7ede433c4ef2?auto=format&fit=crop&w=600&q=80"
+        ]
+      },
+      "services": [
+        {
+          "id": "h-srv-1",
+          "name": "Drywall Repair & Patching",
+          "description": "Seamless wall and ceiling patches, texture matching, and painting touch-ups.",
+          "badge": "Top Request",
+          "popular": true,
+          "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          "id": "h-srv-2",
+          "name": "Light Fixture & Fan Installation",
+          "description": "Replacement of chandeliers, ceiling fans, recessed LEDs, and dimmer switches.",
+          "badge": "Fast Turnaround",
+          "popular": true,
+          "image": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          "id": "h-srv-3",
+          "name": "Interior & Exterior Door Fixes",
+          "description": "Fix sticking doors, replace deadbolts, draft sealing, and hinge realignment.",
+          "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          "id": "h-srv-4",
+          "name": "Deck & Porch Maintenance",
+          "description": "Board replacement, power washing, railing reinforcement, and weather staining.",
+          "image": "https://images.unsplash.com/photo-1540518614846-7ede433c4ef2?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          "id": "h-srv-5",
+          "name": "Cabinet Hardware & Trim Carpentry",
+          "description": "Baseboard installation, crown moulding, and fresh kitchen cabinet hardware.",
+          "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "rev-m1",
+          "author": "David R.",
+          "rating": 5,
+          "date": "2 weeks ago",
+          "comment": "Mike replaced three ceiling fans and patched drywall where we had an old thermostat. On time, super clean, and charged exactly what was quoted.",
+          "serviceOrDish": "Drywall & Fan Install",
+          "verified": true
+        },
+        {
+          "id": "rev-m2",
+          "author": "Sarah L.",
+          "rating": 5,
+          "date": "Last month",
+          "comment": "Fantastic work fixing our front door alignment and back deck steps. Very polite and professional throughout. Highly recommend!",
+          "serviceOrDish": "Door & Deck Repair",
+          "verified": true
+        },
+        {
+          "id": "rev-m3",
+          "author": "Brian T.",
+          "rating": 5,
+          "date": "2 months ago",
+          "comment": "Hard to find trustworthy repair people these days. Mike arrived promptly and did great craftsmanship on our baseboards.",
+          "serviceOrDish": "Trim Carpentry",
+          "verified": true
+        }
+      ],
+      "website": "https://facebook.com/mikeshandymanaustin",
+      "facebookUrl": "https://facebook.com/mikeshandymanaustin",
+      "googleMapsUrl": "https://maps.google.com/?q=4209+S+Congress+Ave+Austin+TX",
+      "templateId": "H1",
+      "serviceAreas": [
+        "South Austin",
+        "Downtown",
+        "Zilker",
+        "Bouldin Creek",
+        "Oak Hill",
+        "Travis Heights"
+      ],
+      "customDomain": "mikeshandymanaustin.com"
+    },
+    {
+      "id": "lead-sparkling-horizon",
+      "slug": "sparkling-horizon-cleaning",
+      "name": "Sparkling Horizon Cleaning",
+      "industry": "cleaning",
+      "category": "Residential & Light Commercial Cleaning",
+      "description": "Detailed, eco-friendly house cleaning and small office janitorial services across Greater Seattle. Offering recurring weekly, bi-weekly, deep cleaning, and move-in/out services.",
+      "tagline": "Breathable Clean Spaces for Busy Seattle Homes",
+      "phone": "206-555-0182",
+      "email": "info@sparklinghorizonclean.com",
+      "address": "1420 5th Ave",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98101",
+      "hours": {
+        "Monday - Friday": "8:00 AM - 5:30 PM",
+        "Saturday": "9:00 AM - 3:00 PM",
+        "Sunday": "Closed"
+      },
+      "rating": 4.9,
+      "reviewCount": 56,
+      "photos": {
+        "hero": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1600&q=80",
+        "about": "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1000&q=80",
+        "gallery": [
+          "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
+        ],
+        "services": [
+          "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80",
+          "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=600&q=80",
+          "https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?auto=format&fit=crop&w=600&q=80",
+          "https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&w=600&q=80"
+        ]
+      },
+      "services": [
+        {
+          "id": "c-srv-1",
+          "name": "Recurring Residential Cleaning",
+          "description": "Weekly or bi-weekly complete home upkeep with custom checklist for kitchens, bathrooms, and living areas.",
+          "badge": "Most Popular",
+          "popular": true,
+          "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          "id": "c-srv-2",
+          "name": "Deep Clean & Refresh",
+          "description": "Comprehensive top-to-bottom scrub including baseboards, interior windows, cabinet fronts, and tile grout.",
+          "badge": "Thorough Care",
+          "popular": true,
+          "image": "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          "id": "c-srv-3",
+          "name": "Move-In / Move-Out Cleaning",
+          "description": "Leave the old residence spotless for deposit return or prepare your new home for immediate move-in.",
+          "image": "https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          "id": "c-srv-4",
+          "name": "Boutique Office Cleaning",
+          "description": "Evening sanitation for creative studios, tech offices, and professional clinics.",
+          "image": "https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&w=600&q=80"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "rev-s1",
+          "author": "Elena M.",
+          "rating": 5,
+          "date": "3 weeks ago",
+          "comment": "Sparkling Horizon does an incredible job with our bi-weekly clean. They bring their own supplies and leave the house smelling fresh and clean.",
+          "serviceOrDish": "Bi-Weekly Cleaning",
+          "verified": true
+        },
+        {
+          "id": "rev-s2",
+          "author": "Marcus K.",
+          "rating": 5,
+          "date": "1 month ago",
+          "comment": "Booked a move-out deep clean for our 2-bedroom condo in Capitol Hill. Got 100% of our deposit back without a single deduction.",
+          "serviceOrDish": "Move-Out Deep Clean",
+          "verified": true
+        },
+        {
+          "id": "rev-s3",
+          "author": "Claire H.",
+          "rating": 5,
+          "date": "2 months ago",
+          "comment": "Super communicative and punctual. It is such a relief coming home after their visits!",
+          "serviceOrDish": "Residential Housekeeping",
+          "verified": true
+        }
+      ],
+      "facebookUrl": "https://facebook.com/sparklinghorizonseattle",
+      "googleMapsUrl": "https://maps.google.com/?q=1420+5th+Ave+Seattle+WA",
+      "templateId": "C1",
+      "serviceAreas": [
+        "Downtown Seattle",
+        "Capitol Hill",
+        "Ballard",
+        "Queen Anne",
+        "Fremont",
+        "Bellevue"
+      ]
+    },
+    {
+      "id": "lead-bella-vista",
+      "slug": "bella-vista-trattoria",
+      "name": "Bella Vista Trattoria",
+      "industry": "restaurant",
+      "restaurantCategory": "pizza",
+      "cuisine": "Italian-American",
+      "category": "Pizza & Italian",
+      "description": "Handmade pasta, wood-fired seasonal pizzas, and classic Northern Italian specialties in Chicago's historic West Loop. Dine-in, heated patio seating, and catering available.",
+      "tagline": "Handmade Pasta & Wood-Fired Tradition in West Loop",
+      "phone": "312-555-0149",
+      "email": "reservations@bellavistachicago.com",
+      "address": "832 W Randolph St",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60607",
+      "hours": {
+        "Tuesday - Thursday": "4:30 PM - 10:00 PM",
+        "Friday - Saturday": "4:00 PM - 11:00 PM",
+        "Sunday": "4:00 PM - 9:30 PM",
+        "Monday": "Closed"
+      },
+      "rating": 4.8,
+      "reviewCount": 89,
+      "photos": {
+        "hero": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1600&q=80",
+        "about": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=80",
+        "gallery": [
+          "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80"
+        ],
+        "services": []
+      },
+      "services": [],
+      "menuCategories": [
+        {
+          "id": "cat-antipasti",
+          "name": "Antipasti",
+          "description": "Starters and small plates",
+          "items": [
+            {
+              "id": "item-polpo",
+              "name": "Polpo Grigliato",
+              "description": "Charred Mediterranean octopus, fingerling potato confit, smoked paprika aioli, pickled shallots.",
+              "price": 22,
+              "tags": [
+                "gluten-free"
+              ],
+              "available": true,
+              "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+              "id": "item-bruschetta",
+              "name": "Bruschetta al Pomodoro",
+              "description": "Grilled sourdough, heirloom tomatoes, fresh basil, aged balsamic, extra virgin olive oil.",
+              "price": 14,
+              "tags": [
+                "vegan",
+                "popular"
+              ],
+              "available": true,
+              "image": "https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?auto=format&fit=crop&w=600&q=80"
+            }
+          ]
+        },
+        {
+          "id": "cat-pasta",
+          "name": "Handmade Pasta",
+          "description": "Fresh pasta made daily in-house",
+          "items": [
+            {
+              "id": "item-pappardelle",
+              "name": "Pappardelle al Cinghiale",
+              "description": "Wide ribbon pasta, slow-braised wild boar ragù, fresh rosemary, aged pecorino romano.",
+              "price": 26,
+              "tags": [
+                "popular",
+                "chef-signature"
+              ],
+              "available": true,
+              "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+              "id": "item-tagliolini",
+              "name": "Tagliolini al Tartufo",
+              "description": "Delicate egg tagliolini, cultured Umbrian butter, shaved black winter truffle, Parmigiano-Reggiano.",
+              "price": 29,
+              "tags": [
+                "vegetarian",
+                "chef-signature",
+                "popular"
+              ],
+              "available": true,
+              "image": "https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=600&q=80"
+            }
+          ]
+        },
+        {
+          "id": "cat-pizza",
+          "name": "Wood-Fired Pizza",
+          "description": "Authentic Neapolitan-style, baked in our wood-fire oven",
+          "items": [
+            {
+              "id": "item-margherita",
+              "name": "Margherita Verace Pizza",
+              "description": "San Marzano D.O.P. tomatoes, buffalo mozzarella, fresh basil, cold-pressed extra virgin olive oil.",
+              "price": 21,
+              "tags": [
+                "vegetarian",
+                "popular"
+              ],
+              "available": true,
+              "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80"
+            }
+          ]
+        },
+        {
+          "id": "cat-dolci",
+          "name": "Dolci",
+          "description": "Desserts",
+          "items": [
+            {
+              "id": "item-tiramisu",
+              "name": "Classic Tiramisù Tradizionale",
+              "description": "Espresso-soaked savoiardi ladyfingers, whipped mascarpone zabaione, Valrhona dark cocoa powder.",
+              "price": 12,
+              "tags": [
+                "vegetarian",
+                "popular"
+              ],
+              "available": true,
+              "image": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=600&q=80"
+            }
+          ]
+        }
+      ],
+      "reviews": [
+        {
+          "id": "rev-b1",
+          "author": "Gianna P.",
+          "rating": 5,
+          "date": "1 week ago",
+          "comment": "The Pappardelle al Cinghiale was outstanding! Authentic flavors that transported me straight to Florence. Outstanding wine list too.",
+          "serviceOrDish": "Pappardelle & Barolo",
+          "verified": true
+        },
+        {
+          "id": "rev-b2",
+          "author": "Robert D.",
+          "rating": 5,
+          "date": "2 weeks ago",
+          "comment": "Celebrated our anniversary here on the heated patio. Fantastic attentive staff, wonderful ambiance, and best tiramisu in the West Loop.",
+          "serviceOrDish": "Dinner for Two",
+          "verified": true
+        },
+        {
+          "id": "rev-b3",
+          "author": "Jessica T.",
+          "rating": 5,
+          "date": "Last month",
+          "comment": "Authentic wood-fired crust and truly delicious handmade pasta. We make it a monthly tradition now.",
+          "serviceOrDish": "Margherita & Tagliolini",
+          "verified": true
+        }
+      ],
+      "facebookUrl": "https://facebook.com/bellavistachicago",
+      "googleMapsUrl": "https://maps.google.com/?q=832+W+Randolph+St+Chicago+IL",
+      "instagramUrl": "https://instagram.com/bellavistachicago",
+      "reservationUrl": "https://resy.com/cities/chi/bella-vista",
+      "currency": "USD",
+      "templateId": "R1"
+    },
+    {
+      "id": "lead-taco-libre",
+      "slug": "taco-libre-austin",
+      "name": "Taco Libre",
+      "industry": "restaurant",
+      "restaurantCategory": "mexican",
+      "cuisine": "Mexican & Tex-Mex",
+      "category": "Mexican & Latin",
+      "description": "Bold street tacos, handcrafted margaritas, and festive atmosphere in the heart of East Austin. Family recipes passed down three generations.",
+      "tagline": "Authentic Street Tacos & Handcrafted Margaritas",
+      "phone": "512-555-0372",
+      "email": "hola@tacolibreaustin.com",
+      "address": "2214 E Cesar Chavez St",
+      "city": "Austin",
+      "state": "TX",
+      "zip": "78702",
+      "hours": {
+        "Monday - Thursday": "11:00 AM - 10:00 PM",
+        "Friday - Saturday": "11:00 AM - 12:00 AM",
+        "Sunday": "10:00 AM - 9:00 PM"
+      },
+      "rating": 4.7,
+      "reviewCount": 134,
+      "photos": {
+        "hero": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=1600&q=80",
+        "about": "https://images.unsplash.com/photo-1504544750208-dc0358e63f7f?auto=format&fit=crop&w=1000&q=80",
+        "gallery": [
+          "https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1505253758473-96b7015fcd40?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1583835746434-cf1534674ad5?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=80"
+        ],
+        "services": []
+      },
+      "services": [],
+      "menuCategories": [
+        {
+          "id": "cat-tacos",
+          "name": "Street Tacos",
+          "description": "Traditional corn tortillas, two per order",
+          "items": [
+            {
+              "id": "item-al-pastor",
+              "name": "Al Pastor",
+              "description": "Achiote-marinated pork, grilled pineapple, white onion, fresh cilantro, salsa verde.",
+              "price": 4.5,
+              "tags": [
+                "popular",
+                "spicy"
+              ],
+              "available": true,
+              "image": "https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+              "id": "item-carne-asada",
+              "name": "Carne Asada",
+              "description": "Grilled skirt steak, roasted jalapeño salsa, white onion, fresh cilantro, lime.",
+              "price": 5.5,
+              "tags": [
+                "popular",
+                "gluten-free"
+              ],
+              "available": true,
+              "image": "https://images.unsplash.com/photo-1505253758473-96b7015fcd40?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+              "id": "item-veggie",
+              "name": "Veggie & Cheese",
+              "description": "Roasted seasonal vegetables, queso fresco, chipotle crema, pickled red onion.",
+              "price": 4,
+              "tags": [
+                "vegetarian",
+                "vegan-available"
+              ],
+              "available": true,
+              "image": "https://images.unsplash.com/photo-1583835746434-cf1534674ad5?auto=format&fit=crop&w=600&q=80"
+            }
+          ]
+        },
+        {
+          "id": "cat-sides",
+          "name": "Sides & Extras",
+          "items": [
+            {
+              "id": "item-guac",
+              "name": "Fresh Guacamole",
+              "description": "Made to order with Hass avocados, serrano chile, lime, and cilantro. Served with house chips.",
+              "price": 8,
+              "tags": [
+                "vegan",
+                "gluten-free",
+                "popular"
+              ],
+              "available": true,
+              "image": "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+              "id": "item-elote",
+              "name": "Mexican Street Corn (Elote)",
+              "description": "Grilled corn on the cob, cotija cheese, chipotle mayo, chili powder, lime.",
+              "price": 6,
+              "tags": [
+                "vegetarian",
+                "popular"
+              ],
+              "available": true,
+              "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=600&q=80"
+            }
+          ]
+        },
+        {
+          "id": "cat-drinks",
+          "name": "Drinks",
+          "items": [
+            {
+              "id": "item-margarita",
+              "name": "House Margarita",
+              "description": "El Jimador blanco, fresh lime, agave nectar. On the rocks or frozen.",
+              "price": 11,
+              "tags": [
+                "popular"
+              ],
+              "available": true
+            },
+            {
+              "id": "item-horchata",
+              "name": "Horchata",
+              "description": "House-made rice milk with cinnamon and vanilla. Non-alcoholic.",
+              "price": 4.5,
+              "tags": [
+                "non-alcoholic",
+                "vegan"
+              ],
+              "available": true
+            }
+          ]
+        }
+      ],
+      "reviews": [
+        {
+          "id": "rev-tl1",
+          "author": "Marcus B.",
+          "rating": 5,
+          "date": "3 days ago",
+          "comment": "Best al pastor tacos in Austin, hands down. The pineapple on top makes it perfect. Will be back weekly.",
+          "serviceOrDish": "Al Pastor Tacos",
+          "verified": true
+        },
+        {
+          "id": "rev-tl2",
+          "author": "Sofia R.",
+          "rating": 5,
+          "date": "2 weeks ago",
+          "comment": "Incredible brunch! The Sunday hours are perfect. Huevos rancheros and fresh horchata — unbeatable combo.",
+          "serviceOrDish": "Sunday Brunch",
+          "verified": true
+        },
+        {
+          "id": "rev-tl3",
+          "author": "Jake T.",
+          "rating": 4,
+          "date": "Last month",
+          "comment": "Great vibe, great food. The guacamole is made fresh right in front of you. Margaritas are strong and well-priced.",
+          "serviceOrDish": "Guac & Margaritas",
+          "verified": true
+        }
+      ],
+      "facebookUrl": "https://facebook.com/tacolibreaustin",
+      "googleMapsUrl": "https://maps.google.com/?q=2214+E+Cesar+Chavez+St+Austin+TX",
+      "instagramUrl": "https://instagram.com/tacolibreaustin",
+      "orderUrl": "https://order.tacolibreaustin.com",
+      "currency": "USD",
+      "templateId": "R2"
+    },
+    {
+      "id": "lead-big-stack",
+      "slug": "big-stack-burgers",
+      "name": "Big Stack Burgers",
+      "industry": "restaurant",
+      "restaurantCategory": "fastfood",
+      "cuisine": "American Burgers & Fast Food",
+      "category": "Fast Food & Burgers",
+      "description": "Smash burgers, thick-cut fries, and classic shakes served fast in Houston's Midtown. No shortcuts — just real beef, real cheese, real flavor.",
+      "tagline": "Real Beef. Real Flavor. Served Fast.",
+      "phone": "713-555-0841",
+      "email": "order@bigstackburgers.com",
+      "address": "3810 Milam St",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77006",
+      "hours": {
+        "Monday - Thursday": "11:00 AM - 10:00 PM",
+        "Friday - Saturday": "11:00 AM - 11:00 PM",
+        "Sunday": "12:00 PM - 9:00 PM"
+      },
+      "rating": 4.6,
+      "reviewCount": 211,
+      "photos": {
+        "hero": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1600&q=80",
+        "about": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1000&q=80",
+        "gallery": [
+          "https://images.unsplash.com/photo-1586816001966-79b736744398?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1541614101331-1a5a3a194e92?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80"
+        ],
+        "services": []
+      },
+      "services": [],
+      "menuCategories": [
+        {
+          "id": "cat-burgers",
+          "name": "Burgers",
+          "description": "All burgers smashed fresh on the flat-top",
+          "items": [
+            {
+              "id": "item-big-stack",
+              "name": "The Big Stack",
+              "description": "Double smash patties, American cheese, shredded lettuce, tomato, pickles, Big Stack sauce.",
+              "price": 13,
+              "tags": [
+                "popular",
+                "signature"
+              ],
+              "available": true,
+              "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+              "id": "item-classic",
+              "name": "Classic Single",
+              "description": "Smash patty, cheddar, onion, mustard, ketchup, pickles. Old-school done right.",
+              "price": 9,
+              "tags": [
+                "popular"
+              ],
+              "available": true,
+              "image": "https://images.unsplash.com/photo-1586816001966-79b736744398?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+              "id": "item-mushroom",
+              "name": "Mushroom Swiss",
+              "description": "Smash patty, sautéed cremini mushrooms, Swiss cheese, garlic aioli, arugula.",
+              "price": 12,
+              "tags": [],
+              "available": true,
+              "image": "https://images.unsplash.com/photo-1541614101331-1a5a3a194e92?auto=format&fit=crop&w=600&q=80"
+            }
+          ]
+        },
+        {
+          "id": "cat-sides-bs",
+          "name": "Sides",
+          "items": [
+            {
+              "id": "item-fries",
+              "name": "Thick-Cut Fries",
+              "description": "Hand-cut russet potatoes, fried golden, seasoned with sea salt.",
+              "price": 5,
+              "tags": [
+                "vegan",
+                "popular"
+              ],
+              "available": true,
+              "image": "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+              "id": "item-rings",
+              "name": "Onion Rings",
+              "description": "Beer-battered Vidalia onion rings with smoky chipotle dip.",
+              "price": 6,
+              "tags": [
+                "vegetarian"
+              ],
+              "available": true
+            }
+          ]
+        },
+        {
+          "id": "cat-shakes",
+          "name": "Shakes",
+          "items": [
+            {
+              "id": "item-vanilla-shake",
+              "name": "Classic Vanilla Shake",
+              "description": "Whole milk vanilla bean ice cream, blended thick.",
+              "price": 7,
+              "tags": [
+                "vegetarian",
+                "popular"
+              ],
+              "available": true
+            },
+            {
+              "id": "item-chocolate-shake",
+              "name": "Chocolate Fudge Shake",
+              "description": "Rich chocolate ice cream with hot fudge swirl.",
+              "price": 7,
+              "tags": [
+                "vegetarian"
+              ],
+              "available": true
+            }
+          ]
+        }
+      ],
+      "reviews": [
+        {
+          "id": "rev-bs1",
+          "author": "Derrick W.",
+          "rating": 5,
+          "date": "1 week ago",
+          "comment": "The Big Stack is everything. Perfectly smashed, crispy edges, and that sauce is addictive. Best burger in Houston Midtown.",
+          "serviceOrDish": "The Big Stack",
+          "verified": true
+        },
+        {
+          "id": "rev-bs2",
+          "author": "Tanya M.",
+          "rating": 5,
+          "date": "2 weeks ago",
+          "comment": "Fast, fresh, and delicious. The fries are perfectly thick and not soggy. Great value for the quality.",
+          "serviceOrDish": "Classic Single & Fries",
+          "verified": true
+        },
+        {
+          "id": "rev-bs3",
+          "author": "Chris P.",
+          "rating": 4,
+          "date": "Last month",
+          "comment": "Mushroom Swiss burger was incredible. Shakes are thick and cold. Parking can be rough but worth it.",
+          "serviceOrDish": "Mushroom Swiss",
+          "verified": true
+        }
+      ],
+      "facebookUrl": "https://facebook.com/bigstackburgers",
+      "googleMapsUrl": "https://maps.google.com/?q=3810+Milam+St+Houston+TX",
+      "instagramUrl": "https://instagram.com/bigstackburgers",
+      "orderUrl": "https://order.bigstackburgers.com",
+      "currency": "USD",
+      "templateId": "R3"
+    },
+    {
+      "id": "lead-dragon-palace",
+      "slug": "dragon-palace-sf",
+      "name": "Dragon Palace",
+      "industry": "restaurant",
+      "restaurantCategory": "asian",
+      "cuisine": "Cantonese & Asian Fusion",
+      "category": "Chinese & Asian Fusion",
+      "description": "Elevated Cantonese cuisine with a modern Asian fusion twist in San Francisco's Richmond District. Dim sum weekends, full dinner service, and private dining rooms available.",
+      "tagline": "Elevated Cantonese Cuisine & Modern Asian Fusion",
+      "phone": "415-555-0293",
+      "email": "info@dragonpalacesf.com",
+      "address": "618 Clement St",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94118",
+      "hours": {
+        "Monday - Friday": "11:30 AM - 2:30 PM, 5:00 PM - 10:00 PM",
+        "Saturday": "10:00 AM - 2:30 PM (Dim Sum), 5:00 PM - 10:30 PM",
+        "Sunday": "10:00 AM - 2:30 PM (Dim Sum), 5:00 PM - 9:30 PM"
+      },
+      "rating": 4.9,
+      "reviewCount": 178,
+      "photos": {
+        "hero": "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?auto=format&fit=crop&w=1600&q=80",
+        "about": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1000&q=80",
+        "gallery": [
+          "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1617196034183-421b4040ed20?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1618898303370-94b0b56d5843?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?auto=format&fit=crop&w=800&q=80"
+        ],
+        "services": []
+      },
+      "services": [],
+      "menuCategories": [
+        {
+          "id": "cat-dim-sum",
+          "name": "Dim Sum",
+          "description": "Served weekends 10am–2:30pm",
+          "items": [
+            {
+              "id": "item-har-gow",
+              "name": "Har Gow (Shrimp Dumplings)",
+              "description": "Delicate steamed shrimp dumplings in translucent rice flour wrapper. 4 pieces.",
+              "price": 9,
+              "tags": [
+                "popular",
+                "gluten-free"
+              ],
+              "available": true,
+              "image": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+              "id": "item-siu-mai",
+              "name": "Siu Mai (Pork & Shrimp)",
+              "description": "Open-topped dumplings with pork, tiger shrimp, and water chestnut. 4 pieces.",
+              "price": 9,
+              "tags": [
+                "popular"
+              ],
+              "available": true,
+              "image": "https://images.unsplash.com/photo-1617196034183-421b4040ed20?auto=format&fit=crop&w=600&q=80"
+            }
+          ]
+        },
+        {
+          "id": "cat-mains-dp",
+          "name": "Signature Mains",
+          "description": "Dinner service, daily",
+          "items": [
+            {
+              "id": "item-peking-duck",
+              "name": "Peking Duck (Half)",
+              "description": "Lacquered duck, crispy skin, hoisin sauce, steamed pancakes, scallion, cucumber. Serves 2–3.",
+              "price": 48,
+              "tags": [
+                "popular",
+                "chef-signature"
+              ],
+              "available": true,
+              "image": "https://images.unsplash.com/photo-1618898303370-94b0b56d5843?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+              "id": "item-mapo-tofu",
+              "name": "Mapo Tofu",
+              "description": "Silken tofu in spiced Sichuan bean paste, ground pork, chili oil, Sichuan peppercorn.",
+              "price": 18,
+              "tags": [
+                "spicy",
+                "gluten-free-available"
+              ],
+              "available": true,
+              "image": "https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+              "id": "item-fried-rice",
+              "name": "Wok-Fried Yang Chow Rice",
+              "description": "Day-old jasmine rice, BBQ pork, shrimp, egg, peas, scallion, light soy.",
+              "price": 16,
+              "tags": [
+                "popular"
+              ],
+              "available": true
+            }
+          ]
+        }
+      ],
+      "reviews": [
+        {
+          "id": "rev-dp1",
+          "author": "Linda C.",
+          "rating": 5,
+          "date": "5 days ago",
+          "comment": "Possibly the best Peking Duck in San Francisco. The skin was impossibly crispy and the pancakes were perfect. A special occasion staple.",
+          "serviceOrDish": "Peking Duck",
+          "verified": true
+        },
+        {
+          "id": "rev-dp2",
+          "author": "Kevin Y.",
+          "rating": 5,
+          "date": "2 weeks ago",
+          "comment": "Weekend dim sum is a must. Har gow was delicate and fresh, not frozen. Elegant space that feels special without being stuffy.",
+          "serviceOrDish": "Dim Sum Brunch",
+          "verified": true
+        },
+        {
+          "id": "rev-dp3",
+          "author": "Michelle L.",
+          "rating": 5,
+          "date": "Last month",
+          "comment": "We had our team dinner here — private room, seamless service, and the food was consistently exceptional. Highly recommend for groups.",
+          "serviceOrDish": "Private Dining",
+          "verified": true
+        }
+      ],
+      "facebookUrl": "https://facebook.com/dragonpalacesf",
+      "googleMapsUrl": "https://maps.google.com/?q=618+Clement+St+San+Francisco+CA",
+      "instagramUrl": "https://instagram.com/dragonpalacesf",
+      "reservationUrl": "https://resy.com/cities/sf/dragon-palace",
+      "currency": "USD",
+      "templateId": "R4"
+    },
+    {
+      "id": "lead-rusty-fork",
+      "slug": "the-rusty-fork-diner",
+      "name": "The Rusty Fork Diner",
+      "industry": "restaurant",
+      "restaurantCategory": "american",
+      "cuisine": "American Southern & BBQ",
+      "category": "American Diner & BBQ",
+      "description": "A Nashville institution since 1978. All-day breakfast, slow-smoked BBQ, and homestyle Southern plates in a classic diner setting on Broadway.",
+      "tagline": "Nashville's Favorite All-Day Diner Since 1978",
+      "phone": "615-555-0466",
+      "email": "hello@therustyfork.com",
+      "address": "428 Broadway",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37203",
+      "hours": {
+        "Monday - Friday": "7:00 AM - 10:00 PM",
+        "Saturday": "7:00 AM - 11:00 PM",
+        "Sunday": "8:00 AM - 9:00 PM"
+      },
+      "rating": 4.8,
+      "reviewCount": 302,
+      "photos": {
+        "hero": "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=1600&q=80",
+        "about": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1000&q=80",
+        "gallery": [
+          "https://images.unsplash.com/photo-1529543544282-ea669407fca3?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1494488900571-297f16dfdb0d?auto=format&fit=crop&w=800&q=80"
+        ],
+        "services": []
+      },
+      "services": [],
+      "menuCategories": [
+        {
+          "id": "cat-breakfast",
+          "name": "All-Day Breakfast",
+          "description": "Served 7am until close",
+          "items": [
+            {
+              "id": "item-grand-slam",
+              "name": "The Grand Slam",
+              "description": "Two eggs any style, two strips of smoked bacon, country sausage patty, hash browns, and buttermilk biscuit.",
+              "price": 14,
+              "tags": [
+                "popular"
+              ],
+              "available": true,
+              "image": "https://images.unsplash.com/photo-1529543544282-ea669407fca3?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+              "id": "item-chicken-waffles",
+              "name": "Nashville Hot Chicken & Waffles",
+              "description": "Crispy hot chicken thigh on a buttermilk waffle, hot honey drizzle, dill pickle chips.",
+              "price": 17,
+              "tags": [
+                "popular",
+                "spicy",
+                "chef-signature"
+              ],
+              "available": true,
+              "image": "https://images.unsplash.com/photo-1603532648955-039310d9ed75?auto=format&fit=crop&w=600&q=80"
+            }
+          ]
+        },
+        {
+          "id": "cat-bbq",
+          "name": "BBQ Plates",
+          "description": "Slow-smoked over hickory wood, served with two sides",
+          "items": [
+            {
+              "id": "item-brisket",
+              "name": "Smoked Brisket Plate",
+              "description": "12-hour hickory-smoked brisket, two sides (choose from: mac & cheese, collard greens, baked beans, coleslaw).",
+              "price": 22,
+              "tags": [
+                "popular",
+                "gluten-free"
+              ],
+              "available": true,
+              "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+              "id": "item-pulled-pork",
+              "name": "Pulled Pork Sandwich",
+              "description": "Slow-smoked pork shoulder on a brioche bun, house BBQ sauce, apple cider slaw.",
+              "price": 14,
+              "tags": [
+                "popular"
+              ],
+              "available": true,
+              "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+              "id": "item-ribs",
+              "name": "Half Rack Pork Ribs",
+              "description": "St. Louis-style spare ribs, dry-rubbed and smoked 6 hours, two sides.",
+              "price": 28,
+              "tags": [
+                "gluten-free"
+              ],
+              "available": true
+            }
+          ]
+        },
+        {
+          "id": "cat-desserts-rf",
+          "name": "Desserts",
+          "items": [
+            {
+              "id": "item-pie",
+              "name": "Pecan Pie Slice",
+              "description": "Classic Southern pecan pie, buttery flaky crust, served warm with vanilla ice cream.",
+              "price": 7,
+              "tags": [
+                "vegetarian",
+                "popular"
+              ],
+              "available": true,
+              "image": "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?auto=format&fit=crop&w=600&q=80"
+            }
+          ]
+        }
+      ],
+      "reviews": [
+        {
+          "id": "rev-rf1",
+          "author": "Tommy J.",
+          "rating": 5,
+          "date": "4 days ago",
+          "comment": "The brisket is everything you dream of — tender, smoky, and perfectly bark-crusted. Best BBQ on Broadway by a mile.",
+          "serviceOrDish": "Smoked Brisket",
+          "verified": true
+        },
+        {
+          "id": "rev-rf2",
+          "author": "Anita K.",
+          "rating": 5,
+          "date": "1 week ago",
+          "comment": "Nashville Hot Chicken & Waffles for breakfast? Yes please. The hot honey on top is addictive. Classic diner with real soul.",
+          "serviceOrDish": "Chicken & Waffles",
+          "verified": true
+        },
+        {
+          "id": "rev-rf3",
+          "author": "Brad H.",
+          "rating": 5,
+          "date": "3 weeks ago",
+          "comment": "Been coming since I was a kid. Nothing has changed and that's exactly the point. Comfort food done perfectly. The pecan pie is the best.",
+          "serviceOrDish": "Full Breakfast & Pecan Pie",
+          "verified": true
+        }
+      ],
+      "facebookUrl": "https://facebook.com/therustyforkdiner",
+      "googleMapsUrl": "https://maps.google.com/?q=428+Broadway+Nashville+TN",
+      "instagramUrl": "https://instagram.com/therustyfork",
+      "orderUrl": "https://order.therustyfork.com",
+      "currency": "USD",
+      "templateId": "R5"
+    }
+  ],
+  "websites": {
+    "lead-mikes-handyman": {
+      "id": "site-lead-mikes-handyman",
+      "businessId": "lead-mikes-handyman",
+      "templateId": "H1",
+      "theme": {
+        "primaryColor": "#059669",
+        "secondaryColor": "#0f172a",
+        "backgroundColor": "#ffffff",
+        "textColor": "#0f172a",
+        "fontFamily": "sans",
+        "buttonStyle": "rounded",
+        "logoType": "text",
+        "textLogo": {
+          "line1": "MIKE'S HANDYMAN SERVICES",
+          "line2": "Home Repairs & Light Remodeling",
+          "style": "stacked"
+        }
+      },
+      "pages": [
+        {
+          "id": "page-home",
+          "name": "Home",
+          "slug": "home",
+          "title": "Mike's Handyman Services | Austin, TX",
+          "sections": [
+            {
+              "id": "sec-hero-1",
+              "type": "hero",
+              "variant": "HeroA",
+              "order": 1,
+              "visible": true,
+              "content": {
+                "headline": "Reliable Home Repairs & Maintenance in Austin, TX",
+                "subheadline": "Reliable residential handyman and home maintenance services serving Austin homeowners. Specializing in drywall repair, fixture replacements, carpentry, door adjustments, and exterior deck repairs.",
+                "primaryCta": "Request a Free Quote",
+                "secondaryCta": "Call Now",
+                "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=80",
+                "badge": "4.9 ★ Local Service in Austin"
+              },
+              "settings": {
+                "alignment": "left",
+                "backgroundStyle": "white"
+              }
+            },
+            {
+              "id": "sec-services-2",
+              "type": "services",
+              "variant": "ServicesA",
+              "order": 2,
+              "visible": true,
+              "content": {
+                "heading": "Professional Services",
+                "subheading": "High quality standards, reliable turnaround, and honest upfront pricing.",
+                "items": [
+                  {
+                    "id": "h-srv-1",
+                    "name": "Drywall Repair & Patching",
+                    "description": "Seamless wall and ceiling patches, texture matching, and painting touch-ups.",
+                    "badge": "Top Request",
+                    "popular": true,
+                    "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=600&q=80"
+                  },
+                  {
+                    "id": "h-srv-2",
+                    "name": "Light Fixture & Fan Installation",
+                    "description": "Replacement of chandeliers, ceiling fans, recessed LEDs, and dimmer switches.",
+                    "badge": "Fast Turnaround",
+                    "popular": true,
+                    "image": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80"
+                  },
+                  {
+                    "id": "h-srv-3",
+                    "name": "Interior & Exterior Door Fixes",
+                    "description": "Fix sticking doors, replace deadbolts, draft sealing, and hinge realignment.",
+                    "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80"
+                  },
+                  {
+                    "id": "h-srv-4",
+                    "name": "Deck & Porch Maintenance",
+                    "description": "Board replacement, power washing, railing reinforcement, and weather staining.",
+                    "image": "https://images.unsplash.com/photo-1540518614846-7ede433c4ef2?auto=format&fit=crop&w=600&q=80"
+                  },
+                  {
+                    "id": "h-srv-5",
+                    "name": "Cabinet Hardware & Trim Carpentry",
+                    "description": "Baseboard installation, crown moulding, and fresh kitchen cabinet hardware.",
+                    "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80"
+                  }
+                ]
+              },
+              "settings": {
+                "columns": 3,
+                "backgroundStyle": "white"
+              }
+            },
+            {
+              "id": "sec-about-3",
+              "type": "about",
+              "variant": "AboutA",
+              "order": 3,
+              "visible": true,
+              "content": {
+                "heading": "Our Story & Commitments",
+                "story": "Mike's Handyman Services provides dependable repair, maintenance, and improvement services in Austin, TX. We focus on doing the job right the first time, respecting your home, and delivering honest, upfront service without hassle.",
+                "pillars": [
+                  {
+                    "title": "Clear Communication",
+                    "desc": "We arrive on time, explain the work clearly, and keep you informed every step of the way."
+                  },
+                  {
+                    "title": "Quality Workmanship",
+                    "desc": "Careful attention to detail on every repair, installation, and improvement project."
+                  },
+                  {
+                    "title": "Clean & Respectful",
+                    "desc": "We treat your home with care, lay down floor protection, and leave the workspace spotless."
+                  },
+                  {
+                    "title": "Straightforward Service",
+                    "desc": "Transparent quotes with no surprise hidden fees before work begins."
+                  }
+                ],
+                "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=80"
+              },
+              "settings": {
+                "alignment": "left",
+                "backgroundStyle": "dark"
+              }
+            },
+            {
+              "id": "sec-gallery-4",
+              "type": "gallery",
+              "variant": "GalleryA",
+              "order": 4,
+              "visible": true,
+              "content": {
+                "heading": "Recent Completed Work",
+                "subheading": "Showcasing craftsmanship across Austin and surrounding areas.",
+                "images": [
+                  "https://images.unsplash.com/photo-1540518614846-7ede433c4ef2?auto=format&fit=crop&w=800&q=80",
+                  "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80",
+                  "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80",
+                  "https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&w=800&q=80"
+                ]
+              },
+              "settings": {
+                "columns": 4,
+                "backgroundStyle": "white"
+              }
+            },
+            {
+              "id": "sec-reviews-5",
+              "type": "reviews",
+              "variant": "ReviewsA",
+              "order": 5,
+              "visible": true,
+              "content": {
+                "heading": "What Neighbors Say",
+                "subheading": "4.9 Stars based on 42 verified local experiences.",
+                "reviews": [
+                  {
+                    "id": "rev-m1",
+                    "author": "David R.",
+                    "rating": 5,
+                    "date": "2 weeks ago",
+                    "comment": "Mike replaced three ceiling fans and patched drywall where we had an old thermostat. On time, super clean, and charged exactly what was quoted.",
+                    "serviceOrDish": "Drywall & Fan Install",
+                    "verified": true
+                  },
+                  {
+                    "id": "rev-m2",
+                    "author": "Sarah L.",
+                    "rating": 5,
+                    "date": "Last month",
+                    "comment": "Fantastic work fixing our front door alignment and back deck steps. Very polite and professional throughout. Highly recommend!",
+                    "serviceOrDish": "Door & Deck Repair",
+                    "verified": true
+                  },
+                  {
+                    "id": "rev-m3",
+                    "author": "Brian T.",
+                    "rating": 5,
+                    "date": "2 months ago",
+                    "comment": "Hard to find trustworthy repair people these days. Mike arrived promptly and did great craftsmanship on our baseboards.",
+                    "serviceOrDish": "Trim Carpentry",
+                    "verified": true
+                  }
+                ]
+              },
+              "settings": {
+                "columns": 3,
+                "backgroundStyle": "white"
+              }
+            },
+            {
+              "id": "sec-faq-6",
+              "type": "faq",
+              "variant": "FAQA",
+              "order": 6,
+              "visible": true,
+              "content": {
+                "heading": "Frequently Asked Questions",
+                "subheading": "Clear, transparent answers about our process and service scheduling.",
+                "faqs": [
+                  {
+                    "question": "What types of repairs do you handle in Austin?",
+                    "answer": "We regularly handle Drywall Repair & Patching, Light Fixture & Fan Installation, Interior & Exterior Door Fixes, Deck & Porch Maintenance, and a variety of other household repairs and installations."
+                  },
+                  {
+                    "question": "How do you quote projects?",
+                    "answer": "We review your project requirements, assess photos or visit on-site if needed, and provide an upfront quote before starting any work."
+                  },
+                  {
+                    "question": "Do I need to supply the materials?",
+                    "answer": "You can supply your own fixtures (such as ceiling fans, faucets, or shelving) or we can source standard repair materials for you."
+                  },
+                  {
+                    "question": "How quickly can you schedule service?",
+                    "answer": "We schedule work based on current availability. Contact us today or submit your request to confirm the next open service window."
+                  }
+                ]
+              },
+              "settings": {
+                "backgroundStyle": "slate"
+              }
+            },
+            {
+              "id": "sec-cta-7",
+              "type": "cta",
+              "variant": "CTAA",
+              "order": 7,
+              "visible": true,
+              "content": {
+                "headline": "Ready to Get Started on Your Home?",
+                "subheadline": "Contact Mike's Handyman Services in Austin for prompt, reliable assistance.",
+                "buttonText": "Request a Free Quote"
+              },
+              "settings": {
+                "backgroundStyle": "brand"
+              }
+            },
+            {
+              "id": "sec-contact-8",
+              "type": "contact",
+              "variant": "ContactA",
+              "order": 8,
+              "visible": true,
+              "content": {
+                "heading": "Hours & Service Location",
+                "address": "4209 S Congress Ave",
+                "city": "Austin",
+                "state": "TX",
+                "zip": "78745",
+                "phone": "512-555-0194",
+                "email": "mike@mikeshandymanaustin.com",
+                "hours": {
+                  "Monday - Friday": "7:30 AM - 6:00 PM",
+                  "Saturday": "8:00 AM - 2:00 PM",
+                  "Sunday": "Closed"
+                },
+                "serviceAreas": [
+                  "South Austin",
+                  "Downtown",
+                  "Zilker",
+                  "Bouldin Creek",
+                  "Oak Hill",
+                  "Travis Heights"
+                ],
+                "googleMapsUrl": "https://maps.google.com/?q=4209+S+Congress+Ave+Austin+TX"
+              },
+              "settings": {
+                "backgroundStyle": "dark"
+              }
+            }
+          ],
+          "visible": true,
+          "isProtected": true
+        }
+      ],
+      "navigation": [
+        {
+          "id": "nav-home",
+          "label": "Home",
+          "pageSlug": "home",
+          "visible": true,
+          "order": 1
+        },
+        {
+          "id": "nav-services",
+          "label": "Services",
+          "pageSlug": "services",
+          "visible": true,
+          "order": 2
+        },
+        {
+          "id": "nav-about",
+          "label": "About",
+          "pageSlug": "about",
+          "visible": true,
+          "order": 3
+        },
+        {
+          "id": "nav-reviews",
+          "label": "Reviews",
+          "pageSlug": "reviews",
+          "visible": true,
+          "order": 4
+        },
+        {
+          "id": "nav-blog",
+          "label": "Blog",
+          "pageSlug": "blog",
+          "visible": true,
+          "order": 5
+        },
+        {
+          "id": "nav-contact",
+          "label": "Contact",
+          "pageSlug": "contact",
+          "visible": true,
+          "order": 6
+        }
+      ],
+      "revisions": [],
+      "isDraft": false,
+      "lastSavedAt": "2026-09-14T11:16:52.419Z"
+    },
+    "lead-sparkling-horizon": {
+      "id": "site-lead-sparkling-horizon",
+      "businessId": "lead-sparkling-horizon",
+      "templateId": "C1",
+      "theme": {
+        "primaryColor": "#0891b2",
+        "secondaryColor": "#0f172a",
+        "backgroundColor": "#ffffff",
+        "textColor": "#0f172a",
+        "fontFamily": "sans",
+        "buttonStyle": "pill",
+        "logoType": "text",
+        "textLogo": {
+          "line1": "SPARKLING HORIZON CLEANING",
+          "line2": "Residential & Light Commercial Cleaning",
+          "style": "stacked"
+        }
+      },
+      "pages": [
+        {
+          "id": "page-home",
+          "name": "Home",
+          "slug": "home",
+          "title": "Sparkling Horizon Cleaning | Seattle, WA",
+          "sections": [
+            {
+              "id": "sec-hero-1",
+              "type": "hero",
+              "variant": "HeroA",
+              "order": 1,
+              "visible": true,
+              "content": {
+                "headline": "Spotless Cleaning Services in Seattle, WA",
+                "subheadline": "Detailed, eco-friendly house cleaning and small office janitorial services across Greater Seattle. Offering recurring weekly, bi-weekly, deep cleaning, and move-in/out services.",
+                "primaryCta": "Get a Free Quote",
+                "secondaryCta": "View Cleaning Services",
+                "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1600&q=80",
+                "badge": "4.9 ★ Local Service in Seattle"
+              },
+              "settings": {
+                "alignment": "left",
+                "backgroundStyle": "white"
+              }
+            },
+            {
+              "id": "sec-services-2",
+              "type": "services",
+              "variant": "ServicesA",
+              "order": 2,
+              "visible": true,
+              "content": {
+                "heading": "Professional Services",
+                "subheading": "High quality standards, reliable turnaround, and honest upfront pricing.",
+                "items": [
+                  {
+                    "id": "c-srv-1",
+                    "name": "Recurring Residential Cleaning",
+                    "description": "Weekly or bi-weekly complete home upkeep with custom checklist for kitchens, bathrooms, and living areas.",
+                    "badge": "Most Popular",
+                    "popular": true,
+                    "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80"
+                  },
+                  {
+                    "id": "c-srv-2",
+                    "name": "Deep Clean & Refresh",
+                    "description": "Comprehensive top-to-bottom scrub including baseboards, interior windows, cabinet fronts, and tile grout.",
+                    "badge": "Thorough Care",
+                    "popular": true,
+                    "image": "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=600&q=80"
+                  },
+                  {
+                    "id": "c-srv-3",
+                    "name": "Move-In / Move-Out Cleaning",
+                    "description": "Leave the old residence spotless for deposit return or prepare your new home for immediate move-in.",
+                    "image": "https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?auto=format&fit=crop&w=600&q=80"
+                  },
+                  {
+                    "id": "c-srv-4",
+                    "name": "Boutique Office Cleaning",
+                    "description": "Evening sanitation for creative studios, tech offices, and professional clinics.",
+                    "image": "https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&w=600&q=80"
+                  }
+                ]
+              },
+              "settings": {
+                "columns": 3,
+                "backgroundStyle": "white"
+              }
+            },
+            {
+              "id": "sec-about-3",
+              "type": "about",
+              "variant": "AboutA",
+              "order": 3,
+              "visible": true,
+              "content": {
+                "heading": "Our Story & Commitments",
+                "story": "At Sparkling Horizon Cleaning, we take pride in delivering meticulous cleaning for our clients in Seattle, WA. Whether you need regular recurring upkeep, a deep clean, or specialized facility care, our dedicated team brings thorough standards to every visit.",
+                "pillars": [
+                  {
+                    "title": "Detail-Oriented Cleaning",
+                    "desc": "Every surface, baseboard, and corner receives attentive, thorough care."
+                  },
+                  {
+                    "title": "Customized Cleaning Plans",
+                    "desc": "Flexible scheduling designed around your lifestyle, home layout, or business hours."
+                  },
+                  {
+                    "title": "Trusted & Professional",
+                    "desc": "Reliable, punctual, and respectful cleaners who treat your property like their own."
+                  },
+                  {
+                    "title": "Consistent Quality",
+                    "desc": "Structured checklists ensure your space receives the same high standard every clean."
+                  }
+                ],
+                "image": "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1000&q=80"
+              },
+              "settings": {
+                "backgroundStyle": "slate"
+              }
+            },
+            {
+              "id": "sec-reviews-4",
+              "type": "reviews",
+              "variant": "ReviewsA",
+              "order": 4,
+              "visible": true,
+              "content": {
+                "heading": "What Neighbors Say",
+                "subheading": "4.9 Stars based on 56 verified local experiences.",
+                "reviews": [
+                  {
+                    "id": "rev-s1",
+                    "author": "Elena M.",
+                    "rating": 5,
+                    "date": "3 weeks ago",
+                    "comment": "Sparkling Horizon does an incredible job with our bi-weekly clean. They bring their own supplies and leave the house smelling fresh and clean.",
+                    "serviceOrDish": "Bi-Weekly Cleaning",
+                    "verified": true
+                  },
+                  {
+                    "id": "rev-s2",
+                    "author": "Marcus K.",
+                    "rating": 5,
+                    "date": "1 month ago",
+                    "comment": "Booked a move-out deep clean for our 2-bedroom condo in Capitol Hill. Got 100% of our deposit back without a single deduction.",
+                    "serviceOrDish": "Move-Out Deep Clean",
+                    "verified": true
+                  },
+                  {
+                    "id": "rev-s3",
+                    "author": "Claire H.",
+                    "rating": 5,
+                    "date": "2 months ago",
+                    "comment": "Super communicative and punctual. It is such a relief coming home after their visits!",
+                    "serviceOrDish": "Residential Housekeeping",
+                    "verified": true
+                  }
+                ]
+              },
+              "settings": {
+                "columns": 3,
+                "backgroundStyle": "white"
+              }
+            },
+            {
+              "id": "sec-faq-5",
+              "type": "faq",
+              "variant": "FAQA",
+              "order": 5,
+              "visible": true,
+              "content": {
+                "heading": "Frequently Asked Questions",
+                "subheading": "Clear, transparent answers about our process and service scheduling.",
+                "faqs": [
+                  {
+                    "question": "Do you provide all cleaning supplies and equipment?",
+                    "answer": "Yes, we bring our own professional-grade supplies and equipment. If you prefer specific products used in your home, let us know and we are happy to accommodate."
+                  },
+                  {
+                    "question": "How frequently can I schedule recurring cleaning?",
+                    "answer": "We offer weekly, bi-weekly, monthly, or one-time cleanings depending on your household or facility needs."
+                  },
+                  {
+                    "question": "Do I need to be home during the cleaning?",
+                    "answer": "Not at all! Many clients provide key or code access. We treat your property with complete respect and lock up securely when finished."
+                  },
+                  {
+                    "question": "Which neighborhoods in Seattle, WA do you service?",
+                    "answer": "We serve clients throughout Seattle, WA and surrounding areas. Contact us with your zip code to confirm prompt availability."
+                  }
+                ]
+              },
+              "settings": {
+                "backgroundStyle": "slate"
+              }
+            },
+            {
+              "id": "sec-cta-6",
+              "type": "cta",
+              "variant": "CTAA",
+              "order": 6,
+              "visible": true,
+              "content": {
+                "headline": "Ready to Get Started on Your Home?",
+                "subheadline": "Contact Sparkling Horizon Cleaning in Seattle for prompt, reliable assistance.",
+                "buttonText": "Get a Free Quote"
+              },
+              "settings": {
+                "backgroundStyle": "brand"
+              }
+            },
+            {
+              "id": "sec-contact-7",
+              "type": "contact",
+              "variant": "ContactA",
+              "order": 7,
+              "visible": true,
+              "content": {
+                "heading": "Hours & Service Location",
+                "address": "1420 5th Ave",
+                "city": "Seattle",
+                "state": "WA",
+                "zip": "98101",
+                "phone": "206-555-0182",
+                "email": "info@sparklinghorizonclean.com",
+                "hours": {
+                  "Monday - Friday": "8:00 AM - 5:30 PM",
+                  "Saturday": "9:00 AM - 3:00 PM",
+                  "Sunday": "Closed"
+                },
+                "serviceAreas": [
+                  "Downtown Seattle",
+                  "Capitol Hill",
+                  "Ballard",
+                  "Queen Anne",
+                  "Fremont",
+                  "Bellevue"
+                ],
+                "googleMapsUrl": "https://maps.google.com/?q=1420+5th+Ave+Seattle+WA"
+              },
+              "settings": {
+                "backgroundStyle": "dark"
+              }
+            }
+          ],
+          "visible": true,
+          "isProtected": true
+        }
+      ],
+      "navigation": [
+        {
+          "id": "nav-home",
+          "label": "Home",
+          "pageSlug": "home",
+          "visible": true,
+          "order": 1
+        },
+        {
+          "id": "nav-services",
+          "label": "Services",
+          "pageSlug": "services",
+          "visible": true,
+          "order": 2
+        },
+        {
+          "id": "nav-about",
+          "label": "About",
+          "pageSlug": "about",
+          "visible": true,
+          "order": 3
+        },
+        {
+          "id": "nav-reviews",
+          "label": "Reviews",
+          "pageSlug": "reviews",
+          "visible": true,
+          "order": 4
+        },
+        {
+          "id": "nav-blog",
+          "label": "Blog",
+          "pageSlug": "blog",
+          "visible": true,
+          "order": 5
+        },
+        {
+          "id": "nav-contact",
+          "label": "Contact",
+          "pageSlug": "contact",
+          "visible": true,
+          "order": 6
+        }
+      ],
+      "revisions": [],
+      "isDraft": false,
+      "lastSavedAt": "2026-09-14T11:16:52.420Z"
+    },
+    "lead-bella-vista": {
+      "id": "site-lead-bella-vista",
+      "businessId": "lead-bella-vista",
+      "templateId": "R1",
+      "theme": {
+        "primaryColor": "#c2410c",
+        "secondaryColor": "#1c0a00",
+        "backgroundColor": "#fffbf5",
+        "textColor": "#1c0a00",
+        "fontFamily": "serif",
+        "buttonStyle": "rounded",
+        "logoType": "text",
+        "textLogo": {
+          "line1": "BELLA VISTA TRATTORIA",
+          "line2": "Italian-American",
+          "style": "serif"
+        }
+      },
+      "pages": [
+        {
+          "id": "page-home",
+          "name": "Home",
+          "slug": "home",
+          "title": "Bella Vista Trattoria | Chicago, IL",
+          "sections": [
+            {
+              "id": "sec-hero-1",
+              "type": "hero",
+              "variant": "HeroB",
+              "order": 1,
+              "visible": true,
+              "content": {
+                "headline": "Handcrafted Flavors & Welcoming Dining in Chicago, IL",
+                "subheadline": "Handmade pasta, wood-fired seasonal pizzas, and classic Northern Italian specialties in Chicago's historic West Loop. Dine-in, heated patio seating, and catering available.",
+                "primaryCta": "View Menu",
+                "secondaryCta": "Reserve a Table",
+                "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1600&q=80",
+                "badge": "4.8 ★ Pizza & Italian in Chicago"
+              },
+              "settings": {
+                "alignment": "center",
+                "overlay": true,
+                "backgroundStyle": "dark"
+              }
+            },
+            {
+              "id": "sec-menu-2",
+              "type": "menu",
+              "variant": "MenuA",
+              "order": 2,
+              "visible": true,
+              "content": {
+                "heading": "Our Menu",
+                "subheading": "Italian-American cuisine with authentic ingredients and culinary care.",
+                "items": [
+                  {
+                    "id": "item-polpo",
+                    "name": "Polpo Grigliato",
+                    "category": "Antipasti",
+                    "description": "Charred Mediterranean octopus, fingerling potato confit, smoked paprika aioli, pickled shallots.",
+                    "price": "$22.00",
+                    "popular": false,
+                    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+                    "dietary": [
+                      "gluten-free"
+                    ],
+                    "visible": true
+                  },
+                  {
+                    "id": "item-bruschetta",
+                    "name": "Bruschetta al Pomodoro",
+                    "category": "Antipasti",
+                    "description": "Grilled sourdough, heirloom tomatoes, fresh basil, aged balsamic, extra virgin olive oil.",
+                    "price": "$14.00",
+                    "popular": true,
+                    "image": "https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?auto=format&fit=crop&w=600&q=80",
+                    "dietary": [
+                      "vegan"
+                    ],
+                    "visible": true
+                  },
+                  {
+                    "id": "item-pappardelle",
+                    "name": "Pappardelle al Cinghiale",
+                    "category": "Handmade Pasta",
+                    "description": "Wide ribbon pasta, slow-braised wild boar ragù, fresh rosemary, aged pecorino romano.",
+                    "price": "$26.00",
+                    "popular": true,
+                    "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=600&q=80",
+                    "dietary": [
+                      "chef-signature"
+                    ],
+                    "visible": true
+                  },
+                  {
+                    "id": "item-tagliolini",
+                    "name": "Tagliolini al Tartufo",
+                    "category": "Handmade Pasta",
+                    "description": "Delicate egg tagliolini, cultured Umbrian butter, shaved black winter truffle, Parmigiano-Reggiano.",
+                    "price": "$29.00",
+                    "popular": true,
+                    "image": "https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=600&q=80",
+                    "dietary": [
+                      "vegetarian",
+                      "chef-signature"
+                    ],
+                    "visible": true
+                  },
+                  {
+                    "id": "item-margherita",
+                    "name": "Margherita Verace Pizza",
+                    "category": "Wood-Fired Pizza",
+                    "description": "San Marzano D.O.P. tomatoes, buffalo mozzarella, fresh basil, cold-pressed extra virgin olive oil.",
+                    "price": "$21.00",
+                    "popular": true,
+                    "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80",
+                    "dietary": [
+                      "vegetarian"
+                    ],
+                    "visible": true
+                  },
+                  {
+                    "id": "item-tiramisu",
+                    "name": "Classic Tiramisù Tradizionale",
+                    "category": "Dolci",
+                    "description": "Espresso-soaked savoiardi ladyfingers, whipped mascarpone zabaione, Valrhona dark cocoa powder.",
+                    "price": "$12.00",
+                    "popular": true,
+                    "image": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=600&q=80",
+                    "dietary": [
+                      "vegetarian"
+                    ],
+                    "visible": true
+                  }
+                ],
+                "menuCategories": [
+                  {
+                    "id": "cat-antipasti",
+                    "name": "Antipasti",
+                    "description": "Starters and small plates",
+                    "items": [
+                      {
+                        "id": "item-polpo",
+                        "name": "Polpo Grigliato",
+                        "description": "Charred Mediterranean octopus, fingerling potato confit, smoked paprika aioli, pickled shallots.",
+                        "price": 22,
+                        "tags": [
+                          "gluten-free"
+                        ],
+                        "available": true,
+                        "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80"
+                      },
+                      {
+                        "id": "item-bruschetta",
+                        "name": "Bruschetta al Pomodoro",
+                        "description": "Grilled sourdough, heirloom tomatoes, fresh basil, aged balsamic, extra virgin olive oil.",
+                        "price": 14,
+                        "tags": [
+                          "vegan",
+                          "popular"
+                        ],
+                        "available": true,
+                        "image": "https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?auto=format&fit=crop&w=600&q=80"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "cat-pasta",
+                    "name": "Handmade Pasta",
+                    "description": "Fresh pasta made daily in-house",
+                    "items": [
+                      {
+                        "id": "item-pappardelle",
+                        "name": "Pappardelle al Cinghiale",
+                        "description": "Wide ribbon pasta, slow-braised wild boar ragù, fresh rosemary, aged pecorino romano.",
+                        "price": 26,
+                        "tags": [
+                          "popular",
+                          "chef-signature"
+                        ],
+                        "available": true,
+                        "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=600&q=80"
+                      },
+                      {
+                        "id": "item-tagliolini",
+                        "name": "Tagliolini al Tartufo",
+                        "description": "Delicate egg tagliolini, cultured Umbrian butter, shaved black winter truffle, Parmigiano-Reggiano.",
+                        "price": 29,
+                        "tags": [
+                          "vegetarian",
+                          "chef-signature",
+                          "popular"
+                        ],
+                        "available": true,
+                        "image": "https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=600&q=80"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "cat-pizza",
+                    "name": "Wood-Fired Pizza",
+                    "description": "Authentic Neapolitan-style, baked in our wood-fire oven",
+                    "items": [
+                      {
+                        "id": "item-margherita",
+                        "name": "Margherita Verace Pizza",
+                        "description": "San Marzano D.O.P. tomatoes, buffalo mozzarella, fresh basil, cold-pressed extra virgin olive oil.",
+                        "price": 21,
+                        "tags": [
+                          "vegetarian",
+                          "popular"
+                        ],
+                        "available": true,
+                        "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "cat-dolci",
+                    "name": "Dolci",
+                    "description": "Desserts",
+                    "items": [
+                      {
+                        "id": "item-tiramisu",
+                        "name": "Classic Tiramisù Tradizionale",
+                        "description": "Espresso-soaked savoiardi ladyfingers, whipped mascarpone zabaione, Valrhona dark cocoa powder.",
+                        "price": 12,
+                        "tags": [
+                          "vegetarian",
+                          "popular"
+                        ],
+                        "available": true,
+                        "image": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=600&q=80"
+                      }
+                    ]
+                  }
+                ],
+                "currency": "USD"
+              },
+              "settings": {
+                "backgroundStyle": "white"
+              }
+            },
+            {
+              "id": "sec-gallery-3",
+              "type": "gallery",
+              "variant": "GalleryA",
+              "order": 3,
+              "visible": true,
+              "content": {
+                "heading": "Our Dishes & Atmosphere",
+                "subheading": "Experience the flavors and ambiance of Bella Vista Trattoria.",
+                "images": [
+                  "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=800&q=80",
+                  "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80",
+                  "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+                  "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80"
+                ]
+              },
+              "settings": {
+                "columns": 4,
+                "backgroundStyle": "slate"
+              }
+            },
+            {
+              "id": "sec-about-4",
+              "type": "about",
+              "variant": "AboutB",
+              "order": 4,
+              "visible": true,
+              "content": {
+                "heading": "Our Story & Commitments",
+                "story": "Welcome to Bella Vista Trattoria! We are passionate about bringing vibrant flavors and genuine hospitality to Chicago, IL. Every dish is prepared with fresh ingredients, time-tested recipes, and a passion for good food enjoyed among good company.",
+                "pillars": [
+                  {
+                    "title": "Fresh, Quality Ingredients",
+                    "desc": "Carefully chosen produce and meats sourced to elevate every flavor on the plate."
+                  },
+                  {
+                    "title": "Crafted with Care",
+                    "desc": "From our kitchen to your table, each recipe is prepared from scratch with culinary pride."
+                  },
+                  {
+                    "title": "Warm Hospitality",
+                    "desc": "A relaxed, inviting environment whether you are catching up with friends or celebrating a milestone."
+                  },
+                  {
+                    "title": "Takeout & Catering",
+                    "desc": "Enjoy your favorites at home or let us cater your special event with ease."
+                  }
+                ],
+                "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=80"
+              },
+              "settings": {
+                "backgroundStyle": "white"
+              }
+            },
+            {
+              "id": "sec-reviews-5",
+              "type": "reviews",
+              "variant": "ReviewsA",
+              "order": 5,
+              "visible": true,
+              "content": {
+                "heading": "What Our Guests Say",
+                "subheading": "4.8 Stars based on 89 verified guest experiences.",
+                "reviews": [
+                  {
+                    "id": "rev-b1",
+                    "author": "Gianna P.",
+                    "rating": 5,
+                    "date": "1 week ago",
+                    "comment": "The Pappardelle al Cinghiale was outstanding! Authentic flavors that transported me straight to Florence. Outstanding wine list too.",
+                    "serviceOrDish": "Pappardelle & Barolo",
+                    "verified": true
+                  },
+                  {
+                    "id": "rev-b2",
+                    "author": "Robert D.",
+                    "rating": 5,
+                    "date": "2 weeks ago",
+                    "comment": "Celebrated our anniversary here on the heated patio. Fantastic attentive staff, wonderful ambiance, and best tiramisu in the West Loop.",
+                    "serviceOrDish": "Dinner for Two",
+                    "verified": true
+                  },
+                  {
+                    "id": "rev-b3",
+                    "author": "Jessica T.",
+                    "rating": 5,
+                    "date": "Last month",
+                    "comment": "Authentic wood-fired crust and truly delicious handmade pasta. We make it a monthly tradition now.",
+                    "serviceOrDish": "Margherita & Tagliolini",
+                    "verified": true
+                  }
+                ]
+              },
+              "settings": {
+                "columns": 3,
+                "backgroundStyle": "slate"
+              }
+            },
+            {
+              "id": "sec-cta-6",
+              "type": "cta",
+              "variant": "CTAC",
+              "order": 6,
+              "visible": true,
+              "content": {
+                "headline": "Visit Bella Vista Trattoria in Chicago",
+                "subheadline": "Reserve a table, view our full menu, or order online today.",
+                "buttonText": "View Menu",
+                "reservationUrl": "https://resy.com/cities/chi/bella-vista"
+              },
+              "settings": {
+                "backgroundStyle": "brand"
+              }
+            },
+            {
+              "id": "sec-contact-7",
+              "type": "contact",
+              "variant": "ContactA",
+              "order": 7,
+              "visible": true,
+              "content": {
+                "heading": "Find Us & Opening Hours",
+                "address": "832 W Randolph St",
+                "city": "Chicago",
+                "state": "IL",
+                "zip": "60607",
+                "phone": "312-555-0149",
+                "email": "reservations@bellavistachicago.com",
+                "hours": {
+                  "Tuesday - Thursday": "4:30 PM - 10:00 PM",
+                  "Friday - Saturday": "4:00 PM - 11:00 PM",
+                  "Sunday": "4:00 PM - 9:30 PM",
+                  "Monday": "Closed"
+                },
+                "serviceAreas": [
+                  "Chicago"
+                ],
+                "googleMapsUrl": "https://maps.google.com/?q=832+W+Randolph+St+Chicago+IL",
+                "instagramUrl": "https://instagram.com/bellavistachicago"
+              },
+              "settings": {
+                "backgroundStyle": "dark"
+              }
+            }
+          ],
+          "visible": true,
+          "isProtected": true
+        }
+      ],
+      "navigation": [
+        {
+          "id": "nav-home",
+          "label": "Home",
+          "pageSlug": "home",
+          "visible": true,
+          "order": 1
+        },
+        {
+          "id": "nav-menu",
+          "label": "Menu",
+          "pageSlug": "menu",
+          "visible": true,
+          "order": 2
+        },
+        {
+          "id": "nav-about",
+          "label": "About",
+          "pageSlug": "about",
+          "visible": true,
+          "order": 3
+        },
+        {
+          "id": "nav-reservations",
+          "label": "Reservations",
+          "pageSlug": "reservations",
+          "visible": true,
+          "order": 4
+        },
+        {
+          "id": "nav-reviews",
+          "label": "Reviews",
+          "pageSlug": "reviews",
+          "visible": true,
+          "order": 5
+        },
+        {
+          "id": "nav-contact",
+          "label": "Contact",
+          "pageSlug": "contact",
+          "visible": true,
+          "order": 6
+        }
+      ],
+      "revisions": [],
+      "isDraft": false,
+      "lastSavedAt": "2026-09-14T11:16:52.420Z"
+    },
+    "lead-taco-libre": {
+      "id": "site-lead-taco-libre",
+      "businessId": "lead-taco-libre",
+      "templateId": "R2",
+      "theme": {
+        "primaryColor": "#ea580c",
+        "secondaryColor": "#713f12",
+        "backgroundColor": "#ffffff",
+        "textColor": "#1c0a00",
+        "fontFamily": "sans",
+        "buttonStyle": "pill",
+        "logoType": "text",
+        "textLogo": {
+          "line1": "TACO LIBRE",
+          "line2": "Mexican & Tex-Mex",
+          "style": "stacked"
+        }
+      },
+      "pages": [
+        {
+          "id": "page-home",
+          "name": "Home",
+          "slug": "home",
+          "title": "Taco Libre | Austin, TX",
+          "sections": [
+            {
+              "id": "sec-hero-1",
+              "type": "hero",
+              "variant": "HeroA",
+              "order": 1,
+              "visible": true,
+              "content": {
+                "headline": "Handcrafted Flavors & Welcoming Dining in Austin, TX",
+                "subheadline": "Bold street tacos, handcrafted margaritas, and festive atmosphere in the heart of East Austin. Family recipes passed down three generations.",
+                "primaryCta": "View Menu",
+                "secondaryCta": "Reserve a Table",
+                "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=1600&q=80",
+                "badge": "4.7 ★ Mexican & Latin in Austin"
+              },
+              "settings": {
+                "alignment": "left",
+                "backgroundStyle": "white"
+              }
+            },
+            {
+              "id": "sec-menu-2",
+              "type": "menu",
+              "variant": "MenuB",
+              "order": 2,
+              "visible": true,
+              "content": {
+                "heading": "Our Menu",
+                "subheading": "Mexican & Tex-Mex cuisine with authentic ingredients and culinary care.",
+                "items": [
+                  {
+                    "id": "item-al-pastor",
+                    "name": "Al Pastor",
+                    "category": "Street Tacos",
+                    "description": "Achiote-marinated pork, grilled pineapple, white onion, fresh cilantro, salsa verde.",
+                    "price": "$4.50",
+                    "popular": true,
+                    "image": "https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?auto=format&fit=crop&w=600&q=80",
+                    "dietary": [
+                      "spicy"
+                    ],
+                    "visible": true
+                  },
+                  {
+                    "id": "item-carne-asada",
+                    "name": "Carne Asada",
+                    "category": "Street Tacos",
+                    "description": "Grilled skirt steak, roasted jalapeño salsa, white onion, fresh cilantro, lime.",
+                    "price": "$5.50",
+                    "popular": true,
+                    "image": "https://images.unsplash.com/photo-1505253758473-96b7015fcd40?auto=format&fit=crop&w=600&q=80",
+                    "dietary": [
+                      "gluten-free"
+                    ],
+                    "visible": true
+                  },
+                  {
+                    "id": "item-veggie",
+                    "name": "Veggie & Cheese",
+                    "category": "Street Tacos",
+                    "description": "Roasted seasonal vegetables, queso fresco, chipotle crema, pickled red onion.",
+                    "price": "$4.00",
+                    "popular": false,
+                    "image": "https://images.unsplash.com/photo-1583835746434-cf1534674ad5?auto=format&fit=crop&w=600&q=80",
+                    "dietary": [
+                      "vegetarian",
+                      "vegan-available"
+                    ],
+                    "visible": true
+                  },
+                  {
+                    "id": "item-guac",
+                    "name": "Fresh Guacamole",
+                    "category": "Sides & Extras",
+                    "description": "Made to order with Hass avocados, serrano chile, lime, and cilantro. Served with house chips.",
+                    "price": "$8.00",
+                    "popular": true,
+                    "image": "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=600&q=80",
+                    "dietary": [
+                      "vegan",
+                      "gluten-free"
+                    ],
+                    "visible": true
+                  },
+                  {
+                    "id": "item-elote",
+                    "name": "Mexican Street Corn (Elote)",
+                    "category": "Sides & Extras",
+                    "description": "Grilled corn on the cob, cotija cheese, chipotle mayo, chili powder, lime.",
+                    "price": "$6.00",
+                    "popular": true,
+                    "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=600&q=80",
+                    "dietary": [
+                      "vegetarian"
+                    ],
+                    "visible": true
+                  },
+                  {
+                    "id": "item-margarita",
+                    "name": "House Margarita",
+                    "category": "Drinks",
+                    "description": "El Jimador blanco, fresh lime, agave nectar. On the rocks or frozen.",
+                    "price": "$11.00",
+                    "popular": true,
+                    "dietary": [],
+                    "visible": true
+                  },
+                  {
+                    "id": "item-horchata",
+                    "name": "Horchata",
+                    "category": "Drinks",
+                    "description": "House-made rice milk with cinnamon and vanilla. Non-alcoholic.",
+                    "price": "$4.50",
+                    "popular": false,
+                    "dietary": [
+                      "non-alcoholic",
+                      "vegan"
+                    ],
+                    "visible": true
+                  }
+                ],
+                "menuCategories": [
+                  {
+                    "id": "cat-tacos",
+                    "name": "Street Tacos",
+                    "description": "Traditional corn tortillas, two per order",
+                    "items": [
+                      {
+                        "id": "item-al-pastor",
+                        "name": "Al Pastor",
+                        "description": "Achiote-marinated pork, grilled pineapple, white onion, fresh cilantro, salsa verde.",
+                        "price": 4.5,
+                        "tags": [
+                          "popular",
+                          "spicy"
+                        ],
+                        "available": true,
+                        "image": "https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?auto=format&fit=crop&w=600&q=80"
+                      },
+                      {
+                        "id": "item-carne-asada",
+                        "name": "Carne Asada",
+                        "description": "Grilled skirt steak, roasted jalapeño salsa, white onion, fresh cilantro, lime.",
+                        "price": 5.5,
+                        "tags": [
+                          "popular",
+                          "gluten-free"
+                        ],
+                        "available": true,
+                        "image": "https://images.unsplash.com/photo-1505253758473-96b7015fcd40?auto=format&fit=crop&w=600&q=80"
+                      },
+                      {
+                        "id": "item-veggie",
+                        "name": "Veggie & Cheese",
+                        "description": "Roasted seasonal vegetables, queso fresco, chipotle crema, pickled red onion.",
+                        "price": 4,
+                        "tags": [
+                          "vegetarian",
+                          "vegan-available"
+                        ],
+                        "available": true,
+                        "image": "https://images.unsplash.com/photo-1583835746434-cf1534674ad5?auto=format&fit=crop&w=600&q=80"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "cat-sides",
+                    "name": "Sides & Extras",
+                    "items": [
+                      {
+                        "id": "item-guac",
+                        "name": "Fresh Guacamole",
+                        "description": "Made to order with Hass avocados, serrano chile, lime, and cilantro. Served with house chips.",
+                        "price": 8,
+                        "tags": [
+                          "vegan",
+                          "gluten-free",
+                          "popular"
+                        ],
+                        "available": true,
+                        "image": "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=600&q=80"
+                      },
+                      {
+                        "id": "item-elote",
+                        "name": "Mexican Street Corn (Elote)",
+                        "description": "Grilled corn on the cob, cotija cheese, chipotle mayo, chili powder, lime.",
+                        "price": 6,
+                        "tags": [
+                          "vegetarian",
+                          "popular"
+                        ],
+                        "available": true,
+                        "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=600&q=80"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "cat-drinks",
+                    "name": "Drinks",
+                    "items": [
+                      {
+                        "id": "item-margarita",
+                        "name": "House Margarita",
+                        "description": "El Jimador blanco, fresh lime, agave nectar. On the rocks or frozen.",
+                        "price": 11,
+                        "tags": [
+                          "popular"
+                        ],
+                        "available": true
+                      },
+                      {
+                        "id": "item-horchata",
+                        "name": "Horchata",
+                        "description": "House-made rice milk with cinnamon and vanilla. Non-alcoholic.",
+                        "price": 4.5,
+                        "tags": [
+                          "non-alcoholic",
+                          "vegan"
+                        ],
+                        "available": true
+                      }
+                    ]
+                  }
+                ],
+                "orderUrl": "https://order.tacolibreaustin.com",
+                "currency": "USD"
+              },
+              "settings": {
+                "backgroundStyle": "slate"
+              }
+            },
+            {
+              "id": "sec-gallery-3",
+              "type": "gallery",
+              "variant": "GalleryB",
+              "order": 3,
+              "visible": true,
+              "content": {
+                "heading": "Our Dishes & Atmosphere",
+                "subheading": "Experience the flavors and ambiance of Taco Libre.",
+                "images": [
+                  "https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?auto=format&fit=crop&w=800&q=80",
+                  "https://images.unsplash.com/photo-1505253758473-96b7015fcd40?auto=format&fit=crop&w=800&q=80",
+                  "https://images.unsplash.com/photo-1583835746434-cf1534674ad5?auto=format&fit=crop&w=800&q=80",
+                  "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=80"
+                ]
+              },
+              "settings": {
+                "columns": 3,
+                "backgroundStyle": "white"
+              }
+            },
+            {
+              "id": "sec-about-4",
+              "type": "about",
+              "variant": "AboutA",
+              "order": 4,
+              "visible": true,
+              "content": {
+                "heading": "Our Story & Commitments",
+                "story": "Welcome to Taco Libre! We are passionate about bringing vibrant flavors and genuine hospitality to Austin, TX. Every dish is prepared with fresh ingredients, time-tested recipes, and a passion for good food enjoyed among good company.",
+                "pillars": [
+                  {
+                    "title": "Fresh, Quality Ingredients",
+                    "desc": "Carefully chosen produce and meats sourced to elevate every flavor on the plate."
+                  },
+                  {
+                    "title": "Crafted with Care",
+                    "desc": "From our kitchen to your table, each recipe is prepared from scratch with culinary pride."
+                  },
+                  {
+                    "title": "Warm Hospitality",
+                    "desc": "A relaxed, inviting environment whether you are catching up with friends or celebrating a milestone."
+                  },
+                  {
+                    "title": "Takeout & Catering",
+                    "desc": "Enjoy your favorites at home or let us cater your special event with ease."
+                  }
+                ],
+                "image": "https://images.unsplash.com/photo-1504544750208-dc0358e63f7f?auto=format&fit=crop&w=1000&q=80"
+              },
+              "settings": {
+                "backgroundStyle": "slate"
+              }
+            },
+            {
+              "id": "sec-reviews-5",
+              "type": "reviews",
+              "variant": "ReviewsB",
+              "order": 5,
+              "visible": true,
+              "content": {
+                "heading": "What Our Guests Say",
+                "subheading": "4.7 Stars based on 134 verified guest experiences.",
+                "reviews": [
+                  {
+                    "id": "rev-tl1",
+                    "author": "Marcus B.",
+                    "rating": 5,
+                    "date": "3 days ago",
+                    "comment": "Best al pastor tacos in Austin, hands down. The pineapple on top makes it perfect. Will be back weekly.",
+                    "serviceOrDish": "Al Pastor Tacos",
+                    "verified": true
+                  },
+                  {
+                    "id": "rev-tl2",
+                    "author": "Sofia R.",
+                    "rating": 5,
+                    "date": "2 weeks ago",
+                    "comment": "Incredible brunch! The Sunday hours are perfect. Huevos rancheros and fresh horchata — unbeatable combo.",
+                    "serviceOrDish": "Sunday Brunch",
+                    "verified": true
+                  },
+                  {
+                    "id": "rev-tl3",
+                    "author": "Jake T.",
+                    "rating": 4,
+                    "date": "Last month",
+                    "comment": "Great vibe, great food. The guacamole is made fresh right in front of you. Margaritas are strong and well-priced.",
+                    "serviceOrDish": "Guac & Margaritas",
+                    "verified": true
+                  }
+                ]
+              },
+              "settings": {
+                "columns": 3,
+                "backgroundStyle": "white"
+              }
+            },
+            {
+              "id": "sec-cta-6",
+              "type": "cta",
+              "variant": "CTAB",
+              "order": 6,
+              "visible": true,
+              "content": {
+                "headline": "Visit Taco Libre in Austin",
+                "subheadline": "Reserve a table, view our full menu, or order online today.",
+                "buttonText": "View Menu",
+                "orderUrl": "https://order.tacolibreaustin.com"
+              },
+              "settings": {
+                "backgroundStyle": "brand"
+              }
+            },
+            {
+              "id": "sec-contact-7",
+              "type": "contact",
+              "variant": "ContactA",
+              "order": 7,
+              "visible": true,
+              "content": {
+                "heading": "Find Us & Opening Hours",
+                "address": "2214 E Cesar Chavez St",
+                "city": "Austin",
+                "state": "TX",
+                "zip": "78702",
+                "phone": "512-555-0372",
+                "email": "hola@tacolibreaustin.com",
+                "hours": {
+                  "Monday - Thursday": "11:00 AM - 10:00 PM",
+                  "Friday - Saturday": "11:00 AM - 12:00 AM",
+                  "Sunday": "10:00 AM - 9:00 PM"
+                },
+                "serviceAreas": [
+                  "Austin"
+                ],
+                "googleMapsUrl": "https://maps.google.com/?q=2214+E+Cesar+Chavez+St+Austin+TX",
+                "instagramUrl": "https://instagram.com/tacolibreaustin"
+              },
+              "settings": {
+                "backgroundStyle": "dark"
+              }
+            }
+          ],
+          "visible": true,
+          "isProtected": true
+        }
+      ],
+      "navigation": [
+        {
+          "id": "nav-home",
+          "label": "Home",
+          "pageSlug": "home",
+          "visible": true,
+          "order": 1
+        },
+        {
+          "id": "nav-menu",
+          "label": "Menu",
+          "pageSlug": "menu",
+          "visible": true,
+          "order": 2
+        },
+        {
+          "id": "nav-about",
+          "label": "About",
+          "pageSlug": "about",
+          "visible": true,
+          "order": 3
+        },
+        {
+          "id": "nav-reservations",
+          "label": "Reservations",
+          "pageSlug": "reservations",
+          "visible": true,
+          "order": 4
+        },
+        {
+          "id": "nav-reviews",
+          "label": "Reviews",
+          "pageSlug": "reviews",
+          "visible": true,
+          "order": 5
+        },
+        {
+          "id": "nav-contact",
+          "label": "Contact",
+          "pageSlug": "contact",
+          "visible": true,
+          "order": 6
+        }
+      ],
+      "revisions": [],
+      "isDraft": false,
+      "lastSavedAt": "2026-09-14T11:16:52.421Z"
+    },
+    "lead-big-stack": {
+      "id": "site-lead-big-stack",
+      "businessId": "lead-big-stack",
+      "templateId": "R3",
+      "theme": {
+        "primaryColor": "#dc2626",
+        "secondaryColor": "#f59e0b",
+        "backgroundColor": "#0c0a09",
+        "textColor": "#f5f5f4",
+        "fontFamily": "sans",
+        "buttonStyle": "square",
+        "logoType": "text",
+        "textLogo": {
+          "line1": "BIG STACK BURGERS",
+          "line2": "American Burgers & Fast Food",
+          "style": "stacked"
+        }
+      },
+      "pages": [
+        {
+          "id": "page-home",
+          "name": "Home",
+          "slug": "home",
+          "title": "Big Stack Burgers | Houston, TX",
+          "sections": [
+            {
+              "id": "sec-hero-1",
+              "type": "hero",
+              "variant": "HeroC",
+              "order": 1,
+              "visible": true,
+              "content": {
+                "headline": "Handcrafted Flavors & Welcoming Dining in Houston, TX",
+                "subheadline": "Smash burgers, thick-cut fries, and classic shakes served fast in Houston's Midtown. No shortcuts — just real beef, real cheese, real flavor.",
+                "primaryCta": "View Menu",
+                "secondaryCta": "Reserve a Table",
+                "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1600&q=80",
+                "badge": "4.6 ★ Fast Food & Burgers in Houston"
+              },
+              "settings": {
+                "alignment": "center",
+                "backgroundStyle": "dark"
+              }
+            },
+            {
+              "id": "sec-menu-2",
+              "type": "menu",
+              "variant": "MenuA",
+              "order": 2,
+              "visible": true,
+              "content": {
+                "heading": "Our Menu",
+                "subheading": "American Burgers & Fast Food cuisine with authentic ingredients and culinary care.",
+                "items": [
+                  {
+                    "id": "item-big-stack",
+                    "name": "The Big Stack",
+                    "category": "Burgers",
+                    "description": "Double smash patties, American cheese, shredded lettuce, tomato, pickles, Big Stack sauce.",
+                    "price": "$13.00",
+                    "popular": true,
+                    "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80",
+                    "dietary": [
+                      "signature"
+                    ],
+                    "visible": true
+                  },
+                  {
+                    "id": "item-classic",
+                    "name": "Classic Single",
+                    "category": "Burgers",
+                    "description": "Smash patty, cheddar, onion, mustard, ketchup, pickles. Old-school done right.",
+                    "price": "$9.00",
+                    "popular": true,
+                    "image": "https://images.unsplash.com/photo-1586816001966-79b736744398?auto=format&fit=crop&w=600&q=80",
+                    "dietary": [],
+                    "visible": true
+                  },
+                  {
+                    "id": "item-mushroom",
+                    "name": "Mushroom Swiss",
+                    "category": "Burgers",
+                    "description": "Smash patty, sautéed cremini mushrooms, Swiss cheese, garlic aioli, arugula.",
+                    "price": "$12.00",
+                    "popular": false,
+                    "image": "https://images.unsplash.com/photo-1541614101331-1a5a3a194e92?auto=format&fit=crop&w=600&q=80",
+                    "dietary": [],
+                    "visible": true
+                  },
+                  {
+                    "id": "item-fries",
+                    "name": "Thick-Cut Fries",
+                    "category": "Sides",
+                    "description": "Hand-cut russet potatoes, fried golden, seasoned with sea salt.",
+                    "price": "$5.00",
+                    "popular": true,
+                    "image": "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=600&q=80",
+                    "dietary": [
+                      "vegan"
+                    ],
+                    "visible": true
+                  },
+                  {
+                    "id": "item-rings",
+                    "name": "Onion Rings",
+                    "category": "Sides",
+                    "description": "Beer-battered Vidalia onion rings with smoky chipotle dip.",
+                    "price": "$6.00",
+                    "popular": false,
+                    "dietary": [
+                      "vegetarian"
+                    ],
+                    "visible": true
+                  },
+                  {
+                    "id": "item-vanilla-shake",
+                    "name": "Classic Vanilla Shake",
+                    "category": "Shakes",
+                    "description": "Whole milk vanilla bean ice cream, blended thick.",
+                    "price": "$7.00",
+                    "popular": true,
+                    "dietary": [
+                      "vegetarian"
+                    ],
+                    "visible": true
+                  },
+                  {
+                    "id": "item-chocolate-shake",
+                    "name": "Chocolate Fudge Shake",
+                    "category": "Shakes",
+                    "description": "Rich chocolate ice cream with hot fudge swirl.",
+                    "price": "$7.00",
+                    "popular": false,
+                    "dietary": [
+                      "vegetarian"
+                    ],
+                    "visible": true
+                  }
+                ],
+                "menuCategories": [
+                  {
+                    "id": "cat-burgers",
+                    "name": "Burgers",
+                    "description": "All burgers smashed fresh on the flat-top",
+                    "items": [
+                      {
+                        "id": "item-big-stack",
+                        "name": "The Big Stack",
+                        "description": "Double smash patties, American cheese, shredded lettuce, tomato, pickles, Big Stack sauce.",
+                        "price": 13,
+                        "tags": [
+                          "popular",
+                          "signature"
+                        ],
+                        "available": true,
+                        "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80"
+                      },
+                      {
+                        "id": "item-classic",
+                        "name": "Classic Single",
+                        "description": "Smash patty, cheddar, onion, mustard, ketchup, pickles. Old-school done right.",
+                        "price": 9,
+                        "tags": [
+                          "popular"
+                        ],
+                        "available": true,
+                        "image": "https://images.unsplash.com/photo-1586816001966-79b736744398?auto=format&fit=crop&w=600&q=80"
+                      },
+                      {
+                        "id": "item-mushroom",
+                        "name": "Mushroom Swiss",
+                        "description": "Smash patty, sautéed cremini mushrooms, Swiss cheese, garlic aioli, arugula.",
+                        "price": 12,
+                        "tags": [],
+                        "available": true,
+                        "image": "https://images.unsplash.com/photo-1541614101331-1a5a3a194e92?auto=format&fit=crop&w=600&q=80"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "cat-sides-bs",
+                    "name": "Sides",
+                    "items": [
+                      {
+                        "id": "item-fries",
+                        "name": "Thick-Cut Fries",
+                        "description": "Hand-cut russet potatoes, fried golden, seasoned with sea salt.",
+                        "price": 5,
+                        "tags": [
+                          "vegan",
+                          "popular"
+                        ],
+                        "available": true,
+                        "image": "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=600&q=80"
+                      },
+                      {
+                        "id": "item-rings",
+                        "name": "Onion Rings",
+                        "description": "Beer-battered Vidalia onion rings with smoky chipotle dip.",
+                        "price": 6,
+                        "tags": [
+                          "vegetarian"
+                        ],
+                        "available": true
+                      }
+                    ]
+                  },
+                  {
+                    "id": "cat-shakes",
+                    "name": "Shakes",
+                    "items": [
+                      {
+                        "id": "item-vanilla-shake",
+                        "name": "Classic Vanilla Shake",
+                        "description": "Whole milk vanilla bean ice cream, blended thick.",
+                        "price": 7,
+                        "tags": [
+                          "vegetarian",
+                          "popular"
+                        ],
+                        "available": true
+                      },
+                      {
+                        "id": "item-chocolate-shake",
+                        "name": "Chocolate Fudge Shake",
+                        "description": "Rich chocolate ice cream with hot fudge swirl.",
+                        "price": 7,
+                        "tags": [
+                          "vegetarian"
+                        ],
+                        "available": true
+                      }
+                    ]
+                  }
+                ],
+                "orderUrl": "https://order.bigstackburgers.com",
+                "currency": "USD"
+              },
+              "settings": {
+                "backgroundStyle": "dark"
+              }
+            },
+            {
+              "id": "sec-about-3",
+              "type": "about",
+              "variant": "AboutC",
+              "order": 3,
+              "visible": true,
+              "content": {
+                "heading": "Our Story & Commitments",
+                "story": "Welcome to Big Stack Burgers! We are passionate about bringing vibrant flavors and genuine hospitality to Houston, TX. Every dish is prepared with fresh ingredients, time-tested recipes, and a passion for good food enjoyed among good company.",
+                "pillars": [
+                  {
+                    "title": "Fresh, Quality Ingredients",
+                    "desc": "Carefully chosen produce and meats sourced to elevate every flavor on the plate."
+                  },
+                  {
+                    "title": "Crafted with Care",
+                    "desc": "From our kitchen to your table, each recipe is prepared from scratch with culinary pride."
+                  },
+                  {
+                    "title": "Warm Hospitality",
+                    "desc": "A relaxed, inviting environment whether you are catching up with friends or celebrating a milestone."
+                  },
+                  {
+                    "title": "Takeout & Catering",
+                    "desc": "Enjoy your favorites at home or let us cater your special event with ease."
+                  }
+                ],
+                "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1000&q=80"
+              },
+              "settings": {
+                "backgroundStyle": "dark"
+              }
+            },
+            {
+              "id": "sec-reviews-4",
+              "type": "reviews",
+              "variant": "ReviewsC",
+              "order": 4,
+              "visible": true,
+              "content": {
+                "heading": "What Our Guests Say",
+                "subheading": "4.6 Stars based on 211 verified guest experiences.",
+                "reviews": [
+                  {
+                    "id": "rev-bs1",
+                    "author": "Derrick W.",
+                    "rating": 5,
+                    "date": "1 week ago",
+                    "comment": "The Big Stack is everything. Perfectly smashed, crispy edges, and that sauce is addictive. Best burger in Houston Midtown.",
+                    "serviceOrDish": "The Big Stack",
+                    "verified": true
+                  },
+                  {
+                    "id": "rev-bs2",
+                    "author": "Tanya M.",
+                    "rating": 5,
+                    "date": "2 weeks ago",
+                    "comment": "Fast, fresh, and delicious. The fries are perfectly thick and not soggy. Great value for the quality.",
+                    "serviceOrDish": "Classic Single & Fries",
+                    "verified": true
+                  },
+                  {
+                    "id": "rev-bs3",
+                    "author": "Chris P.",
+                    "rating": 4,
+                    "date": "Last month",
+                    "comment": "Mushroom Swiss burger was incredible. Shakes are thick and cold. Parking can be rough but worth it.",
+                    "serviceOrDish": "Mushroom Swiss",
+                    "verified": true
+                  }
+                ]
+              },
+              "settings": {
+                "backgroundStyle": "dark"
+              }
+            },
+            {
+              "id": "sec-cta-5",
+              "type": "cta",
+              "variant": "CTAB",
+              "order": 5,
+              "visible": true,
+              "content": {
+                "headline": "Visit Big Stack Burgers in Houston",
+                "subheadline": "Reserve a table, view our full menu, or order online today.",
+                "buttonText": "View Menu",
+                "orderUrl": "https://order.bigstackburgers.com"
+              },
+              "settings": {
+                "backgroundStyle": "brand"
+              }
+            },
+            {
+              "id": "sec-contact-6",
+              "type": "contact",
+              "variant": "ContactA",
+              "order": 6,
+              "visible": true,
+              "content": {
+                "heading": "Find Us & Opening Hours",
+                "address": "3810 Milam St",
+                "city": "Houston",
+                "state": "TX",
+                "zip": "77006",
+                "phone": "713-555-0841",
+                "email": "order@bigstackburgers.com",
+                "hours": {
+                  "Monday - Thursday": "11:00 AM - 10:00 PM",
+                  "Friday - Saturday": "11:00 AM - 11:00 PM",
+                  "Sunday": "12:00 PM - 9:00 PM"
+                },
+                "serviceAreas": [
+                  "Houston"
+                ],
+                "googleMapsUrl": "https://maps.google.com/?q=3810+Milam+St+Houston+TX",
+                "instagramUrl": "https://instagram.com/bigstackburgers"
+              },
+              "settings": {
+                "backgroundStyle": "dark"
+              }
+            }
+          ],
+          "visible": true,
+          "isProtected": true
+        }
+      ],
+      "navigation": [
+        {
+          "id": "nav-home",
+          "label": "Home",
+          "pageSlug": "home",
+          "visible": true,
+          "order": 1
+        },
+        {
+          "id": "nav-menu",
+          "label": "Menu",
+          "pageSlug": "menu",
+          "visible": true,
+          "order": 2
+        },
+        {
+          "id": "nav-about",
+          "label": "About",
+          "pageSlug": "about",
+          "visible": true,
+          "order": 3
+        },
+        {
+          "id": "nav-reservations",
+          "label": "Reservations",
+          "pageSlug": "reservations",
+          "visible": true,
+          "order": 4
+        },
+        {
+          "id": "nav-reviews",
+          "label": "Reviews",
+          "pageSlug": "reviews",
+          "visible": true,
+          "order": 5
+        },
+        {
+          "id": "nav-contact",
+          "label": "Contact",
+          "pageSlug": "contact",
+          "visible": true,
+          "order": 6
+        }
+      ],
+      "revisions": [],
+      "isDraft": false,
+      "lastSavedAt": "2026-09-14T11:16:52.421Z"
+    },
+    "lead-dragon-palace": {
+      "id": "site-lead-dragon-palace",
+      "businessId": "lead-dragon-palace",
+      "templateId": "R4",
+      "theme": {
+        "primaryColor": "#b45309",
+        "secondaryColor": "#0f172a",
+        "backgroundColor": "#0f172a",
+        "textColor": "#f8fafc",
+        "fontFamily": "serif",
+        "buttonStyle": "square",
+        "logoType": "text",
+        "textLogo": {
+          "line1": "DRAGON PALACE",
+          "line2": "Cantonese & Asian Fusion",
+          "style": "serif"
+        }
+      },
+      "pages": [
+        {
+          "id": "page-home",
+          "name": "Home",
+          "slug": "home",
+          "title": "Dragon Palace | San Francisco, CA",
+          "sections": [
+            {
+              "id": "sec-hero-1",
+              "type": "hero",
+              "variant": "HeroD",
+              "order": 1,
+              "visible": true,
+              "content": {
+                "headline": "Handcrafted Flavors & Welcoming Dining in San Francisco, CA",
+                "subheadline": "Elevated Cantonese cuisine with a modern Asian fusion twist in San Francisco's Richmond District. Dim sum weekends, full dinner service, and private dining rooms available.",
+                "primaryCta": "View Menu",
+                "secondaryCta": "Reserve a Table",
+                "image": "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?auto=format&fit=crop&w=1600&q=80",
+                "badge": "4.9 ★ Chinese & Asian Fusion in San Francisco"
+              },
+              "settings": {
+                "alignment": "center",
+                "backgroundStyle": "dark"
+              }
+            },
+            {
+              "id": "sec-menu-2",
+              "type": "menu",
+              "variant": "MenuC",
+              "order": 2,
+              "visible": true,
+              "content": {
+                "heading": "Our Menu",
+                "subheading": "Cantonese & Asian Fusion cuisine with authentic ingredients and culinary care.",
+                "items": [
+                  {
+                    "id": "item-har-gow",
+                    "name": "Har Gow (Shrimp Dumplings)",
+                    "category": "Dim Sum",
+                    "description": "Delicate steamed shrimp dumplings in translucent rice flour wrapper. 4 pieces.",
+                    "price": "$9.00",
+                    "popular": true,
+                    "image": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=80",
+                    "dietary": [
+                      "gluten-free"
+                    ],
+                    "visible": true
+                  },
+                  {
+                    "id": "item-siu-mai",
+                    "name": "Siu Mai (Pork & Shrimp)",
+                    "category": "Dim Sum",
+                    "description": "Open-topped dumplings with pork, tiger shrimp, and water chestnut. 4 pieces.",
+                    "price": "$9.00",
+                    "popular": true,
+                    "image": "https://images.unsplash.com/photo-1617196034183-421b4040ed20?auto=format&fit=crop&w=600&q=80",
+                    "dietary": [],
+                    "visible": true
+                  },
+                  {
+                    "id": "item-peking-duck",
+                    "name": "Peking Duck (Half)",
+                    "category": "Signature Mains",
+                    "description": "Lacquered duck, crispy skin, hoisin sauce, steamed pancakes, scallion, cucumber. Serves 2–3.",
+                    "price": "$48.00",
+                    "popular": true,
+                    "image": "https://images.unsplash.com/photo-1618898303370-94b0b56d5843?auto=format&fit=crop&w=600&q=80",
+                    "dietary": [
+                      "chef-signature"
+                    ],
+                    "visible": true
+                  },
+                  {
+                    "id": "item-mapo-tofu",
+                    "name": "Mapo Tofu",
+                    "category": "Signature Mains",
+                    "description": "Silken tofu in spiced Sichuan bean paste, ground pork, chili oil, Sichuan peppercorn.",
+                    "price": "$18.00",
+                    "popular": false,
+                    "image": "https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?auto=format&fit=crop&w=600&q=80",
+                    "dietary": [
+                      "spicy",
+                      "gluten-free-available"
+                    ],
+                    "visible": true
+                  },
+                  {
+                    "id": "item-fried-rice",
+                    "name": "Wok-Fried Yang Chow Rice",
+                    "category": "Signature Mains",
+                    "description": "Day-old jasmine rice, BBQ pork, shrimp, egg, peas, scallion, light soy.",
+                    "price": "$16.00",
+                    "popular": true,
+                    "dietary": [],
+                    "visible": true
+                  }
+                ],
+                "menuCategories": [
+                  {
+                    "id": "cat-dim-sum",
+                    "name": "Dim Sum",
+                    "description": "Served weekends 10am–2:30pm",
+                    "items": [
+                      {
+                        "id": "item-har-gow",
+                        "name": "Har Gow (Shrimp Dumplings)",
+                        "description": "Delicate steamed shrimp dumplings in translucent rice flour wrapper. 4 pieces.",
+                        "price": 9,
+                        "tags": [
+                          "popular",
+                          "gluten-free"
+                        ],
+                        "available": true,
+                        "image": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=80"
+                      },
+                      {
+                        "id": "item-siu-mai",
+                        "name": "Siu Mai (Pork & Shrimp)",
+                        "description": "Open-topped dumplings with pork, tiger shrimp, and water chestnut. 4 pieces.",
+                        "price": 9,
+                        "tags": [
+                          "popular"
+                        ],
+                        "available": true,
+                        "image": "https://images.unsplash.com/photo-1617196034183-421b4040ed20?auto=format&fit=crop&w=600&q=80"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "cat-mains-dp",
+                    "name": "Signature Mains",
+                    "description": "Dinner service, daily",
+                    "items": [
+                      {
+                        "id": "item-peking-duck",
+                        "name": "Peking Duck (Half)",
+                        "description": "Lacquered duck, crispy skin, hoisin sauce, steamed pancakes, scallion, cucumber. Serves 2–3.",
+                        "price": 48,
+                        "tags": [
+                          "popular",
+                          "chef-signature"
+                        ],
+                        "available": true,
+                        "image": "https://images.unsplash.com/photo-1618898303370-94b0b56d5843?auto=format&fit=crop&w=600&q=80"
+                      },
+                      {
+                        "id": "item-mapo-tofu",
+                        "name": "Mapo Tofu",
+                        "description": "Silken tofu in spiced Sichuan bean paste, ground pork, chili oil, Sichuan peppercorn.",
+                        "price": 18,
+                        "tags": [
+                          "spicy",
+                          "gluten-free-available"
+                        ],
+                        "available": true,
+                        "image": "https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?auto=format&fit=crop&w=600&q=80"
+                      },
+                      {
+                        "id": "item-fried-rice",
+                        "name": "Wok-Fried Yang Chow Rice",
+                        "description": "Day-old jasmine rice, BBQ pork, shrimp, egg, peas, scallion, light soy.",
+                        "price": 16,
+                        "tags": [
+                          "popular"
+                        ],
+                        "available": true
+                      }
+                    ]
+                  }
+                ],
+                "currency": "USD"
+              },
+              "settings": {
+                "backgroundStyle": "dark"
+              }
+            },
+            {
+              "id": "sec-gallery-3",
+              "type": "gallery",
+              "variant": "GalleryC",
+              "order": 3,
+              "visible": true,
+              "content": {
+                "heading": "Our Dishes & Atmosphere",
+                "subheading": "Experience the flavors and ambiance of Dragon Palace.",
+                "images": [
+                  "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80",
+                  "https://images.unsplash.com/photo-1617196034183-421b4040ed20?auto=format&fit=crop&w=800&q=80",
+                  "https://images.unsplash.com/photo-1618898303370-94b0b56d5843?auto=format&fit=crop&w=800&q=80",
+                  "https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?auto=format&fit=crop&w=800&q=80"
+                ]
+              },
+              "settings": {
+                "columns": 3,
+                "backgroundStyle": "dark"
+              }
+            },
+            {
+              "id": "sec-about-4",
+              "type": "about",
+              "variant": "AboutB",
+              "order": 4,
+              "visible": true,
+              "content": {
+                "heading": "Our Story & Commitments",
+                "story": "Welcome to Dragon Palace! We are passionate about bringing vibrant flavors and genuine hospitality to San Francisco, CA. Every dish is prepared with fresh ingredients, time-tested recipes, and a passion for good food enjoyed among good company.",
+                "pillars": [
+                  {
+                    "title": "Fresh, Quality Ingredients",
+                    "desc": "Carefully chosen produce and meats sourced to elevate every flavor on the plate."
+                  },
+                  {
+                    "title": "Crafted with Care",
+                    "desc": "From our kitchen to your table, each recipe is prepared from scratch with culinary pride."
+                  },
+                  {
+                    "title": "Warm Hospitality",
+                    "desc": "A relaxed, inviting environment whether you are catching up with friends or celebrating a milestone."
+                  },
+                  {
+                    "title": "Takeout & Catering",
+                    "desc": "Enjoy your favorites at home or let us cater your special event with ease."
+                  }
+                ],
+                "image": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1000&q=80"
+              },
+              "settings": {
+                "backgroundStyle": "dark"
+              }
+            },
+            {
+              "id": "sec-reviews-5",
+              "type": "reviews",
+              "variant": "ReviewsA",
+              "order": 5,
+              "visible": true,
+              "content": {
+                "heading": "What Our Guests Say",
+                "subheading": "4.9 Stars based on 178 verified guest experiences.",
+                "reviews": [
+                  {
+                    "id": "rev-dp1",
+                    "author": "Linda C.",
+                    "rating": 5,
+                    "date": "5 days ago",
+                    "comment": "Possibly the best Peking Duck in San Francisco. The skin was impossibly crispy and the pancakes were perfect. A special occasion staple.",
+                    "serviceOrDish": "Peking Duck",
+                    "verified": true
+                  },
+                  {
+                    "id": "rev-dp2",
+                    "author": "Kevin Y.",
+                    "rating": 5,
+                    "date": "2 weeks ago",
+                    "comment": "Weekend dim sum is a must. Har gow was delicate and fresh, not frozen. Elegant space that feels special without being stuffy.",
+                    "serviceOrDish": "Dim Sum Brunch",
+                    "verified": true
+                  },
+                  {
+                    "id": "rev-dp3",
+                    "author": "Michelle L.",
+                    "rating": 5,
+                    "date": "Last month",
+                    "comment": "We had our team dinner here — private room, seamless service, and the food was consistently exceptional. Highly recommend for groups.",
+                    "serviceOrDish": "Private Dining",
+                    "verified": true
+                  }
+                ]
+              },
+              "settings": {
+                "columns": 3,
+                "backgroundStyle": "dark"
+              }
+            },
+            {
+              "id": "sec-cta-6",
+              "type": "cta",
+              "variant": "CTAC",
+              "order": 6,
+              "visible": true,
+              "content": {
+                "headline": "Visit Dragon Palace in San Francisco",
+                "subheadline": "Reserve a table, view our full menu, or order online today.",
+                "buttonText": "View Menu",
+                "reservationUrl": "https://resy.com/cities/sf/dragon-palace"
+              },
+              "settings": {
+                "backgroundStyle": "dark"
+              }
+            },
+            {
+              "id": "sec-contact-7",
+              "type": "contact",
+              "variant": "ContactA",
+              "order": 7,
+              "visible": true,
+              "content": {
+                "heading": "Find Us & Opening Hours",
+                "address": "618 Clement St",
+                "city": "San Francisco",
+                "state": "CA",
+                "zip": "94118",
+                "phone": "415-555-0293",
+                "email": "info@dragonpalacesf.com",
+                "hours": {
+                  "Monday - Friday": "11:30 AM - 2:30 PM, 5:00 PM - 10:00 PM",
+                  "Saturday": "10:00 AM - 2:30 PM (Dim Sum), 5:00 PM - 10:30 PM",
+                  "Sunday": "10:00 AM - 2:30 PM (Dim Sum), 5:00 PM - 9:30 PM"
+                },
+                "serviceAreas": [
+                  "San Francisco"
+                ],
+                "googleMapsUrl": "https://maps.google.com/?q=618+Clement+St+San+Francisco+CA",
+                "instagramUrl": "https://instagram.com/dragonpalacesf"
+              },
+              "settings": {
+                "backgroundStyle": "dark"
+              }
+            }
+          ],
+          "visible": true,
+          "isProtected": true
+        }
+      ],
+      "navigation": [
+        {
+          "id": "nav-home",
+          "label": "Home",
+          "pageSlug": "home",
+          "visible": true,
+          "order": 1
+        },
+        {
+          "id": "nav-menu",
+          "label": "Menu",
+          "pageSlug": "menu",
+          "visible": true,
+          "order": 2
+        },
+        {
+          "id": "nav-about",
+          "label": "About",
+          "pageSlug": "about",
+          "visible": true,
+          "order": 3
+        },
+        {
+          "id": "nav-reservations",
+          "label": "Reservations",
+          "pageSlug": "reservations",
+          "visible": true,
+          "order": 4
+        },
+        {
+          "id": "nav-reviews",
+          "label": "Reviews",
+          "pageSlug": "reviews",
+          "visible": true,
+          "order": 5
+        },
+        {
+          "id": "nav-contact",
+          "label": "Contact",
+          "pageSlug": "contact",
+          "visible": true,
+          "order": 6
+        }
+      ],
+      "revisions": [],
+      "isDraft": false,
+      "lastSavedAt": "2026-09-14T11:16:52.421Z"
+    },
+    "lead-rusty-fork": {
+      "id": "site-lead-rusty-fork",
+      "businessId": "lead-rusty-fork",
+      "templateId": "R5",
+      "theme": {
+        "primaryColor": "#1d4ed8",
+        "secondaryColor": "#dc2626",
+        "backgroundColor": "#fefce8",
+        "textColor": "#1c1917",
+        "fontFamily": "sans",
+        "buttonStyle": "rounded",
+        "logoType": "text",
+        "textLogo": {
+          "line1": "THE RUSTY FORK DINER",
+          "line2": "American Southern & BBQ",
+          "style": "stacked"
+        }
+      },
+      "pages": [
+        {
+          "id": "page-home",
+          "name": "Home",
+          "slug": "home",
+          "title": "The Rusty Fork Diner | Nashville, TN",
+          "sections": [
+            {
+              "id": "sec-hero-1",
+              "type": "hero",
+              "variant": "HeroA",
+              "order": 1,
+              "visible": true,
+              "content": {
+                "headline": "Handcrafted Flavors & Welcoming Dining in Nashville, TN",
+                "subheadline": "A Nashville institution since 1978. All-day breakfast, slow-smoked BBQ, and homestyle Southern plates in a classic diner setting on Broadway.",
+                "primaryCta": "View Menu",
+                "secondaryCta": "Reserve a Table",
+                "image": "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=1600&q=80",
+                "badge": "4.8 ★ American Diner & BBQ in Nashville"
+              },
+              "settings": {
+                "alignment": "left",
+                "backgroundStyle": "white"
+              }
+            },
+            {
+              "id": "sec-about-2",
+              "type": "about",
+              "variant": "AboutC",
+              "order": 2,
+              "visible": true,
+              "content": {
+                "heading": "Our Story & Commitments",
+                "story": "Welcome to The Rusty Fork Diner! We are passionate about bringing vibrant flavors and genuine hospitality to Nashville, TN. Every dish is prepared with fresh ingredients, time-tested recipes, and a passion for good food enjoyed among good company.",
+                "pillars": [
+                  {
+                    "title": "Fresh, Quality Ingredients",
+                    "desc": "Carefully chosen produce and meats sourced to elevate every flavor on the plate."
+                  },
+                  {
+                    "title": "Crafted with Care",
+                    "desc": "From our kitchen to your table, each recipe is prepared from scratch with culinary pride."
+                  },
+                  {
+                    "title": "Warm Hospitality",
+                    "desc": "A relaxed, inviting environment whether you are catching up with friends or celebrating a milestone."
+                  },
+                  {
+                    "title": "Takeout & Catering",
+                    "desc": "Enjoy your favorites at home or let us cater your special event with ease."
+                  }
+                ],
+                "image": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1000&q=80"
+              },
+              "settings": {
+                "backgroundStyle": "slate"
+              }
+            },
+            {
+              "id": "sec-menu-3",
+              "type": "menu",
+              "variant": "MenuB",
+              "order": 3,
+              "visible": true,
+              "content": {
+                "heading": "Our Menu",
+                "subheading": "American Southern & BBQ cuisine with authentic ingredients and culinary care.",
+                "items": [
+                  {
+                    "id": "item-grand-slam",
+                    "name": "The Grand Slam",
+                    "category": "All-Day Breakfast",
+                    "description": "Two eggs any style, two strips of smoked bacon, country sausage patty, hash browns, and buttermilk biscuit.",
+                    "price": "$14.00",
+                    "popular": true,
+                    "image": "https://images.unsplash.com/photo-1529543544282-ea669407fca3?auto=format&fit=crop&w=600&q=80",
+                    "dietary": [],
+                    "visible": true
+                  },
+                  {
+                    "id": "item-chicken-waffles",
+                    "name": "Nashville Hot Chicken & Waffles",
+                    "category": "All-Day Breakfast",
+                    "description": "Crispy hot chicken thigh on a buttermilk waffle, hot honey drizzle, dill pickle chips.",
+                    "price": "$17.00",
+                    "popular": true,
+                    "image": "https://images.unsplash.com/photo-1603532648955-039310d9ed75?auto=format&fit=crop&w=600&q=80",
+                    "dietary": [
+                      "spicy",
+                      "chef-signature"
+                    ],
+                    "visible": true
+                  },
+                  {
+                    "id": "item-brisket",
+                    "name": "Smoked Brisket Plate",
+                    "category": "BBQ Plates",
+                    "description": "12-hour hickory-smoked brisket, two sides (choose from: mac & cheese, collard greens, baked beans, coleslaw).",
+                    "price": "$22.00",
+                    "popular": true,
+                    "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=600&q=80",
+                    "dietary": [
+                      "gluten-free"
+                    ],
+                    "visible": true
+                  },
+                  {
+                    "id": "item-pulled-pork",
+                    "name": "Pulled Pork Sandwich",
+                    "category": "BBQ Plates",
+                    "description": "Slow-smoked pork shoulder on a brioche bun, house BBQ sauce, apple cider slaw.",
+                    "price": "$14.00",
+                    "popular": true,
+                    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+                    "dietary": [],
+                    "visible": true
+                  },
+                  {
+                    "id": "item-ribs",
+                    "name": "Half Rack Pork Ribs",
+                    "category": "BBQ Plates",
+                    "description": "St. Louis-style spare ribs, dry-rubbed and smoked 6 hours, two sides.",
+                    "price": "$28.00",
+                    "popular": false,
+                    "dietary": [
+                      "gluten-free"
+                    ],
+                    "visible": true
+                  },
+                  {
+                    "id": "item-pie",
+                    "name": "Pecan Pie Slice",
+                    "category": "Desserts",
+                    "description": "Classic Southern pecan pie, buttery flaky crust, served warm with vanilla ice cream.",
+                    "price": "$7.00",
+                    "popular": true,
+                    "image": "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?auto=format&fit=crop&w=600&q=80",
+                    "dietary": [
+                      "vegetarian"
+                    ],
+                    "visible": true
+                  }
+                ],
+                "menuCategories": [
+                  {
+                    "id": "cat-breakfast",
+                    "name": "All-Day Breakfast",
+                    "description": "Served 7am until close",
+                    "items": [
+                      {
+                        "id": "item-grand-slam",
+                        "name": "The Grand Slam",
+                        "description": "Two eggs any style, two strips of smoked bacon, country sausage patty, hash browns, and buttermilk biscuit.",
+                        "price": 14,
+                        "tags": [
+                          "popular"
+                        ],
+                        "available": true,
+                        "image": "https://images.unsplash.com/photo-1529543544282-ea669407fca3?auto=format&fit=crop&w=600&q=80"
+                      },
+                      {
+                        "id": "item-chicken-waffles",
+                        "name": "Nashville Hot Chicken & Waffles",
+                        "description": "Crispy hot chicken thigh on a buttermilk waffle, hot honey drizzle, dill pickle chips.",
+                        "price": 17,
+                        "tags": [
+                          "popular",
+                          "spicy",
+                          "chef-signature"
+                        ],
+                        "available": true,
+                        "image": "https://images.unsplash.com/photo-1603532648955-039310d9ed75?auto=format&fit=crop&w=600&q=80"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "cat-bbq",
+                    "name": "BBQ Plates",
+                    "description": "Slow-smoked over hickory wood, served with two sides",
+                    "items": [
+                      {
+                        "id": "item-brisket",
+                        "name": "Smoked Brisket Plate",
+                        "description": "12-hour hickory-smoked brisket, two sides (choose from: mac & cheese, collard greens, baked beans, coleslaw).",
+                        "price": 22,
+                        "tags": [
+                          "popular",
+                          "gluten-free"
+                        ],
+                        "available": true,
+                        "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=600&q=80"
+                      },
+                      {
+                        "id": "item-pulled-pork",
+                        "name": "Pulled Pork Sandwich",
+                        "description": "Slow-smoked pork shoulder on a brioche bun, house BBQ sauce, apple cider slaw.",
+                        "price": 14,
+                        "tags": [
+                          "popular"
+                        ],
+                        "available": true,
+                        "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80"
+                      },
+                      {
+                        "id": "item-ribs",
+                        "name": "Half Rack Pork Ribs",
+                        "description": "St. Louis-style spare ribs, dry-rubbed and smoked 6 hours, two sides.",
+                        "price": 28,
+                        "tags": [
+                          "gluten-free"
+                        ],
+                        "available": true
+                      }
+                    ]
+                  },
+                  {
+                    "id": "cat-desserts-rf",
+                    "name": "Desserts",
+                    "items": [
+                      {
+                        "id": "item-pie",
+                        "name": "Pecan Pie Slice",
+                        "description": "Classic Southern pecan pie, buttery flaky crust, served warm with vanilla ice cream.",
+                        "price": 7,
+                        "tags": [
+                          "vegetarian",
+                          "popular"
+                        ],
+                        "available": true,
+                        "image": "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?auto=format&fit=crop&w=600&q=80"
+                      }
+                    ]
+                  }
+                ],
+                "orderUrl": "https://order.therustyfork.com",
+                "currency": "USD"
+              },
+              "settings": {
+                "backgroundStyle": "white"
+              }
+            },
+            {
+              "id": "sec-gallery-4",
+              "type": "gallery",
+              "variant": "GalleryA",
+              "order": 4,
+              "visible": true,
+              "content": {
+                "heading": "Our Dishes & Atmosphere",
+                "subheading": "Experience the flavors and ambiance of The Rusty Fork Diner.",
+                "images": [
+                  "https://images.unsplash.com/photo-1529543544282-ea669407fca3?auto=format&fit=crop&w=800&q=80",
+                  "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80",
+                  "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+                  "https://images.unsplash.com/photo-1494488900571-297f16dfdb0d?auto=format&fit=crop&w=800&q=80"
+                ]
+              },
+              "settings": {
+                "columns": 4,
+                "backgroundStyle": "slate"
+              }
+            },
+            {
+              "id": "sec-reviews-5",
+              "type": "reviews",
+              "variant": "ReviewsA",
+              "order": 5,
+              "visible": true,
+              "content": {
+                "heading": "What Our Guests Say",
+                "subheading": "4.8 Stars based on 302 verified guest experiences.",
+                "reviews": [
+                  {
+                    "id": "rev-rf1",
+                    "author": "Tommy J.",
+                    "rating": 5,
+                    "date": "4 days ago",
+                    "comment": "The brisket is everything you dream of — tender, smoky, and perfectly bark-crusted. Best BBQ on Broadway by a mile.",
+                    "serviceOrDish": "Smoked Brisket",
+                    "verified": true
+                  },
+                  {
+                    "id": "rev-rf2",
+                    "author": "Anita K.",
+                    "rating": 5,
+                    "date": "1 week ago",
+                    "comment": "Nashville Hot Chicken & Waffles for breakfast? Yes please. The hot honey on top is addictive. Classic diner with real soul.",
+                    "serviceOrDish": "Chicken & Waffles",
+                    "verified": true
+                  },
+                  {
+                    "id": "rev-rf3",
+                    "author": "Brad H.",
+                    "rating": 5,
+                    "date": "3 weeks ago",
+                    "comment": "Been coming since I was a kid. Nothing has changed and that's exactly the point. Comfort food done perfectly. The pecan pie is the best.",
+                    "serviceOrDish": "Full Breakfast & Pecan Pie",
+                    "verified": true
+                  }
+                ]
+              },
+              "settings": {
+                "columns": 3,
+                "backgroundStyle": "white"
+              }
+            },
+            {
+              "id": "sec-cta-6",
+              "type": "cta",
+              "variant": "CTAA",
+              "order": 6,
+              "visible": true,
+              "content": {
+                "headline": "Visit The Rusty Fork Diner in Nashville",
+                "subheadline": "Reserve a table, view our full menu, or order online today.",
+                "buttonText": "View Menu",
+                "orderUrl": "https://order.therustyfork.com"
+              },
+              "settings": {
+                "backgroundStyle": "brand"
+              }
+            },
+            {
+              "id": "sec-contact-7",
+              "type": "contact",
+              "variant": "ContactA",
+              "order": 7,
+              "visible": true,
+              "content": {
+                "heading": "Find Us & Opening Hours",
+                "address": "428 Broadway",
+                "city": "Nashville",
+                "state": "TN",
+                "zip": "37203",
+                "phone": "615-555-0466",
+                "email": "hello@therustyfork.com",
+                "hours": {
+                  "Monday - Friday": "7:00 AM - 10:00 PM",
+                  "Saturday": "7:00 AM - 11:00 PM",
+                  "Sunday": "8:00 AM - 9:00 PM"
+                },
+                "serviceAreas": [
+                  "Nashville"
+                ],
+                "googleMapsUrl": "https://maps.google.com/?q=428+Broadway+Nashville+TN",
+                "instagramUrl": "https://instagram.com/therustyfork"
+              },
+              "settings": {
+                "backgroundStyle": "dark"
+              }
+            }
+          ],
+          "visible": true,
+          "isProtected": true
+        }
+      ],
+      "navigation": [
+        {
+          "id": "nav-home",
+          "label": "Home",
+          "pageSlug": "home",
+          "visible": true,
+          "order": 1
+        },
+        {
+          "id": "nav-menu",
+          "label": "Menu",
+          "pageSlug": "menu",
+          "visible": true,
+          "order": 2
+        },
+        {
+          "id": "nav-about",
+          "label": "About",
+          "pageSlug": "about",
+          "visible": true,
+          "order": 3
+        },
+        {
+          "id": "nav-reservations",
+          "label": "Reservations",
+          "pageSlug": "reservations",
+          "visible": true,
+          "order": 4
+        },
+        {
+          "id": "nav-reviews",
+          "label": "Reviews",
+          "pageSlug": "reviews",
+          "visible": true,
+          "order": 5
+        },
+        {
+          "id": "nav-contact",
+          "label": "Contact",
+          "pageSlug": "contact",
+          "visible": true,
+          "order": 6
+        }
+      ],
+      "revisions": [],
+      "isDraft": false,
+      "lastSavedAt": "2026-09-14T11:16:52.421Z"
+    }
+  },
+  "previews": {
+    "lead-mikes-handyman": {
+      "id": "prev-lead-mikes-handyman",
+      "businessId": "lead-mikes-handyman",
+      "status": "ACTIVE",
+      "firstViewedAt": "2026-09-14T11:16:52.428Z",
+      "previewExpiresAt": null,
+      "plan": "WEBSITE_LEAD_149",
+      "paymentStatus": "PAID",
+      "viewCount": 2,
+      "dmStatus": "NOT_CONTACTED",
+      "lastContactedAt": null
+    },
+    "lead-sparkling-horizon": {
+      "id": "prev-lead-sparkling-horizon",
+      "businessId": "lead-sparkling-horizon",
+      "status": "PREVIEW_ACTIVE",
+      "firstViewedAt": null,
+      "previewExpiresAt": null,
+      "plan": "NONE",
+      "paymentStatus": "UNPAID",
+      "viewCount": 0,
+      "dmStatus": "NOT_CONTACTED",
+      "lastContactedAt": null
+    },
+    "lead-bella-vista": {
+      "id": "prev-lead-bella-vista",
+      "businessId": "lead-bella-vista",
+      "status": "PREVIEW_ACTIVE",
+      "firstViewedAt": "2026-09-14T15:09:28.089Z",
+      "previewExpiresAt": "2026-09-21T15:09:28.089Z",
+      "plan": "NONE",
+      "paymentStatus": "UNPAID",
+      "viewCount": 7,
+      "dmStatus": "NOT_CONTACTED",
+      "lastContactedAt": null
+    },
+    "lead-taco-libre": {
+      "id": "prev-lead-taco-libre",
+      "businessId": "lead-taco-libre",
+      "status": "PREVIEW_ACTIVE",
+      "firstViewedAt": null,
+      "previewExpiresAt": null,
+      "plan": "NONE",
+      "paymentStatus": "UNPAID",
+      "viewCount": 0,
+      "dmStatus": "NOT_CONTACTED",
+      "lastContactedAt": null
+    },
+    "lead-big-stack": {
+      "id": "prev-lead-big-stack",
+      "businessId": "lead-big-stack",
+      "status": "PREVIEW_ACTIVE",
+      "firstViewedAt": null,
+      "previewExpiresAt": null,
+      "plan": "NONE",
+      "paymentStatus": "UNPAID",
+      "viewCount": 0,
+      "dmStatus": "NOT_CONTACTED",
+      "lastContactedAt": null
+    },
+    "lead-dragon-palace": {
+      "id": "prev-lead-dragon-palace",
+      "businessId": "lead-dragon-palace",
+      "status": "PREVIEW_ACTIVE",
+      "firstViewedAt": null,
+      "previewExpiresAt": null,
+      "plan": "NONE",
+      "paymentStatus": "UNPAID",
+      "viewCount": 0,
+      "dmStatus": "NOT_CONTACTED",
+      "lastContactedAt": null
+    },
+    "lead-rusty-fork": {
+      "id": "prev-lead-rusty-fork",
+      "businessId": "lead-rusty-fork",
+      "status": "PREVIEW_ACTIVE",
+      "firstViewedAt": null,
+      "previewExpiresAt": null,
+      "plan": "NONE",
+      "paymentStatus": "UNPAID",
+      "viewCount": 0,
+      "dmStatus": "NOT_CONTACTED",
+      "lastContactedAt": null
+    }
+  },
+  "feedbacks": [
+    {
+      "businessId": "lead-mikes-handyman",
+      "authorName": "Mike Miller",
+      "authorEmail": "mike@mikeshandymanaustin.com",
+      "message": "Can you please add deck power washing to the services list?",
+      "id": "fb-1789384612439-wz8q",
+      "status": "NEW",
+      "createdAt": "2026-09-14T11:16:52.439Z"
+    }
+  ],
+  "leads": [
+    {
+      "businessId": "lead-mikes-handyman",
+      "customerName": "Sarah Jenkins",
+      "customerPhone": "512-555-9876",
+      "customerEmail": "sarah.j@example.com",
+      "serviceRequested": "Drywall Repair & Patching",
+      "answers": {
+        "location": "South Austin 78704",
+        "timeline": "Within 1 Week",
+        "notes": "Need two bedroom walls patched where TV mounts were removed."
+      },
+      "id": "lead-sub-1789384612444-kuue",
+      "status": "NEW",
+      "createdAt": "2026-09-14T11:16:52.444Z"
+    }
+  ],
+  "domains": {
+    "lead-mikes-handyman": {
+      "businessId": "lead-mikes-handyman",
+      "domain": "mikeshandymanaustin.com",
+      "verified": true,
+      "dnsRecords": [
+        {
+          "type": "A",
+          "name": "@",
+          "value": "76.76.21.21"
+        },
+        {
+          "type": "CNAME",
+          "name": "www",
+          "value": "cname.vercel-dns.com"
+        }
+      ],
+      "connectedAt": "2026-09-14T11:16:52.450Z"
+    }
+  },
+  "events": [
+    {
+      "previewId": "prev-lead-mikes-handyman",
+      "businessId": "lead-mikes-handyman",
+      "eventType": "FIRST_VISIT",
+      "metadata": {
+        "firstViewedAt": "2026-09-14T11:16:52.428Z"
+      },
+      "id": "ev-1789384612428-uysc",
+      "createdAt": "2026-09-14T11:16:52.428Z"
+    },
+    {
+      "previewId": "prev-lead-mikes-handyman",
+      "businessId": "lead-mikes-handyman",
+      "eventType": "PAGE_VIEW",
+      "metadata": {
+        "totalViews": 1
+      },
+      "id": "ev-1789384612430-0g1b",
+      "createdAt": "2026-09-14T11:16:52.430Z"
+    },
+    {
+      "previewId": "prev-lead-mikes-handyman",
+      "businessId": "lead-mikes-handyman",
+      "eventType": "PAGE_VIEW",
+      "metadata": {
+        "totalViews": 2
+      },
+      "id": "ev-1789384612433-kjo6",
+      "createdAt": "2026-09-14T11:16:52.433Z"
+    },
+    {
+      "previewId": "prev-lead-mikes-handyman",
+      "businessId": "lead-mikes-handyman",
+      "eventType": "FEEDBACK_SUBMITTED",
+      "metadata": {
+        "length": 59
+      },
+      "id": "ev-1789384612439-m3a0",
+      "createdAt": "2026-09-14T11:16:52.439Z"
+    },
+    {
+      "previewId": "prev-lead-mikes-handyman",
+      "businessId": "lead-mikes-handyman",
+      "eventType": "PAYMENT_COMPLETED",
+      "metadata": {
+        "plan": "WEBSITE_LEAD_149"
+      },
+      "id": "ev-1789384612446-kj9q",
+      "createdAt": "2026-09-14T11:16:52.446Z"
+    },
+    {
+      "previewId": "prev-lead-bella-vista",
+      "businessId": "lead-bella-vista",
+      "eventType": "FIRST_VISIT",
+      "metadata": {
+        "firstViewedAt": "2026-09-14T15:09:28.089Z"
+      },
+      "id": "ev-1789398568089-atvv",
+      "createdAt": "2026-09-14T15:09:28.090Z"
+    },
+    {
+      "previewId": "prev-lead-bella-vista",
+      "businessId": "lead-bella-vista",
+      "eventType": "PAGE_VIEW",
+      "metadata": {
+        "totalViews": 1
+      },
+      "id": "ev-1789398568096-pb18",
+      "createdAt": "2026-09-14T15:09:28.096Z"
+    },
+    {
+      "previewId": "prev-lead-bella-vista",
+      "businessId": "lead-bella-vista",
+      "eventType": "PAGE_VIEW",
+      "metadata": {
+        "totalViews": 2
+      },
+      "id": "ev-1789398570543-mk02",
+      "createdAt": "2026-09-14T15:09:30.543Z"
+    },
+    {
+      "previewId": "prev-lead-bella-vista",
+      "businessId": "lead-bella-vista",
+      "eventType": "PAGE_VIEW",
+      "metadata": {
+        "totalViews": 3
+      },
+      "id": "ev-1789398576261-4ddu",
+      "createdAt": "2026-09-14T15:09:36.261Z"
+    },
+    {
+      "previewId": "prev-lead-bella-vista",
+      "businessId": "lead-bella-vista",
+      "eventType": "PAGE_VIEW",
+      "metadata": {
+        "totalViews": 4
+      },
+      "id": "ev-1789398579964-x17g",
+      "createdAt": "2026-09-14T15:09:39.964Z"
+    },
+    {
+      "previewId": "prev-lead-bella-vista",
+      "businessId": "lead-bella-vista",
+      "eventType": "PAGE_VIEW",
+      "metadata": {
+        "totalViews": 5
+      },
+      "id": "ev-1789398586660-4oqd",
+      "createdAt": "2026-09-14T15:09:46.660Z"
+    },
+    {
+      "previewId": "prev-lead-bella-vista",
+      "businessId": "lead-bella-vista",
+      "eventType": "PAGE_VIEW",
+      "metadata": {
+        "totalViews": 6
+      },
+      "id": "ev-1789398590745-oscd",
+      "createdAt": "2026-09-14T15:09:50.745Z"
+    },
+    {
+      "previewId": "prev-lead-bella-vista",
+      "businessId": "lead-bella-vista",
+      "eventType": "PAGE_VIEW",
+      "metadata": {
+        "totalViews": 7
+      },
+      "id": "ev-1789398598148-puzo",
+      "createdAt": "2026-09-14T15:09:58.149Z"
+    }
+  ],
+  "blogPosts": [
+    {
+      "id": "post-lead-mikes-handyman-1",
+      "businessId": "lead-mikes-handyman",
+      "title": "Why Addressing Small Drywall Cracks Early Saves Thousands",
+      "slug": "addressing-drywall-cracks-early",
+      "featuredImage": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=80",
+      "excerpt": "Helpful guidance and local expertise from our dedicated team at Mike's Handyman Services.",
+      "content": "At Mike's Handyman Services, we believe in sharing practical, honest expertise with our local community in Austin. Whether you are planning a small update, scheduling routine care, or enjoying dinner with family, paying attention to craft and quality makes all the difference.\n\nWe pride ourselves on attention to detail, clear communication, and delivering lasting results for our neighbors.",
+      "category": "Home Care Tips",
+      "author": "Mike's Handyman Services",
+      "publishDate": "2026-09-14T11:16:52.420Z",
+      "status": "published",
+      "createdAt": "2026-09-14T11:16:52.420Z",
+      "updatedAt": "2026-09-14T11:16:52.420Z"
+    },
+    {
+      "id": "post-lead-sparkling-horizon-1",
+      "businessId": "lead-sparkling-horizon",
+      "title": "5 Simple Habits to Keep Your Home Spotless Between Cleanings",
+      "slug": "habits-for-spotless-home",
+      "featuredImage": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1600&q=80",
+      "excerpt": "Helpful guidance and local expertise from our dedicated team at Sparkling Horizon Cleaning.",
+      "content": "At Sparkling Horizon Cleaning, we believe in sharing practical, honest expertise with our local community in Seattle. Whether you are planning a small update, scheduling routine care, or enjoying dinner with family, paying attention to craft and quality makes all the difference.\n\nWe pride ourselves on attention to detail, clear communication, and delivering lasting results for our neighbors.",
+      "category": "Home Care Tips",
+      "author": "Sparkling Horizon Cleaning",
+      "publishDate": "2026-09-14T11:16:52.420Z",
+      "status": "published",
+      "createdAt": "2026-09-14T11:16:52.420Z",
+      "updatedAt": "2026-09-14T11:16:52.420Z"
+    },
+    {
+      "id": "post-lead-bella-vista-1",
+      "businessId": "lead-bella-vista",
+      "title": "The Secret to Our Traditional Handmade Pasta",
+      "slug": "secret-to-handmade-pasta",
+      "featuredImage": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1600&q=80",
+      "excerpt": "Helpful guidance and local expertise from our dedicated team at Bella Vista Trattoria.",
+      "content": "At Bella Vista Trattoria, we believe in sharing practical, honest expertise with our local community in Chicago. Whether you are planning a small update, scheduling routine care, or enjoying dinner with family, paying attention to craft and quality makes all the difference.\n\nWe pride ourselves on attention to detail, clear communication, and delivering lasting results for our neighbors.",
+      "category": "Culinary Stories",
+      "author": "Bella Vista Trattoria",
+      "publishDate": "2026-09-14T11:16:52.420Z",
+      "status": "published",
+      "createdAt": "2026-09-14T11:16:52.420Z",
+      "updatedAt": "2026-09-14T11:16:52.420Z"
+    },
+    {
+      "id": "post-lead-taco-libre-1",
+      "businessId": "lead-taco-libre",
+      "title": "The Secret to Our Traditional Handmade Pasta",
+      "slug": "secret-to-handmade-pasta",
+      "featuredImage": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=1600&q=80",
+      "excerpt": "Helpful guidance and local expertise from our dedicated team at Taco Libre.",
+      "content": "At Taco Libre, we believe in sharing practical, honest expertise with our local community in Austin. Whether you are planning a small update, scheduling routine care, or enjoying dinner with family, paying attention to craft and quality makes all the difference.\n\nWe pride ourselves on attention to detail, clear communication, and delivering lasting results for our neighbors.",
+      "category": "Culinary Stories",
+      "author": "Taco Libre",
+      "publishDate": "2026-09-14T11:16:52.421Z",
+      "status": "published",
+      "createdAt": "2026-09-14T11:16:52.421Z",
+      "updatedAt": "2026-09-14T11:16:52.421Z"
+    },
+    {
+      "id": "post-lead-big-stack-1",
+      "businessId": "lead-big-stack",
+      "title": "The Secret to Our Traditional Handmade Pasta",
+      "slug": "secret-to-handmade-pasta",
+      "featuredImage": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1600&q=80",
+      "excerpt": "Helpful guidance and local expertise from our dedicated team at Big Stack Burgers.",
+      "content": "At Big Stack Burgers, we believe in sharing practical, honest expertise with our local community in Houston. Whether you are planning a small update, scheduling routine care, or enjoying dinner with family, paying attention to craft and quality makes all the difference.\n\nWe pride ourselves on attention to detail, clear communication, and delivering lasting results for our neighbors.",
+      "category": "Culinary Stories",
+      "author": "Big Stack Burgers",
+      "publishDate": "2026-09-14T11:16:52.421Z",
+      "status": "published",
+      "createdAt": "2026-09-14T11:16:52.421Z",
+      "updatedAt": "2026-09-14T11:16:52.421Z"
+    },
+    {
+      "id": "post-lead-dragon-palace-1",
+      "businessId": "lead-dragon-palace",
+      "title": "The Secret to Our Traditional Handmade Pasta",
+      "slug": "secret-to-handmade-pasta",
+      "featuredImage": "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?auto=format&fit=crop&w=1600&q=80",
+      "excerpt": "Helpful guidance and local expertise from our dedicated team at Dragon Palace.",
+      "content": "At Dragon Palace, we believe in sharing practical, honest expertise with our local community in San Francisco. Whether you are planning a small update, scheduling routine care, or enjoying dinner with family, paying attention to craft and quality makes all the difference.\n\nWe pride ourselves on attention to detail, clear communication, and delivering lasting results for our neighbors.",
+      "category": "Culinary Stories",
+      "author": "Dragon Palace",
+      "publishDate": "2026-09-14T11:16:52.421Z",
+      "status": "published",
+      "createdAt": "2026-09-14T11:16:52.421Z",
+      "updatedAt": "2026-09-14T11:16:52.421Z"
+    },
+    {
+      "id": "post-lead-rusty-fork-1",
+      "businessId": "lead-rusty-fork",
+      "title": "The Secret to Our Traditional Handmade Pasta",
+      "slug": "secret-to-handmade-pasta",
+      "featuredImage": "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=1600&q=80",
+      "excerpt": "Helpful guidance and local expertise from our dedicated team at The Rusty Fork Diner.",
+      "content": "At The Rusty Fork Diner, we believe in sharing practical, honest expertise with our local community in Nashville. Whether you are planning a small update, scheduling routine care, or enjoying dinner with family, paying attention to craft and quality makes all the difference.\n\nWe pride ourselves on attention to detail, clear communication, and delivering lasting results for our neighbors.",
+      "category": "Culinary Stories",
+      "author": "The Rusty Fork Diner",
+      "publishDate": "2026-09-14T11:16:52.421Z",
+      "status": "published",
+      "createdAt": "2026-09-14T11:16:52.421Z",
+      "updatedAt": "2026-09-14T11:16:52.421Z"
+    }
+  ],
+  "mediaItems": [
+    {
+      "id": "media-lead-mikes-handyman-1",
+      "businessId": "lead-mikes-handyman",
+      "name": "Project Photo 1",
+      "url": "https://images.unsplash.com/photo-1540518614846-7ede433c4ef2?auto=format&fit=crop&w=800&q=80",
+      "size": "1.2 MB",
+      "type": "image/jpeg",
+      "createdAt": "2026-09-14T11:16:52.420Z"
+    },
+    {
+      "id": "media-lead-mikes-handyman-2",
+      "businessId": "lead-mikes-handyman",
+      "name": "Project Photo 2",
+      "url": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80",
+      "size": "1.2 MB",
+      "type": "image/jpeg",
+      "createdAt": "2026-09-14T11:16:52.420Z"
+    },
+    {
+      "id": "media-lead-mikes-handyman-3",
+      "businessId": "lead-mikes-handyman",
+      "name": "Project Photo 3",
+      "url": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80",
+      "size": "1.2 MB",
+      "type": "image/jpeg",
+      "createdAt": "2026-09-14T11:16:52.420Z"
+    },
+    {
+      "id": "media-lead-mikes-handyman-4",
+      "businessId": "lead-mikes-handyman",
+      "name": "Project Photo 4",
+      "url": "https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&w=800&q=80",
+      "size": "1.2 MB",
+      "type": "image/jpeg",
+      "createdAt": "2026-09-14T11:16:52.420Z"
+    },
+    {
+      "id": "media-lead-sparkling-horizon-1",
+      "businessId": "lead-sparkling-horizon",
+      "name": "Project Photo 1",
+      "url": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80",
+      "size": "1.2 MB",
+      "type": "image/jpeg",
+      "createdAt": "2026-09-14T11:16:52.420Z"
+    },
+    {
+      "id": "media-lead-sparkling-horizon-2",
+      "businessId": "lead-sparkling-horizon",
+      "name": "Project Photo 2",
+      "url": "https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?auto=format&fit=crop&w=800&q=80",
+      "size": "1.2 MB",
+      "type": "image/jpeg",
+      "createdAt": "2026-09-14T11:16:52.420Z"
+    },
+    {
+      "id": "media-lead-sparkling-horizon-3",
+      "businessId": "lead-sparkling-horizon",
+      "name": "Project Photo 3",
+      "url": "https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&w=800&q=80",
+      "size": "1.2 MB",
+      "type": "image/jpeg",
+      "createdAt": "2026-09-14T11:16:52.420Z"
+    },
+    {
+      "id": "media-lead-sparkling-horizon-4",
+      "businessId": "lead-sparkling-horizon",
+      "name": "Project Photo 4",
+      "url": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+      "size": "1.2 MB",
+      "type": "image/jpeg",
+      "createdAt": "2026-09-14T11:16:52.420Z"
+    },
+    {
+      "id": "media-lead-bella-vista-1",
+      "businessId": "lead-bella-vista",
+      "name": "Project Photo 1",
+      "url": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=800&q=80",
+      "size": "1.2 MB",
+      "type": "image/jpeg",
+      "createdAt": "2026-09-14T11:16:52.420Z"
+    },
+    {
+      "id": "media-lead-bella-vista-2",
+      "businessId": "lead-bella-vista",
+      "name": "Project Photo 2",
+      "url": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80",
+      "size": "1.2 MB",
+      "type": "image/jpeg",
+      "createdAt": "2026-09-14T11:16:52.420Z"
+    },
+    {
+      "id": "media-lead-bella-vista-3",
+      "businessId": "lead-bella-vista",
+      "name": "Project Photo 3",
+      "url": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+      "size": "1.2 MB",
+      "type": "image/jpeg",
+      "createdAt": "2026-09-14T11:16:52.420Z"
+    },
+    {
+      "id": "media-lead-bella-vista-4",
+      "businessId": "lead-bella-vista",
+      "name": "Project Photo 4",
+      "url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80",
+      "size": "1.2 MB",
+      "type": "image/jpeg",
+      "createdAt": "2026-09-14T11:16:52.420Z"
+    },
+    {
+      "id": "media-lead-taco-libre-1",
+      "businessId": "lead-taco-libre",
+      "name": "Project Photo 1",
+      "url": "https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?auto=format&fit=crop&w=800&q=80",
+      "size": "1.2 MB",
+      "type": "image/jpeg",
+      "createdAt": "2026-09-14T11:16:52.421Z"
+    },
+    {
+      "id": "media-lead-taco-libre-2",
+      "businessId": "lead-taco-libre",
+      "name": "Project Photo 2",
+      "url": "https://images.unsplash.com/photo-1505253758473-96b7015fcd40?auto=format&fit=crop&w=800&q=80",
+      "size": "1.2 MB",
+      "type": "image/jpeg",
+      "createdAt": "2026-09-14T11:16:52.421Z"
+    },
+    {
+      "id": "media-lead-taco-libre-3",
+      "businessId": "lead-taco-libre",
+      "name": "Project Photo 3",
+      "url": "https://images.unsplash.com/photo-1583835746434-cf1534674ad5?auto=format&fit=crop&w=800&q=80",
+      "size": "1.2 MB",
+      "type": "image/jpeg",
+      "createdAt": "2026-09-14T11:16:52.421Z"
+    },
+    {
+      "id": "media-lead-taco-libre-4",
+      "businessId": "lead-taco-libre",
+      "name": "Project Photo 4",
+      "url": "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=80",
+      "size": "1.2 MB",
+      "type": "image/jpeg",
+      "createdAt": "2026-09-14T11:16:52.421Z"
+    },
+    {
+      "id": "media-lead-big-stack-1",
+      "businessId": "lead-big-stack",
+      "name": "Project Photo 1",
+      "url": "https://images.unsplash.com/photo-1586816001966-79b736744398?auto=format&fit=crop&w=800&q=80",
+      "size": "1.2 MB",
+      "type": "image/jpeg",
+      "createdAt": "2026-09-14T11:16:52.421Z"
+    },
+    {
+      "id": "media-lead-big-stack-2",
+      "businessId": "lead-big-stack",
+      "name": "Project Photo 2",
+      "url": "https://images.unsplash.com/photo-1541614101331-1a5a3a194e92?auto=format&fit=crop&w=800&q=80",
+      "size": "1.2 MB",
+      "type": "image/jpeg",
+      "createdAt": "2026-09-14T11:16:52.421Z"
+    },
+    {
+      "id": "media-lead-big-stack-3",
+      "businessId": "lead-big-stack",
+      "name": "Project Photo 3",
+      "url": "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=800&q=80",
+      "size": "1.2 MB",
+      "type": "image/jpeg",
+      "createdAt": "2026-09-14T11:16:52.421Z"
+    },
+    {
+      "id": "media-lead-big-stack-4",
+      "businessId": "lead-big-stack",
+      "name": "Project Photo 4",
+      "url": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80",
+      "size": "1.2 MB",
+      "type": "image/jpeg",
+      "createdAt": "2026-09-14T11:16:52.421Z"
+    },
+    {
+      "id": "media-lead-dragon-palace-1",
+      "businessId": "lead-dragon-palace",
+      "name": "Project Photo 1",
+      "url": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80",
+      "size": "1.2 MB",
+      "type": "image/jpeg",
+      "createdAt": "2026-09-14T11:16:52.421Z"
+    },
+    {
+      "id": "media-lead-dragon-palace-2",
+      "businessId": "lead-dragon-palace",
+      "name": "Project Photo 2",
+      "url": "https://images.unsplash.com/photo-1617196034183-421b4040ed20?auto=format&fit=crop&w=800&q=80",
+      "size": "1.2 MB",
+      "type": "image/jpeg",
+      "createdAt": "2026-09-14T11:16:52.421Z"
+    },
+    {
+      "id": "media-lead-dragon-palace-3",
+      "businessId": "lead-dragon-palace",
+      "name": "Project Photo 3",
+      "url": "https://images.unsplash.com/photo-1618898303370-94b0b56d5843?auto=format&fit=crop&w=800&q=80",
+      "size": "1.2 MB",
+      "type": "image/jpeg",
+      "createdAt": "2026-09-14T11:16:52.421Z"
+    },
+    {
+      "id": "media-lead-dragon-palace-4",
+      "businessId": "lead-dragon-palace",
+      "name": "Project Photo 4",
+      "url": "https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?auto=format&fit=crop&w=800&q=80",
+      "size": "1.2 MB",
+      "type": "image/jpeg",
+      "createdAt": "2026-09-14T11:16:52.421Z"
+    },
+    {
+      "id": "media-lead-rusty-fork-1",
+      "businessId": "lead-rusty-fork",
+      "name": "Project Photo 1",
+      "url": "https://images.unsplash.com/photo-1529543544282-ea669407fca3?auto=format&fit=crop&w=800&q=80",
+      "size": "1.2 MB",
+      "type": "image/jpeg",
+      "createdAt": "2026-09-14T11:16:52.421Z"
+    },
+    {
+      "id": "media-lead-rusty-fork-2",
+      "businessId": "lead-rusty-fork",
+      "name": "Project Photo 2",
+      "url": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80",
+      "size": "1.2 MB",
+      "type": "image/jpeg",
+      "createdAt": "2026-09-14T11:16:52.421Z"
+    },
+    {
+      "id": "media-lead-rusty-fork-3",
+      "businessId": "lead-rusty-fork",
+      "name": "Project Photo 3",
+      "url": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+      "size": "1.2 MB",
+      "type": "image/jpeg",
+      "createdAt": "2026-09-14T11:16:52.421Z"
+    },
+    {
+      "id": "media-lead-rusty-fork-4",
+      "businessId": "lead-rusty-fork",
+      "name": "Project Photo 4",
+      "url": "https://images.unsplash.com/photo-1494488900571-297f16dfdb0d?auto=format&fit=crop&w=800&q=80",
+      "size": "1.2 MB",
+      "type": "image/jpeg",
+      "createdAt": "2026-09-14T11:16:52.421Z"
+    }
+  ]
+}
