@@ -25,8 +25,11 @@ import {
   Award,
   ChevronRight,
   Compass,
+  Code2,
+  Cpu,
+  Palette,
+  Search,
 } from 'lucide-react';
-import { TEMPLATE_REGISTRY } from '@/lib/template-recommender';
 
 export default function BuyerRadarLandingPage() {
   const [quickName, setQuickName] = useState('');
@@ -60,8 +63,6 @@ export default function BuyerRadarLandingPage() {
     }
   };
 
-  const templatesList = Object.values(TEMPLATE_REGISTRY);
-
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-white">
       {/* 1. TOP ANNOUNCEMENT BAR */}
@@ -71,7 +72,7 @@ export default function BuyerRadarLandingPage() {
             <span className="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-bold uppercase tracking-wider border border-emerald-500/30">
               ✦ BuyerRadar Agency
             </span>
-            <span>Bespoke, High-Converting Websites for Local Businesses • Launched in 48 Hours</span>
+            <span>Custom-Crafted Websites for Local Businesses • Delivered & Live in 48 Hours</span>
           </div>
           <div className="flex items-center gap-4">
             <Link
@@ -94,16 +95,17 @@ export default function BuyerRadarLandingPage() {
             </div>
             <div>
               <span className="font-black text-xl text-white block leading-tight tracking-tight">BuyerRadar</span>
-              <span className="text-[10px] text-emerald-400 font-semibold tracking-wider uppercase">Digital Agency • buyerradar.app</span>
+              <span className="text-[10px] text-emerald-400 font-semibold tracking-wider uppercase">Bespoke Web Agency</span>
             </div>
           </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-300">
-            <a href="#services" className="hover:text-white transition-colors">Our Specialties</a>
-            <a href="#portfolio" className="hover:text-white transition-colors">Featured Work</a>
-            <a href="#process" className="hover:text-white transition-colors">How We Work</a>
-            <a href="#pricing" className="hover:text-white transition-colors">Agency Plans</a>
+            <a href="#services" className="hover:text-white transition-colors">Specialties</a>
+            <a href="#portfolio" className="hover:text-white transition-colors">Client Projects</a>
+            <a href="#standards" className="hover:text-white transition-colors">Capabilities</a>
+            <a href="#process" className="hover:text-white transition-colors">Our Process</a>
+            <a href="#pricing" className="hover:text-white transition-colors">Plans</a>
             <a href="#faq" className="hover:text-white transition-colors">FAQ</a>
           </nav>
 
@@ -133,13 +135,11 @@ export default function BuyerRadarLandingPage() {
         <div className="absolute top-1/3 right-1/4 w-[450px] h-[350px] bg-cyan-500/10 blur-[120px] rounded-full pointer-events-none" />
 
         <div className="max-w-5xl mx-auto text-center space-y-8 relative z-10">
-          {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-slate-700/80 text-emerald-400 text-xs font-bold shadow-inner">
             <Award className="w-4 h-4 text-emerald-400" />
-            <span>High-Performance Websites Engineered for Local Businesses</span>
+            <span>High-Performance Websites Custom Built for Local Businesses</span>
           </div>
 
-          {/* Main Headline */}
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-black text-white tracking-tight leading-[1.08]">
             We Build Websites That Turn <br />
             <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
@@ -147,12 +147,11 @@ export default function BuyerRadarLandingPage() {
             </span>
           </h1>
 
-          {/* Subtitle */}
           <p className="text-base sm:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed font-normal">
-            Stop losing customers to outdated templates or missing websites. <strong className="text-white font-semibold">BuyerRadar</strong> designs, builds, and manages ultra-fast, mobile-first websites for restaurants, contractors, and cleaning services. Experience your full site before paying a dime.
+            No generic DIY website builders or slow clunky setups. <strong className="text-white font-semibold">BuyerRadar</strong> handcrafts, launches, and manages custom high-converting websites for restaurants, contractors, and cleaning services. Test drive your actual website on your phone before paying a cent.
           </p>
 
-          {/* Quick Interactive Website Generator (Agency Lead Magnet) */}
+          {/* Quick Custom Preview Generator */}
           <div id="instant-preview" className="pt-4 max-w-3xl mx-auto scroll-mt-28">
             <form
               onSubmit={handleQuickGenerate}
@@ -160,14 +159,14 @@ export default function BuyerRadarLandingPage() {
             >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs font-bold uppercase tracking-wider text-slate-400">
                 <span className="flex items-center gap-1.5 text-emerald-400">
-                  <Sparkles className="w-4 h-4" /> Instant 7-Day Personalized Preview Generator
+                  <Sparkles className="w-4 h-4" /> Request Your Custom 7-Day Live Preview
                 </span>
-                <span className="text-[11px] text-slate-500 font-mono">No credit card required</span>
+                <span className="text-[11px] text-slate-500 font-mono">100% Free • No commitment</span>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div>
-                  <label className="block text-[11px] font-bold text-slate-400 mb-1">Your Business Name</label>
+                  <label className="block text-[11px] font-bold text-slate-400 mb-1">Business Name</label>
                   <input
                     required
                     type="text"
@@ -189,14 +188,14 @@ export default function BuyerRadarLandingPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-[11px] font-bold text-slate-400 mb-1">Industry / Niche</label>
+                  <label className="block text-[11px] font-bold text-slate-400 mb-1">Your Industry</label>
                   <select
                     value={quickIndustry}
                     onChange={(e) => setQuickIndustry(e.target.value)}
                     className="w-full p-3 text-xs rounded-xl bg-slate-950 border border-slate-800 text-white focus:border-emerald-500 focus:outline-hidden transition-colors font-medium"
                   >
-                    <option value="restaurant">🍽 Restaurant & Food</option>
-                    <option value="handyman">🔨 Handyman & Home Services</option>
+                    <option value="restaurant">🍽 Restaurant & Dining</option>
+                    <option value="handyman">🔨 Handyman & Contractors</option>
                     <option value="cleaning">🧹 Cleaning Services</option>
                   </select>
                 </div>
@@ -208,13 +207,13 @@ export default function BuyerRadarLandingPage() {
                 className="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-400 hover:brightness-110 text-slate-950 font-black text-sm flex items-center justify-center gap-2 shadow-xl shadow-emerald-500/25 transition-all active:scale-[0.99] disabled:opacity-60"
               >
                 <Sparkles className="w-4 h-4" />
-                <span>{isGenerating ? 'Engineering Your Website Preview...' : 'Generate My Website Preview Instantly'}</span>
+                <span>{isGenerating ? 'Engineering Your Custom Website...' : 'Generate My Website Preview Instantly'}</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </form>
           </div>
 
-          {/* Agency Metrics & Trust Bar */}
+          {/* Agency Metrics Bar */}
           <div className="pt-6 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
             <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80 text-center">
               <div className="text-2xl sm:text-3xl font-black text-white font-mono">48 hrs</div>
@@ -225,32 +224,32 @@ export default function BuyerRadarLandingPage() {
               <div className="text-xs text-slate-400 mt-0.5">Higher Lead Conversion</div>
             </div>
             <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80 text-center">
-              <div className="text-2xl sm:text-3xl font-black text-white font-mono">15</div>
-              <div className="text-xs text-slate-400 mt-0.5">Industry Design Systems</div>
+              <div className="text-2xl sm:text-3xl font-black text-white font-mono">100%</div>
+              <div className="text-xs text-slate-400 mt-0.5">Custom Niche Architecture</div>
             </div>
             <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80 text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-400 font-mono">100%</div>
-              <div className="text-xs text-slate-400 mt-0.5">Zero Fabrication Policy</div>
+              <div className="text-2xl sm:text-3xl font-black text-amber-400 font-mono">Zero</div>
+              <div className="text-xs text-slate-400 mt-0.5">Maintenance Headaches</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 4. WHAT WE DO / AGENCY SPECIALTIES */}
+      {/* 4. AGENCY SPECIALTIES */}
       <section id="services" className="py-20 px-4 bg-slate-900 border-t border-slate-800 scroll-mt-20">
         <div className="max-w-7xl mx-auto space-y-16">
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
-              Tailored For Your Niche
+              Agency Specialties
             </span>
-            <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">Built For Local Business Growth</h2>
+            <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">Engineered for How Your Customers Buy</h2>
             <p className="text-slate-400 text-sm sm:text-base">
-              We do not build generic cookie-cutter templates. Every website is custom-structured around how your specific customers buy.
+              Every industry has a distinct customer psychology. We design and build custom digital experiences tailored to your market.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Restaurant Specialty */}
+            {/* Restaurant */}
             <div className="bg-slate-950 rounded-3xl border border-slate-800 p-8 space-y-6 hover:border-orange-500/50 transition-all flex flex-col justify-between group">
               <div className="space-y-4">
                 <div className="w-12 h-12 rounded-2xl bg-orange-500/10 border border-orange-500/20 text-orange-400 flex items-center justify-center font-bold">
@@ -263,9 +262,9 @@ export default function BuyerRadarLandingPage() {
                   Engineered to drive table reservations, online food orders, and showcase structured digital menus with dietary tags and clear pricing.
                 </p>
                 <ul className="space-y-2.5 text-xs text-slate-300 pt-2">
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-orange-400" /> Interactive categorized digital menus</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-orange-400" /> Table booking & OpenTable/Resy links</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-orange-400" /> DoorDash/UberEats/Direct ordering CTAs</li>
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-orange-400" /> Categorized digital menus with search</li>
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-orange-400" /> Table booking & OpenTable/Resy integration</li>
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-orange-400" /> Online ordering & delivery buttons</li>
                   <li className="flex items-center gap-2"><Check className="w-4 h-4 text-orange-400" /> Mobile sticky "View Menu" bar</li>
                 </ul>
               </div>
@@ -273,12 +272,12 @@ export default function BuyerRadarLandingPage() {
                 href="/preview/bella-vista-trattoria"
                 className="w-full py-3 rounded-xl bg-orange-600 hover:bg-orange-500 text-white font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md"
               >
-                <span>Explore Restaurant Portfolio</span>
+                <span>View Live Restaurant Experience</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
 
-            {/* Handyman Specialty */}
+            {/* Handyman */}
             <div className="bg-slate-950 rounded-3xl border border-slate-800 p-8 space-y-6 hover:border-amber-500/50 transition-all flex flex-col justify-between group">
               <div className="space-y-4">
                 <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center font-bold">
@@ -291,7 +290,7 @@ export default function BuyerRadarLandingPage() {
                   Turn local homeowners searching for repairs and remodeling into instant phone calls and qualified estimate requests.
                 </p>
                 <ul className="space-y-2.5 text-xs text-slate-300 pt-2">
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-amber-400" /> One-tap "Call Now" mobile buttons</li>
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-amber-400" /> One-tap "Call Now" mobile triggers</li>
                   <li className="flex items-center gap-2"><Check className="w-4 h-4 text-amber-400" /> 4-step job qualification questionnaire</li>
                   <li className="flex items-center gap-2"><Check className="w-4 h-4 text-amber-400" /> Before & after project transformation gallery</li>
                   <li className="flex items-center gap-2"><Check className="w-4 h-4 text-amber-400" /> Service area maps & verified review badge</li>
@@ -301,12 +300,12 @@ export default function BuyerRadarLandingPage() {
                 href="/preview/mikes-handyman-services"
                 className="w-full py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs flex items-center justify-center gap-2 transition-all shadow-md"
               >
-                <span>Explore Handyman Portfolio</span>
+                <span>View Live Contractor Experience</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
 
-            {/* Cleaning Specialty */}
+            {/* Cleaning */}
             <div className="bg-slate-950 rounded-3xl border border-slate-800 p-8 space-y-6 hover:border-cyan-500/50 transition-all flex flex-col justify-between group">
               <div className="space-y-4">
                 <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold">
@@ -322,14 +321,14 @@ export default function BuyerRadarLandingPage() {
                   <li className="flex items-center gap-2"><Check className="w-4 h-4 text-cyan-400" /> Instant online estimate calculator</li>
                   <li className="flex items-center gap-2"><Check className="w-4 h-4 text-cyan-400" /> 50-point cleaning checklist breakdown</li>
                   <li className="flex items-center gap-2"><Check className="w-4 h-4 text-cyan-400" /> Trust badges: Insured, bonded, eco-friendly</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-cyan-400" /> Recurring frequency discounts (Weekly, Bi-Weekly)</li>
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-cyan-400" /> Recurring frequency booking options</li>
                 </ul>
               </div>
               <Link
                 href="/preview/sparkling-horizon-cleaning"
                 className="w-full py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-black text-xs flex items-center justify-center gap-2 transition-all shadow-md"
               >
-                <span>Explore Cleaning Portfolio</span>
+                <span>View Live Cleaning Experience</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -337,7 +336,7 @@ export default function BuyerRadarLandingPage() {
         </div>
       </section>
 
-      {/* 5. FEATURED PORTFOLIO & LIVE CLIENT DEMOS */}
+      {/* 5. FEATURED CLIENT PROJECTS */}
       <section id="portfolio" className="py-20 px-4 bg-slate-950 border-t border-slate-800 scroll-mt-20">
         <div className="max-w-7xl mx-auto space-y-12">
           <div className="text-center max-w-3xl mx-auto space-y-3">
@@ -346,7 +345,7 @@ export default function BuyerRadarLandingPage() {
             </span>
             <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">Recent Client Websites</h2>
             <p className="text-slate-400 text-sm sm:text-base">
-              Test drive our live client websites. Every build includes multi-page navigation, custom visual identity, customer portals, and lead qualification flows.
+              Test drive our live client builds. Every website includes full multi-page navigation, private client editor portals, and conversion-optimized booking flows.
             </p>
           </div>
 
@@ -361,7 +360,7 @@ export default function BuyerRadarLandingPage() {
               }`}
             >
               <Utensils className="w-4 h-4" />
-              <span>Restaurants (5)</span>
+              <span>Restaurants</span>
             </button>
             <button
               onClick={() => setActiveTab('handyman')}
@@ -372,7 +371,7 @@ export default function BuyerRadarLandingPage() {
               }`}
             >
               <Wrench className="w-4 h-4" />
-              <span>Contractors (5)</span>
+              <span>Contractors</span>
             </button>
             <button
               onClick={() => setActiveTab('cleaning')}
@@ -383,19 +382,18 @@ export default function BuyerRadarLandingPage() {
               }`}
             >
               <Sparkles className="w-4 h-4" />
-              <span>Cleaning (5)</span>
+              <span>Cleaning</span>
             </button>
           </div>
 
-          {/* TAB 1: RESTAURANTS */}
+          {/* RESTAURANTS SHOWCASE */}
           {activeTab === 'restaurant' && (
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
-              {/* Bella Vista */}
               <div className="bg-slate-900 rounded-2xl border border-slate-800 p-5 flex flex-col justify-between hover:border-orange-500/50 transition-all group">
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
                     <span className="text-[10px] font-bold uppercase tracking-wider text-orange-400 bg-orange-500/10 px-2 py-0.5 rounded border border-orange-500/20">
-                      R1 • Pizza/Italian
+                      Italian & Trattoria
                     </span>
                     <span className="text-xs text-amber-400 font-bold">★ 4.8</span>
                   </div>
@@ -417,12 +415,11 @@ export default function BuyerRadarLandingPage() {
                 </div>
               </div>
 
-              {/* Taco Libre */}
               <div className="bg-slate-900 rounded-2xl border border-slate-800 p-5 flex flex-col justify-between hover:border-orange-500/50 transition-all group">
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
                     <span className="text-[10px] font-bold uppercase tracking-wider text-orange-400 bg-orange-500/10 px-2 py-0.5 rounded border border-orange-500/20">
-                      R2 • Mexican Street Food
+                      Mexican Street Food
                     </span>
                     <span className="text-xs text-amber-400 font-bold">★ 4.7</span>
                   </div>
@@ -444,12 +441,11 @@ export default function BuyerRadarLandingPage() {
                 </div>
               </div>
 
-              {/* Big Stack */}
               <div className="bg-slate-900 rounded-2xl border border-slate-800 p-5 flex flex-col justify-between hover:border-red-500/50 transition-all group">
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
                     <span className="text-[10px] font-bold uppercase tracking-wider text-red-400 bg-red-500/10 px-2 py-0.5 rounded border border-red-500/20">
-                      R3 • Burgers & Shakes
+                      Fast Casual & Burgers
                     </span>
                     <span className="text-xs text-amber-400 font-bold">★ 4.6</span>
                   </div>
@@ -471,12 +467,11 @@ export default function BuyerRadarLandingPage() {
                 </div>
               </div>
 
-              {/* Dragon Palace */}
               <div className="bg-slate-900 rounded-2xl border border-slate-800 p-5 flex flex-col justify-between hover:border-amber-500/50 transition-all group">
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
                     <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
-                      R4 • Asian Fusion
+                      Asian Fusion & Dim Sum
                     </span>
                     <span className="text-xs text-amber-400 font-bold">★ 4.9</span>
                   </div>
@@ -498,12 +493,11 @@ export default function BuyerRadarLandingPage() {
                 </div>
               </div>
 
-              {/* Rusty Fork */}
               <div className="bg-slate-900 rounded-2xl border border-slate-800 p-5 flex flex-col justify-between hover:border-blue-500/50 transition-all group">
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
                     <span className="text-[10px] font-bold uppercase tracking-wider text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded border border-blue-500/20">
-                      R5 • Diner & BBQ
+                      Classic Diner & BBQ
                     </span>
                     <span className="text-xs text-amber-400 font-bold">★ 4.8</span>
                   </div>
@@ -527,13 +521,13 @@ export default function BuyerRadarLandingPage() {
             </div>
           )}
 
-          {/* TAB 2: HANDYMAN */}
+          {/* CONTRACTORS SHOWCASE */}
           {activeTab === 'handyman' && (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-slate-900 rounded-3xl border border-slate-800 p-7 flex flex-col justify-between hover:border-amber-500/50 transition-all">
                 <div className="space-y-4">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded border border-amber-500/20">
-                    Template H1 • Classic Pro
+                    Residential Repairs
                   </span>
                   <h3 className="font-bold text-2xl text-white">Mike's Handyman Services</h3>
                   <p className="text-xs text-slate-400 leading-relaxed">
@@ -554,11 +548,11 @@ export default function BuyerRadarLandingPage() {
               <div className="bg-slate-900 rounded-3xl border border-slate-800 p-7 flex flex-col justify-between hover:border-amber-500/50 transition-all">
                 <div className="space-y-4">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded border border-amber-500/20">
-                    Template H2 • Remodeling Focus
+                    Full Remodeling
                   </span>
                   <h3 className="font-bold text-2xl text-white">Premium Renovations</h3>
                   <p className="text-xs text-slate-400 leading-relaxed">
-                    Kitchen, bathroom, and structural renovations with gallery-first composition and estimate forms.
+                    Kitchen, bathroom, and structural renovations with gallery-first showcase and estimate forms.
                   </p>
                 </div>
                 <div className="pt-6">
@@ -575,7 +569,7 @@ export default function BuyerRadarLandingPage() {
               <div className="bg-slate-900 rounded-3xl border border-slate-800 p-7 flex flex-col justify-between hover:border-amber-500/50 transition-all">
                 <div className="space-y-4">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded border border-amber-500/20">
-                    Template H3 • 24/7 Emergency
+                    24/7 Emergency Dispatch
                   </span>
                   <h3 className="font-bold text-2xl text-white">Rapid Response Repairs</h3>
                   <p className="text-xs text-slate-400 leading-relaxed">
@@ -595,13 +589,13 @@ export default function BuyerRadarLandingPage() {
             </div>
           )}
 
-          {/* TAB 3: CLEANING */}
+          {/* CLEANING SHOWCASE */}
           {activeTab === 'cleaning' && (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-slate-900 rounded-3xl border border-slate-800 p-7 flex flex-col justify-between hover:border-cyan-500/50 transition-all">
                 <div className="space-y-4">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded border border-cyan-500/20">
-                    Template C1 • Maid Service
+                    Residential Maid Service
                   </span>
                   <h3 className="font-bold text-2xl text-white">Sparkling Horizon Cleaning</h3>
                   <p className="text-xs text-slate-400 leading-relaxed">
@@ -622,7 +616,7 @@ export default function BuyerRadarLandingPage() {
               <div className="bg-slate-900 rounded-3xl border border-slate-800 p-7 flex flex-col justify-between hover:border-cyan-500/50 transition-all">
                 <div className="space-y-4">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded border border-cyan-500/20">
-                    Template C3 • Commercial Janitorial
+                    Corporate Facilities
                   </span>
                   <h3 className="font-bold text-2xl text-white">Corporate Facility Cleans</h3>
                   <p className="text-xs text-slate-400 leading-relaxed">
@@ -643,11 +637,11 @@ export default function BuyerRadarLandingPage() {
               <div className="bg-slate-900 rounded-3xl border border-slate-800 p-7 flex flex-col justify-between hover:border-cyan-500/50 transition-all">
                 <div className="space-y-4">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded border border-cyan-500/20">
-                    Template C4 • Luxury Estate
+                    Luxury Estate Care
                   </span>
                   <h3 className="font-bold text-2xl text-white">Luxury Home Care</h3>
                   <p className="text-xs text-slate-400 leading-relaxed">
-                    White-glove residential cleaning, deep sanitization, elegant serif typography, and custom quote flows.
+                    White-glove residential cleaning, deep sanitization, elegant typography, and bespoke quote flows.
                   </p>
                 </div>
                 <div className="pt-6">
@@ -665,8 +659,85 @@ export default function BuyerRadarLandingPage() {
         </div>
       </section>
 
-      {/* 6. OUR AGENCY PROCESS */}
-      <section id="process" className="py-20 px-4 bg-slate-900/60 border-t border-slate-800 scroll-mt-20">
+      {/* 6. AGENCY CAPABILITIES & STANDARDS */}
+      <section id="standards" className="py-20 px-4 bg-slate-900/60 border-t border-slate-800 scroll-mt-20">
+        <div className="max-w-7xl mx-auto space-y-16">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
+              Agency Capabilities
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">Enterprise Engineering Standards</h2>
+            <p className="text-slate-400 text-sm sm:text-base">
+              Every website we deliver is built with state-of-the-art modern technology designed for speed, security, and sales.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="p-7 rounded-3xl bg-slate-950 border border-slate-800 space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold">
+                <Zap className="w-5 h-5" />
+              </div>
+              <h3 className="font-bold text-lg text-white">Sub-Second Load Speeds</h3>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Built on Next.js with global CDN caching. Fast websites rank higher on Google and convert mobile searchers immediately.
+              </p>
+            </div>
+
+            <div className="p-7 rounded-3xl bg-slate-950 border border-slate-800 space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center font-bold">
+                <Smartphone className="w-5 h-5" />
+              </div>
+              <h3 className="font-bold text-lg text-white">Mobile-First Conversion UX</h3>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Over 80% of local searches happen on mobile. We design sticky call bars, one-tap navigation, and frictionless reservation forms.
+              </p>
+            </div>
+
+            <div className="p-7 rounded-3xl bg-slate-950 border border-slate-800 space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold">
+                <Laptop className="w-5 h-5" />
+              </div>
+              <h3 className="font-bold text-lg text-white">Private Client Portal</h3>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                You get full access to edit text, update dishes and pricing, add new portfolio photos, and publish blog updates anytime.
+              </p>
+            </div>
+
+            <div className="p-7 rounded-3xl bg-slate-950 border border-slate-800 space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold">
+                <ShieldCheck className="w-5 h-5" />
+              </div>
+              <h3 className="font-bold text-lg text-white">Zero Fabrication Guarantee</h3>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                We only showcase verified Google reviews, genuine services, and real business details to build authentic trust with local customers.
+              </p>
+            </div>
+
+            <div className="p-7 rounded-3xl bg-slate-950 border border-slate-800 space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold">
+                <Search className="w-5 h-5" />
+              </div>
+              <h3 className="font-bold text-lg text-white">Local Search (SEO) Optimization</h3>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Structured schema markup, local geotags, semantic headings, and high-speed core web vitals baked into every page.
+              </p>
+            </div>
+
+            <div className="p-7 rounded-3xl bg-slate-950 border border-slate-800 space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center font-bold">
+                <Headphones className="w-5 h-5" />
+              </div>
+              <h3 className="font-bold text-lg text-white">Managed Agency Support</h3>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Need a change? Text or email our team and we will update your website, upload your new menus, and ensure 99.9% uptime.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. OUR 4-STEP PROCESS */}
+      <section id="process" className="py-20 px-4 bg-slate-950 border-t border-slate-800 scroll-mt-20">
         <div className="max-w-7xl mx-auto space-y-16">
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
@@ -674,12 +745,12 @@ export default function BuyerRadarLandingPage() {
             </span>
             <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">How We Launch Your Website</h2>
             <p className="text-slate-400 text-sm sm:text-base">
-              No endless Zoom meetings, no 3-month delays. We engineer, deploy, and manage your website with zero friction.
+              No endless Zoom meetings, no 3-month delays. We design, deploy, and manage your website with zero friction.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="p-6 rounded-3xl bg-slate-950 border border-slate-800 space-y-3 relative">
+            <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800 space-y-3 relative">
               <span className="text-4xl font-black text-slate-800 font-mono">01</span>
               <h3 className="font-bold text-lg text-white">Business Ingestion</h3>
               <p className="text-xs text-slate-400 leading-relaxed">
@@ -687,15 +758,15 @@ export default function BuyerRadarLandingPage() {
               </p>
             </div>
 
-            <div className="p-6 rounded-3xl bg-slate-950 border border-slate-800 space-y-3 relative">
+            <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800 space-y-3 relative">
               <span className="text-4xl font-black text-slate-800 font-mono">02</span>
-              <h3 className="font-bold text-lg text-white">Niche Architecture</h3>
+              <h3 className="font-bold text-lg text-white">Bespoke Architecture</h3>
               <p className="text-xs text-slate-400 leading-relaxed">
-                We select from our 15 conversion-tested layouts, pairing the exact fonts, colors, and CTA buttons your customers respond to.
+                We design tailored typography, visual colorways, and conversion buttons built specifically for your local audience.
               </p>
             </div>
 
-            <div className="p-6 rounded-3xl bg-slate-950 border border-slate-800 space-y-3 relative">
+            <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800 space-y-3 relative">
               <span className="text-4xl font-black text-emerald-500/40 font-mono">03</span>
               <h3 className="font-bold text-lg text-white">Live 7-Day Preview</h3>
               <p className="text-xs text-slate-400 leading-relaxed">
@@ -703,51 +774,13 @@ export default function BuyerRadarLandingPage() {
               </p>
             </div>
 
-            <div className="p-6 rounded-3xl bg-slate-950 border border-slate-800 space-y-3 relative">
+            <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800 space-y-3 relative">
               <span className="text-4xl font-black text-emerald-400 font-mono">04</span>
               <h3 className="font-bold text-lg text-white">Launch & Grow</h3>
               <p className="text-xs text-slate-400 leading-relaxed">
                 We connect your custom domain, set up fast cloud hosting and SSL, and provide you with a visual editor dashboard.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 7. ALL 15 DESIGN FRAMEWORKS */}
-      <section className="py-20 px-4 bg-slate-950 border-t border-slate-800">
-        <div className="max-w-7xl mx-auto space-y-12">
-          <div className="text-center max-w-3xl mx-auto space-y-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
-              Agency Design Library
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">15 Production-Grade Frameworks</h2>
-            <p className="text-slate-400 text-sm sm:text-base">
-              Customized visual hierarchies, section ordering, and conversion triggers for every local business category.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {templatesList.map((tpl) => (
-              <div
-                key={tpl.id}
-                className="p-5 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-slate-700 transition-all space-y-2.5"
-              >
-                <div className="flex justify-between items-center">
-                  <span className="text-xs font-mono font-bold text-white bg-slate-800 px-2.5 py-1 rounded-lg border border-slate-700">
-                    {tpl.id}
-                  </span>
-                  <span className="text-[11px] font-bold text-emerald-300 bg-emerald-500/10 px-2.5 py-1 rounded-lg border border-emerald-500/20">
-                    {tpl.badge}
-                  </span>
-                </div>
-                <h4 className="font-bold text-white text-base">{tpl.name}</h4>
-                <p className="text-xs text-slate-400 leading-relaxed">{tpl.style}</p>
-                <div className="text-[11px] text-slate-500 pt-1 border-t border-slate-800/80">
-                  Target: <span className="text-slate-300 font-medium">{tpl.target}</span>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -761,7 +794,7 @@ export default function BuyerRadarLandingPage() {
             </span>
             <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">Simple Monthly Website Plans</h2>
             <p className="text-slate-400 text-sm sm:text-base">
-              No \$5,000 upfront design bills. Everything is included in one manageable monthly subscription.
+              No $5,000 upfront design bills. Everything is included in one manageable monthly subscription.
             </p>
           </div>
 
@@ -894,15 +927,17 @@ export default function BuyerRadarLandingPage() {
             <Link href="/admin" className="hover:text-emerald-400 transition-colors">Admin Portal</Link>
             <a href="#services" className="hover:text-emerald-400 transition-colors">Specialties</a>
             <a href="#portfolio" className="hover:text-emerald-400 transition-colors">Portfolio</a>
+            <a href="#standards" className="hover:text-emerald-400 transition-colors">Capabilities</a>
             <a href="#pricing" className="hover:text-emerald-400 transition-colors">Pricing</a>
             <a href="#faq" className="hover:text-emerald-400 transition-colors">FAQ</a>
           </div>
-          <p className="text-slate-400 font-bold text-sm">BuyerRadar • Digital Growth Agency for Local Businesses</p>
+          <p className="text-slate-400 font-bold text-sm">BuyerRadar • Bespoke Digital Agency for Local Businesses</p>
           <p>© {new Date().getFullYear()} BuyerRadar (buyerradar.app). All rights reserved.</p>
         </div>
       </footer>
     </div>
   );
 }
+
 
 
